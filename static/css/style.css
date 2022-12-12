@@ -5,7 +5,7 @@ body {
   /* justify-content: center; */
   /* align-items: center; */
   min-height: 100vh;
-  background-color: #93c3e9;
+  background-color: #94e0ff;
   overflow: hidden;
 }
 
@@ -13,8 +13,8 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  background: url(../city-bg.png) no-repeat;
-  background-size: cover;
+  background: url(../city.png) no-repeat;
+  background-size: auto;
   background-position: bottom;
   width: 100%;
   height: 100vh;
@@ -28,13 +28,84 @@ img {
 .plane {
   position: absolute;
 }
-
+/* AIR PLANE ANIMATION */
 .plane {
   left: 0;
   top: 10%;
   animation: plane 35s linear infinite;
 }
+@keyframes plane {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    left: 100%;
+    right: -100%;
+  }
+}
+.plane2 {
+  animation: plane2 35s linear infinite;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+}
+@keyframes plane2 {
+  0% {
+    opacity: 0.3;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    bottom: 210%;
+    top: -100%;
+    transform: scale(1) rotate(90deg) translateX(450px);
+  }
+}
+/* CLOUD ANIMATION */
+.cloud {
+  left: -50%;
+  opacity: 1;
+  animation: cloud 55s linear infinite;
+}
 
+@keyframes cloud {
+  0% {
+    opacity: 0.5;
+    left: -100%;
+  }
+  100% {
+    opacity: 1;
+    left: 100%;
+    right: -100%;
+  }
+}
+/* AIR BALOON ANIMATION */
+.air {
+  bottom: 250px;
+  left: 70%;
+  z-index: -1;
+  animation: air 45s linear infinite;
+}
+.air2 {
+  animation-delay: 20s;
+  left: 20%;
+  opacity: 0;
+}
+
+@keyframes air {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    bottom: 100%;
+  }
+}
+
+/* login */
 .main {
   position: absolute;
   justify-content: center;
@@ -70,7 +141,7 @@ label {
 input {
   width: 60%;
   height: 20px;
-  background: #e0dede;
+  background: #c0ecfd;
   justify-content: center;
   display: flex;
   margin: 20px auto;
@@ -87,7 +158,7 @@ button {
   justify-content: center;
   display: block;
   color: #fff;
-  background: #573ba5;
+  background: #2295d0;
   font-size: 1em;
   font-weight: bold;
   margin-top: 20px;
@@ -98,19 +169,19 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background: #6d44b8;
+  background: #239fdc;
 }
 
 .login {
   height: 460px;
-  background: #eee;
+  background: #ecf8fd;
   border-radius: 60% / 10%;
   transform: translateY(-180px);
   transition: 0.8s ease-in-out;
 }
 
 .login label {
-  color: #573b8a;
+  color: #0069ce;
   transform: scale(0.6);
 }
 
