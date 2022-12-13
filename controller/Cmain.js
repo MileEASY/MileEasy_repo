@@ -1,11 +1,1 @@
-exports.main = (req, res) => {
-  res.render("index");
-};
-
-exports.test = (req,res)=>{
-  res.render("test");
-}
-
-exports.mbti = (req,res)=>{
-res.render('mbtitest');
-}
+//나중에 최종 컨트롤러 여기다 병합
