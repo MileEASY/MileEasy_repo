@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>MBTI Test Page</title>
+
+    <script type="text/javascript" src="/static/data.json"></script>
+</head>
+<body>
+    <form>
+        <section>
+            <div id="qBox"></div>
+            <div id="aBox"></div>
+        </section>
+    </form>
+    <script>
+        var no = 0;
+        function goNext(a) {
+            if ( no != qna.length - 1 ) {
+                axios({
+                    method : 'post',
+                    url : '/test_type',
+                    data : {
+                        type : a.className
+                    }
+                })
+                no++;
+                showQuestion();
+            }
+        }
+        function showQuestion() {
+            document.getElementById("qBox").innerText = `Q.${no+1}`+ qna[no].q;
+
+            var html = "";
+            for ( var a of qna[no].a ) {
+                html += 
+                `<button class="${a.type}" type="button" onclick="goNext(this);">${a.answer}</button>`;
+                type = a.type;
+            }
+            // for ( var i = 0; i < qna[no].a.length; i++ ) {
+            //     html += 
+            //     `<label for="${qna[no].a[i].type}">
+            //         <button type="button" onclick="goNext();">${qna[no].a[i].answer}</button>
+            //     </label>`;
+
+            // }
+            document.getElementById("aBox").innerHTML = html;
+        }
+        showQuestion();
+        
+    </script>
+</body>
+</html>
