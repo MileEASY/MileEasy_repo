@@ -11,8 +11,6 @@ app.use(express.json());
 const router = require("./routes");
 app.use("/", router);
 
-const router2 = require("./routes");
-app.use("/test", router2);
 
 app.get("*", (req, res) => {
   res.send("주소가 존재하지 않습니다. 다시 한 번 확인해주세요.");

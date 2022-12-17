@@ -18,6 +18,7 @@
         </section>
     </form>
     <script>
+        let testResult;
         var no = 0;
         let arr = [];
         function goNext(a) {
@@ -29,6 +30,9 @@
                     data : {
                         type : arr
                     }
+                })
+                .then((res)=>{
+                    testResult = res.data;
                 })
                 no++;
                 showQuestion();
