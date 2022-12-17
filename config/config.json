@@ -6,12 +6,11 @@
         "password": "000000",
         "dialect": "mysql"  
     },
-
-    "production" : {
+    "mile" : {
         "host": "localhost",   
-        "database" : "00000", 
-        "username" : "user", 
-        "password": "000000",
+        "database" : "mileeasy", 
+        "username" : "mileuser", 
+        "password": "@mile",
         "dialect": "mysql" 
     }
 }
