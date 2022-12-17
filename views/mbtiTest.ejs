@@ -19,13 +19,15 @@
     </form>
     <script>
         var no = 0;
+        let arr = [];
         function goNext(a) {
+            arr.push(a.className);
             if ( no != qna.length - 1 ) {
                 axios({
                     method : 'post',
                     url : '/test_type',
                     data : {
-                        type : a.className
+                        type : arr
                     }
                 })
                 no++;
@@ -41,13 +43,6 @@
                 `<button class="${a.type}" type="button" onclick="goNext(this);">${a.answer}</button>`;
                 type = a.type;
             }
-            // for ( var i = 0; i < qna[no].a.length; i++ ) {
-            //     html += 
-            //     `<label for="${qna[no].a[i].type}">
-            //         <button type="button" onclick="goNext();">${qna[no].a[i].answer}</button>
-            //     </label>`;
-
-            // }
             document.getElementById("aBox").innerHTML = html;
         }
         showQuestion();
