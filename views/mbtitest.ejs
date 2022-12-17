@@ -1,12 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+    <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>MBTI Test Page</title>
+
+    <script type="text/javascript" src="/static/qnalist.json"></script>
 </head>
 <body>
-    test 시작
+    <form>
+        <section>
+            <div id="qBox"></div>
+            <div id="aBox"></div>
+        </section>
+    </form>
+    <script>
+        var no = 0;
+        let arr = [];
+        function goNext(a) {
+            arr.push(a.className);
+            if ( no < qna.length - 1 ) {
+                axios({
+                    method : 'post',
+                    url : '/test_type',
+                    data : {
+                        type : arr
+                    }
+                })
+                no++;
+                showQuestion();
+            }
+        }
+
+        function showQuestion() {
+            document.getElementById("qBox").innerText = `Q.${no+1}`+ qna[no].q;
+
+            var html = "";
+            for ( var a of qna[no].a ) {
+                html += 
+                `<button class="${a.type}" type="button" onclick="goNext(this);">${a.answer}</button>`;
+            }
+            document.getElementById("aBox").innerHTML = html;
+        }
+
+        showQuestion();
+        
+    </script>
 </body>
 </html>
