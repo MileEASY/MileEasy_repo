@@ -1,55 +1,80 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.2.js"
+        integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>MBTI Test Page</title>
-
+    <link rel="stylesheet" href="../public/static/css/mbtitest.css">
     <script type="text/javascript" src="/public/static/qnalist.json"></script>
-    <!-- <link rel="stylesheet" href="/public/static/css/index.css"> -->
-
+    
 </head>
+
 <body>
+    <img src="../public/static/img/Logo.png" alt="">
     <form>
-        <section>
-            <div id="qBox"></div>
-            <div id="aBox"></div>
-        </section>
+        <div class="status">
+            <div class="statusBar"></div>
+        </div>
+        <div id="qBox"></div>
+        <div id="aBox"></div>
     </form>
+
+    <div id="result"><button onclick="result();" id="result">결과보기</button></div>
+
+
     <script>
+        function result() {
+            location.href = "loading";
+        }
+
+        const endPoint = 20;//상태바 엔드포인트
         var no = 0;
-        let arr = [];
+        document.getElementById('result').style.display = "none";//결과버튼
         function goNext(a) {
-            arr.push(a.className);
-            if ( no < qna.length - 1 ) {
+            if (no < qna.length -1 ) {
+                
+                document.getElementById('result').style.display = "none"//결과버튼
                 axios({
-                    method : 'post',
-                    url : '/test_type',
-                    data : {
-                        type : arr
+                    method: 'post',
+                    url: '/test_type',
+                    data: {
+                        type: a.className
                     }
                 })
+                    .then((response) => {
+                        console.log(a.className);
+
+                    })
                 no++;
                 showQuestion();
             }
+        
+            else document.getElementById('result').style.display = "block"//결과버튼
         }
-
         function showQuestion() {
-            document.getElementById("qBox").innerText = `Q.${no+1}`+ qna[no].q;
 
+            document.getElementById("qBox").innerText = `Q${no + 1} ` + qna[no].q;
             var html = "";
-            for ( var a of qna[no].a ) {
-                html += 
-                `<button class="${a.type}" type="button" onclick="goNext(this);">${a.answer}</button>`;
+            for (var a of qna[no].a) {
+                html +=
+                    `<button class="${a.type}" type="button" onclick="goNext(this);">${a.answer}</button>`;
             }
             document.getElementById("aBox").innerHTML = html;
-        }
 
+            // 상태바 코드
+            var status = document.querySelector('.statusBar');
+            status.style.width = (100 / endPoint) * (no + 1) + '%';
+
+        }
         showQuestion();
-        
+
+
     </script>
 </body>
+
 </html>
