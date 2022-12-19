@@ -59,24 +59,39 @@
     </div>
     <script>
       function signup() {
-        var form = document.getElementById("signup");
-        let user = {
-          id: form.userId.value,
-          pw: form.userPw.value,
-          name: form.userName.value,
-        };
-        axios({
-          method: "post",
-          url: "/signup",
-          data: user,
-        })
-          .then((res) => {
-            console.log(res);
-          })
-          .then((data) => {
-            document.location.href = "/";
-            console.log(user.id + "님 회원가입 성공");
-          });
+        let form = document.querySelector("#signup");
+            let user = {
+                    name:form.userName.value,
+                    id:form.userId.value,
+                    pw:form.userPw.value,
+                }
+            if(user.name == "" || user.id =="" || user.pw== ""){
+                alert("회원 정보를 모두 기입해 주세요");
+            } else {
+                axios({
+                    method: 'get',
+                    url: '/signup',
+                    params: {id:user.id}
+                })
+                .then((res)=>{
+                        console.log(res);
+                    if(res.data != false) { alert(`이미 있는 ID 입니다`);
+                        $("input[name=userId]").val("");
+                        $("input[name=userPw]").val("");
+                    } else {
+                        axios({
+                        method: 'post',
+                        url: '/signup',
+                        data: user,
+                        })
+                        .then((response)=>{
+                            console.log(response);
+                            alert(`welcome, ${response.data.name}`);
+                            window.location.href = "/";
+                        });
+                    }
+                });           
+            }   
       }
     </script>
   </body>
