@@ -13,7 +13,7 @@ db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 db.User = require('./User')(sequelize, Sequelize);
 db.Trip = require('./Trip')(sequelize, Sequelize);
-db.User = require('./User2')(sequelize, Sequelize);
-db.Trip = require('./Trip2')(sequelize, Sequelize);
+db.User2 = require('./User2')(sequelize, Sequelize);
+db.Trip2 = require('./Trip2')(sequelize, Sequelize);
 
 module.exports = db;

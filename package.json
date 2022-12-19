@@ -15,7 +15,6 @@
     "url": "https://github.com/MileEASY/MileEasy_repo/issues"
   },
   "homepage": "https://github.com/MileEASY/MileEasy_repo#readme",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.20.1",
     "ejs": "^3.1.8",
@@ -24,5 +23,7 @@
     "mysql2": "^2.3.3",
     "sequelize": "^6.26.0",
     "sequelize-cli": "^6.5.2"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
