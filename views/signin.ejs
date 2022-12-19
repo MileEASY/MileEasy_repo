@@ -46,36 +46,43 @@
               placeholder="Password"
               required=""
             />
-            <button type="button" onclick="login()">Login</button>
+            <button type="button" onclick="signin()">Sign in</button>
           </form>
+          <p id="welcome" class="d-none"></p>
         </div>
       </div>
     </div>
     <script>
-      function login() {
-        var form = document.getElementById("login");
-        let user = {
-          id: form.userId.value,
-          pw: form.userPw.value,
-        };
-        axios({
-          method: "post",
-          url: "/signIn",
-          data: user,
-        })
-          .then((req) => {
-            {
-              return req.data;
-            }
-          })
-          .then((data) => {
-            if (data == true) {
-              console.log(data);
-              console.log(user.id + "님 로그인성공");
+      function signin() {
+        let form = document.querySelector("#login");
+            let user = {
+                    id:form.userId.value,
+                    pw:form.userPw.value,
+                }
+            if(user.id =="" || user.pw== ""){
+                alert("회원 정보를 모두 기입해 주세요");
             } else {
-              alert("로그인실패");
-            }
-          });
+                axios({
+                    method: 'get',
+                    url: '/signin',
+                    params: {
+                        id: user.id,
+                        pw: user.pw
+                    }
+                })
+                .then((res)=>{
+                    if(res.data.name){
+                       alert(`welcome, ${res.data.name}!`);
+                       window.location.href = "/";
+                       //$("input[name=userId]").addClass("d-none");
+                       //$("input[name=userPw]").addClass("d-none");
+                       //$("#welcome").removeClass("d-none");
+                       //$("#welcome").text(`${res.data.name}님 환영합니다!`);
+                    } else {
+                       alert(`정확한 정보를 입력하세요`);
+                    } 
+                });
+            }   
       }
     </script>
   </body>
