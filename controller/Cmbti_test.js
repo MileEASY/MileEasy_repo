@@ -1,8 +1,13 @@
 const { User2 } = require('../model');
 const { Trip2 } = require('../model');
 
+
 exports.test = (req, res) => {
-  res.render('mbtiTest');
+  res.render('test');
+}
+
+exports.mbtitest=(req,res)=>{
+  res.render('mbtitest');
 }
 
 exports.type = async (req, res) => {
