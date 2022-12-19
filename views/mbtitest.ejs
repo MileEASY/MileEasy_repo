@@ -22,6 +22,7 @@
         </div>
         <div id="qBox"></div>
         <div id="aBox"></div>
+        <input type="hidden" id="select">
     </form>
 
     <div id="result"><button onclick="result();" id="result">결과보기</button></div>
@@ -34,21 +35,23 @@
 
         const endPoint = 20;//상태바 엔드포인트
         var no = 0;
+        let arr = [];
         document.getElementById('result').style.display = "none";//결과버튼
         function goNext(a) {
+            arr.push(a.className);
             if (no < qna.length -1 ) {
                 
                 document.getElementById('result').style.display = "none"//결과버튼
                 axios({
                     method: 'post',
-                    url: '/test_type',
+                    url: '/mbtitest',
                     data: {
-                        type: a.className
+                        type: arr
                     }
                 })
-                    .then((response) => {
-                        console.log(a.className);
-
+                    .then((res) => {
+                        console.log(res.data);
+                        document.getElementById("select").value = res.data;
                     })
                 no++;
                 showQuestion();
@@ -73,7 +76,16 @@
         }
         showQuestion();
 
-
+        function result() {
+            let select = document.getElementById("select").value
+            axios({
+                    method : 'post',
+                    url : '/mbtiresult',
+                    data : {
+                        data : select
+                    }
+                })
+        }
     </script>
 </body>
 

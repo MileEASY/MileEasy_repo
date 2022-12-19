@@ -2,6 +2,9 @@ const express = require("express");
 const app = express();
 const port = 8080;
 const router = require("./routes");
+const path = require("path");
+const dotenv = require('dotenv');
+dotenv.config({path : path.join(__dirname, '.env')});
 
 app.set("view engine", "ejs");
 

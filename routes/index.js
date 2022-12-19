@@ -6,11 +6,11 @@ const router = express.Router();
 
 router.get("/", controller.main);
 router.get("/test",controller.test);
-router.get('/mbtitest',controller.mbtitest);
 
-
-router.get('/test', controller2.test);
-router.post('/test_type', controller2.type);
+router.get('/mbtitest',controller2.mbtitest);
+router.post('/mbtitest', controller2.test_type);
+router.get('/mbtiresult', controller2.result_page);
+router.post('/mbtiresult', controller2.user_type);
 
 router.get("/signup_home", controller3.signup_home);
 router.get("/signup", controller3.idread);
