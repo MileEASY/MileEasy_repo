@@ -5,7 +5,7 @@ const router = require("./routes");
 
 app.set("view engine", "ejs");
 
-app.use("/static", express.static(__dirname + "/static"));
+app.use("/public/static", express.static(`${__dirname}/public/static`));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use("/", router);
