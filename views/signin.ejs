@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/static/css/style.css" />
-    <title>MileEASY 회원가입</title>
+    <title>MileEASY 로그인</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"
@@ -32,19 +32,13 @@
 
       <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true" />
-        <!-- 회원가입 -->
-        <div class="signup" id="signup_do">
-          <form id="signup">
+        <!-- 로그인 -->
+        <div class="login" id="login_do">
+          <form id="login">
             <label for="chk" aria-hidden="true">
-              <!-- Sign up -->
+              <!-- Login -->
               <a href="/"><img src="../static/Logo.png" alt="logo" /></a>
             </label>
-            <input
-              type="text"
-              name="userName"
-              placeholder="User name"
-              required=""
-            />
             <input type="text" name="userId" placeholder="id" required="" />
             <input
               type="password"
@@ -52,30 +46,35 @@
               placeholder="Password"
               required=""
             />
-            <button type="button" onclick="signup();">Sign up</button>
+            <button type="button" onclick="login()">Login</button>
           </form>
         </div>
       </div>
     </div>
     <script>
-      function signup() {
-        var form = document.getElementById("signup");
+      function login() {
+        var form = document.getElementById("login");
         let user = {
           id: form.userId.value,
           pw: form.userPw.value,
-          name: form.userName.value,
         };
         axios({
           method: "post",
-          url: "/signup",
+          url: "/signIn",
           data: user,
         })
-          .then((res) => {
-            console.log(res);
+          .then((req) => {
+            {
+              return req.data;
+            }
           })
           .then((data) => {
-            document.location.href = "/";
-            console.log(user.id + "님 회원가입 성공");
+            if (data == true) {
+              console.log(data);
+              console.log(user.id + "님 로그인성공");
+            } else {
+              alert("로그인실패");
+            }
           });
       }
     </script>
