@@ -1,5 +1,5 @@
-const { User2 } = require('../model');
-const { Trip2 } = require('../model');
+const { User } = require('../model');
+const { Trip } = require('../model');
 let Ecount = 0; let Icount = 0;
 let Scount = 0; let Ncount = 0;
 let Tcount = 0; let Fcount = 0;
@@ -82,9 +82,9 @@ exports.user_type = async (req, res) => {
 }
 
 exports.test_result = async (req, res) => {
-  let result = await Trip2.findAll({
+  let result = await Trip.findAll({
     where : {mbti : req.body.type}
   })
-  console.log(result[0].dataValues)
+  console.log('result : ', result[0].dataValues)
   res.render('result', {data : result[0].dataValues});
 }
