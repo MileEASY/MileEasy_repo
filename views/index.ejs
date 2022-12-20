@@ -72,11 +72,17 @@
                 >
               </li>
             </ul>
+            <% if(!isLogin) { %>
             <div class="d-flex ms-lg-4">
               <a class="btn btn-secondary-outline" href="/signin_home">Sign In</a
               ><a class="btn btn-warning ms-3" href="/signup_home">Sign Up</a>
             </div>
-          </div>
+            <% } else { %>
+              <div class="d-flex ms-lg-4">
+                <a class="btn btn-secondary-outline" href="/result">나의 여행지</a>
+                <a class="btn btn-warning ms-3" href="/userUpdate">회원정보 수정</a>
+              </div>
+            <% } %>  
         </div>
       </nav>
       <section class="pt-7">
