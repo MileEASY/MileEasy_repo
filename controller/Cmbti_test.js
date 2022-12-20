@@ -1,11 +1,11 @@
 const { User2 } = require('../model');
 const { Trip2 } = require('../model');
-let Ecount = 0;   let Icount = 0;
-let Scount = 0;   let Ncount = 0;
-let Tcount = 0;   let Fcount = 0;
-let Jcount = 0;   let Pcount = 0;
+let Ecount = 0; let Icount = 0;
+let Scount = 0; let Ncount = 0;
+let Tcount = 0; let Fcount = 0;
+let Jcount = 0; let Pcount = 0;
 
-exports.mbtitest = (req, res)=>{
+exports.mbtitest = (req, res) => {
   res.render('mbtitest')
 }
 //MBTI테스트 진행
@@ -13,11 +13,22 @@ exports.test_type = async (req, res) => {
   // let mbti = '';
   console.log('select type : ', req.body.type);
   res.send(req.body.type)
-  }
+}
 
-exports.result_page = (req, res) => {
-  res.render('mbtiresult');
-  }
+//mbti테스트 메인
+exports.testmain=(req,res)=>{
+  res.render('testmain');
+}
+
+//loading페이지
+exports.loading=(req,res)=>{
+  res.render('loading');
+}
+
+//mbti테스트 결과
+exports.result = (req, res) => {
+  res.render('result');
+}
 
 exports.user_type = (req, res) => {
   console.log(req.body.data);
@@ -63,4 +74,4 @@ exports.user_type = (req, res) => {
 
   // console.log('userMBTI : ', mbti);
   // res.send();
-  }
+}
