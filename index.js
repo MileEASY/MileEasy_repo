@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 // const port = 8080;
+const session = require("express-session");
 const router = require("./routes");
 const path = require("path");
 const dotenv = require('dotenv');
@@ -15,6 +16,14 @@ app.set("view engine", "ejs");
 app.use("/public/static", express.static(`${__dirname}/public/static`));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(session({
+  secret: process.env.SESSION_SECRET, 
+  resave: false, 
+  saveUninitialized: true, 
+  cookie: {
+    expires: 1000*10
+  },
+}));
 app.use("/", router);
 
 app.get("*", (req, res) => {

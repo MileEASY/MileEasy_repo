@@ -36,5 +36,5 @@ exports.idread = async (req,res)=>{
       console.log(result); //배열에 안 담김
       if(result == null) res.send(false);
       else if(req.query.pw !== result.pw) res.send(false);
-      else {console.log("true"); res.send({name: result.name});}
+      else {req.session.user = req.query.id; res.send({name: result.name});}
   }
