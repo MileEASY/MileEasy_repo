@@ -36,42 +36,42 @@ exports.user_type = (req, res) => {
   const arr = str.split(',');
   console.log(arr);
 
-  // for (let i = 0; i < arr.length; i++) {
-  //   if (req.body.type[i] === 'E') {
-  //     Ecount++;
-  //   }
-  //   else if (req.body.type[i] === 'I') {
-  //     Icount++;
-  //   }
-  //   else if (req.body.type[i] === 'S') {
-  //     Scount++;
-  //   }
-  //   else if (req.body.type[i] === 'N') {
-  //     Ncount++;
-  //   }
-  //   else if (req.body.type[i] === 'T') {
-  //     Tcount++;
-  //   }
-  //   else if (req.body.type[i] === 'F') {
-  //     Fcount++;
-  //   }
-  //   else if (req.body.type[i] === 'J') {
-  //     Jcount++;
-  //   }
-  //   else if (req.body.type[i] === 'P') {
-  //     Pcount++;
-  //   }
-  // };
+  for (let i = 0; i < arr.length; i++) {
+    if (req.body.type[i] === 'E') {
+      Ecount++;
+    }
+    else if (req.body.type[i] === 'I') {
+      Icount++;
+    }
+    else if (req.body.type[i] === 'S') {
+      Scount++;
+    }
+    else if (req.body.type[i] === 'N') {
+      Ncount++;
+    }
+    else if (req.body.type[i] === 'T') {
+      Tcount++;
+    }
+    else if (req.body.type[i] === 'F') {
+      Fcount++;
+    }
+    else if (req.body.type[i] === 'J') {
+      Jcount++;
+    }
+    else if (req.body.type[i] === 'P') {
+      Pcount++;
+    }
+  };
 
-  // if (Ecount > Icount) { mbti += 'E' }
-  // else mbti += 'I'
-  // if (Scount > Ncount) { mbti += 'S' }
-  // else mbti += 'N'
-  // if (Tcount > Fcount) { mbti += 'T' }
-  // else mbti += 'F'
-  // if (Jcount > Pcount) { mbti += 'J' }
-  // else mbti += 'P'
+  if (Ecount > Icount) { mbti += 'E' }
+  else mbti += 'I'
+  if (Scount > Ncount) { mbti += 'S' }
+  else mbti += 'N'
+  if (Tcount > Fcount) { mbti += 'T' }
+  else mbti += 'F'
+  if (Jcount > Pcount) { mbti += 'J' }
+  else mbti += 'P'
 
-  // console.log('userMBTI : ', mbti);
-  // res.send();
+  console.log('userMBTI : ', mbti);
+  res.send();
 }

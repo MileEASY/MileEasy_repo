@@ -49,10 +49,10 @@
                         type: arr
                     }
                 })
-                    .then((res) => {
-                        console.log(res.data);
-                        document.getElementById("select").value = res.data;
-                    })
+                .then((res) => {
+                    console.log(res.data);
+                    document.getElementById("select").value = res.data;
+                })
                 no++;
                 showQuestion();
             }

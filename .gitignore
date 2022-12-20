@@ -1,5 +1,5 @@
 Package-lock.json
-.env 
+/.env 
 # Compiled source #
 ###################
 *.com
