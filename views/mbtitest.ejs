@@ -22,7 +22,9 @@
         </div>
         <div id="qBox"></div>
         <div id="aBox"></div>
-        <input type="hidden" id="select">
+    </form>
+    <form method="post" action="/test_result" id="mbti_result">
+        <input type="hidden" name="type" id="user_mbti">
     </form>
 
     <div id="result"><button onclick="result();" id="result">결과보기</button></div>
@@ -30,7 +32,8 @@
 
     <script>
         function result() {
-            location.href = "loading";
+            var form = document.getElementById("mbti_result");
+            form.submit();
         }
 
         const endPoint = 20;//상태바 엔드포인트
@@ -44,14 +47,15 @@
                 document.getElementById('result').style.display = "none"//결과버튼
                 axios({
                     method: 'post',
-                    url: '/mbtitest',
+                    url: '/result',
                     data: {
+                        // id : req.session.id,
+                        id : 'nyondoo',
                         type: arr
                     }
                 })
-                .then((res) => {
-                    console.log(res.data);
-                    document.getElementById("select").value = res.data;
+                .then((res)=>{
+                    document.getElementById('user_mbti').value = res.data
                 })
                 no++;
                 showQuestion();
@@ -75,17 +79,6 @@
 
         }
         showQuestion();
-
-        // function result() {
-        //     let select = document.getElementById("select").value
-        //     axios({
-        //             method : 'post',
-        //             url : '/mbtiresult',
-        //             data : {
-        //                 data : select
-        //             }
-        //         })
-        // }
     </script>
 </body>
 

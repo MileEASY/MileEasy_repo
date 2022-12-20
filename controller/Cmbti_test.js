@@ -5,19 +5,20 @@ let Scount = 0; let Ncount = 0;
 let Tcount = 0; let Fcount = 0;
 let Jcount = 0; let Pcount = 0;
 
-exports.mbtitest = (req, res) => {
-  res.render('mbtitest')
-}
-//MBTI테스트 진행
-exports.test_type = async (req, res) => {
-  // let mbti = '';
-  console.log('select type : ', req.body.type);
-  res.send(req.body.type)
-}
 
 //mbti테스트 메인
 exports.testmain=(req,res)=>{
   res.render('testmain');
+}
+
+exports.mbtitest = (req, res) => {
+  res.render('mbtitest')
+}
+
+//MBTI테스트 진행
+exports.test_type = async (req, res) => {
+  console.log('select type : ', req.body.type);
+  res.send(req.body.type)
 }
 
 //loading페이지
@@ -30,13 +31,11 @@ exports.result = (req, res) => {
   res.render('result');
 }
 
-exports.user_type = (req, res) => {
-  console.log(req.body.data);
-  const str = req.body.data;
-  const arr = str.split(',');
-  console.log(arr);
+exports.user_type = async (req, res) => {
+  let usermbti = '';
+  console.log('select type : ', req.body.type);
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < req.body.type.length; i++) {
     if (req.body.type[i] === 'E') {
       Ecount++;
     }
@@ -63,15 +62,29 @@ exports.user_type = (req, res) => {
     }
   };
 
-  if (Ecount > Icount) { mbti += 'E' }
-  else mbti += 'I'
-  if (Scount > Ncount) { mbti += 'S' }
-  else mbti += 'N'
-  if (Tcount > Fcount) { mbti += 'T' }
-  else mbti += 'F'
-  if (Jcount > Pcount) { mbti += 'J' }
-  else mbti += 'P'
+  if (Ecount > Icount) { usermbti += 'E' }
+  else usermbti += 'I'
+  if (Scount > Ncount) { usermbti += 'S' }
+  else usermbti += 'N'
+  if (Tcount > Fcount) { usermbti += 'T' }
+  else usermbti += 'F'
+  if (Jcount > Pcount) { usermbti += 'J' }
+  else usermbti += 'P'
 
-  console.log('userMBTI : ', mbti);
-  res.send();
+  console.log('userMBTI : ', usermbti);
+  // let data = {
+  //   where: {id: id},
+  //   mbti: usermbti
+  // }
+  // let result = await User2.create(data);
+  //   console.log(result);
+  res.send(usermbti);
+}
+
+exports.test_result = async (req, res) => {
+  let result = await Trip2.findAll({
+    where : {mbti : req.body.type}
+  })
+  console.log(result[0].dataValues)
+  res.render('result', {data : result[0].dataValues});
 }
