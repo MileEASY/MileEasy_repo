@@ -82,9 +82,14 @@ exports.user_type = async (req, res) => {
 }
 
 exports.test_result = async (req, res) => {
-  let result = await Trip.findAll({
+  let result = await Trip.findOne({
     where : {mbti : req.body.type}
   })
-  console.log('result : ', result[0].dataValues)
-  res.render('result', {data : result[0].dataValues});
+  console.log('result : ', result)
+  res.render('result', {
+    mbti : result.mbti,
+    spot : result.spot,
+    location : result.location,
+    info : result.info
+  });
 }
