@@ -15,14 +15,6 @@ const User = (Sequelize, DataTypes)=>{
                 type: DataTypes.STRING(128),
                 allowNull: true
             },
-            mbti_ok: {
-                type: DataTypes.STRING(5),
-                allowNull: true,
-            },
-            auth: {
-                type: DataTypes.STRING(5),
-                allowNull: true,
-            },
             mbti: {
                 type: DataTypes.STRING(4),
                 allowNull: true,
