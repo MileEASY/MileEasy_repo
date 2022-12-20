@@ -9,8 +9,10 @@ router.get("/test",controller.test);
 
 router.get('/mbtitest',controller2.mbtitest);
 router.post('/mbtitest', controller2.test_type);
-router.get('/mbtiresult', controller2.result_page);
-router.post('/mbtiresult', controller2.user_type);
+
+router.get('/testmain',controller2.testmain);
+router.get('/result',controller2.result);
+router.get('/loading',controller2.loading);
 
 router.get("/signup_home", controller3.signup_home);
 router.get("/signup", controller3.idread);
