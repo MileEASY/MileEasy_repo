@@ -121,7 +121,6 @@ img {
 
 .signup {
   position: relative;
-  background: #f8f4da;
   width: 100%;
   height: 100%;
 }
@@ -130,7 +129,7 @@ img {
   position: relative;
   width: 100%;
   height: 100%;
-  background: #fff;
+  /* background: #fff; */
 }
 label {
   color: #fff;
@@ -155,28 +154,28 @@ input {
   padding: 10px;
   border: none;
   outline: none;
-  border-radius: 5px;
+  border-radius: 1rem;
 }
 
 button {
-  width: 60%;
+  width: 65%;
   height: 40px;
   margin: 10px auto;
   justify-content: center;
   display: block;
   color: #fff;
-  background: #e89d3a;
+  background: #f90;
   font-size: 1em;
   font-weight: bold;
   margin-top: 20px;
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 1rem;
   transition: 0.2s ease-in;
   cursor: pointer;
 }
 button:hover {
-  background: #239fdc;
+  background: #df6951;
 }
 
 .login label {
