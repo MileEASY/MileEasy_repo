@@ -18,12 +18,10 @@ exports.idread = async (req,res)=>{
           id: req.body.id,
           pw: req.body.pw,
           name: req.body.name
-          //mbti_ok: req.body.mbti_ok 
-          //auth: req.body.auth 
-          //mbti 검사한 경우는 추후에 추가 
       }
       let result = await User.create(data);
-        console.log(result);
+        req.session.user = req.body.id;     
+        console.log("db result:"+result);
         res.send({name : result.name});
   }
 

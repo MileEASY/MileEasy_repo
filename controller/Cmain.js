@@ -6,11 +6,8 @@ exports.main = (req, res) => {
   else res.render("index", {isLogin: false}); 
   };
   
-  exports.test = (req,res)=>{
-    res.render("test");
+  exports.recommend = (req,res)=>{
+    res.render("recommend");
   }
   
-  exports.mbti = (req,res)=>{
-  res.render('mbtitest');
-  }
   

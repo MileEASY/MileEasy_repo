@@ -48,7 +48,7 @@
               required=""
             />
             <div class="d-flex ms-lg-4">
-              <button type="button" onclick="signin()">
+              <button id="signinBtn" type="button" onclick="signin()">
               <a class="btn btn-secondary-outline"> Sign in </a> </button>
               </div>
           </form>
@@ -57,6 +57,12 @@
       </div>
     </div>
     <script>
+      document.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("signinBtn").click();
+        }
+      });
       function signin() {
         let form = document.querySelector("#login");
             let user = {
