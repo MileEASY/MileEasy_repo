@@ -5,7 +5,7 @@ var controller3 = require("../controller/Csigns");
 const router = express.Router();
 
 router.get("/", controller.main);
-router.get("/test",controller.test);
+router.get("/recommend", controller.recommend);
 
 router.get('/testmain',controller2.testmain);
 router.get('/mbtitest',controller2.mbtitest);
