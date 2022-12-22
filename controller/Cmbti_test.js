@@ -28,7 +28,7 @@ exports.loading=(req,res)=>{
 
 //mbti테스트 결과
 exports.result = (req, res) => {
-  res.render('result');
+  res.render('result', {MAP_API_KEY:process.env.MAP_API_KEY});
 }
 
 exports.user_type = async (req, res) => {
@@ -86,6 +86,7 @@ exports.test_result = async (req, res) => {
   })
   console.log('Trip result : ', result)
   res.render('result', {
+    MAP_API_KEY:process.env.MAP_API_KEY,
     mbti : result.mbti,
     spot : result.spot,
     location : result.location,

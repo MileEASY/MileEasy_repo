@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../public/static/css/result.css">
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=<%=MAP_API_KEY%>&callback=initMap"></script>
 </head>
 
 <body>
@@ -30,7 +31,9 @@
     <div class="info">
         <ul>
             <li class="spot">정보<br><%=info%></li>
-            <li class="info">위치<br><%=location%></li>
+            <li class="info">위치<br>
+                <div id="map" style="height: 500px; width: 500px;"></div>
+            </li>
         </ul>
     </div>
 
@@ -42,8 +45,12 @@
     </div>
 
     <script>
-        
-
+        window.initMap = function () {
+            const map = new google.maps.Map(document.getElementById("map"), {
+            center: { lat: 37.5400456, lng: 126.9921017 },
+            zoom: 10,
+            });
+        };
     </script>
 </body>
 
