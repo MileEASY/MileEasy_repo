@@ -72,12 +72,11 @@ exports.user_type = async (req, res) => {
   else usermbti += 'P'
 
   console.log('userMBTI : ', usermbti);
-  // let data = {
-  //   where: {id: id},
-  //   mbti: usermbti
-  // }
-  // let result = await User2.create(data);
-  //   console.log(result);
+  let data = {
+    mbti: usermbti
+  }
+  let result = await User.update(data, {where : {id : req.body.id}});
+  console.log('User result :', result);
   res.send(usermbti);
 }
 
@@ -85,7 +84,7 @@ exports.test_result = async (req, res) => {
   let result = await Trip.findOne({
     where : {mbti : req.body.type}
   })
-  console.log('result : ', result)
+  console.log('Trip result : ', result)
   res.render('result', {
     mbti : result.mbti,
     spot : result.spot,
@@ -93,3 +92,16 @@ exports.test_result = async (req, res) => {
     info : result.info
   });
 }
+
+//사용자의 mbti값 조회
+//select mbti from User where id = 'userid'
+//변수에 담기
+//whether_test = select mbti from User where id = 'userid'
+
+//mbti 값이 없는 경우(mbti검사를 안 한 경우) => 추천 여행지 보러가기
+//mbti 값이 있는 경우(mbti검사를 한 경우) => 추천 여행지 보러가기
+// if (whether_test = null) {
+//   // let's get start 버튼 활성화
+// }
+// else // 추천여행지 보러가기 버튼 활성화
+
