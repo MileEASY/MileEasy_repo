@@ -16,20 +16,65 @@
         <h1 class="text1">당신의 mbti는</h1>
         <div class="result-box">
             <h1 class="mbti"><%=mbti%></h1>
-            <p class="text2"></p>
-
-
         </div>
 
         <div class="tour-box">
-            <h1>추천 여행지는<%=spot%></h1>
-            <div class="tour"><img src="../static/img/boat.png" alt=""></div>
+            <h1 class="country">추천 여행지는 <%=spot%> 입니다.</h1>
+            <div class="tour"></div>
         </div>
+        <% if (mbti=='ENFJ') { %>
+            <img src='public/static/img/enfj.jpeg'>
+        <% } %>
+        <% if(mbti=='ENFP') { %>
+            <img src="public/static/img/enfp.jpeg">
+        <% } %>
+        <% if(mbti=='ENTJ') { %>
+            <img src="public/static/img/entj.jpeg">
+        <% } %>
+        <% if(mbti=='ENTP') { %>
+            <img src="public/static/img/entp.jpeg">
+        <% } %>
+        <% if(mbti=='ESFJ') { %>
+            <img src="public/static/img/esfj.jpeg">
+        <% } %>
+        <% if(mbti=='ESFP') { %>
+            <img src="public/static/img/esfp.jpeg">
+        <% } %>
+        <% if(mbti=='ESTJ') { %>
+            <img src="public/static/img/estj.jpeg">
+        <% } %>
+        <% if(mbti=='ESTP') { %>
+            <img src="public/static/img/estp.jpeg">
+        <% } %>
+        <% if(mbti=='INFJ') { %>
+            <img src="public/static/img/infj.jpeg">
+        <% } %>
+        <% if(mbti=='INFP') { %>
+            <img src="public/static/img/infp.jpeg">
+        <% } %>
+        <% if(mbti=='INTJ') { %>
+            <img src="public/static/img/intj.jpeg">
+        <% } %>
+        <% if(mbti=='INTP') { %>
+            <img src="public/static/img/intp.jpeg">
+        <% } %>
+        <% if(mbti=='ISFJ') { %>
+            <img src="public/static/img/isfj.jpeg">
+        <% } %>
+        <% if(mbti=='ISFP') { %>
+            <img src="public/static/img/isfp.jpeg">
+        <% } %>
+        <% if(mbti=='ISTJ') { %>
+            <img src="public/static/img/istj.jpeg">
+        <% } %>
+        <% if(mbti=='ISTP') { %>
+            <img src="public/static/img/istp.jpeg">
+        <% } %>
 
 
     <div class="info">
         <ul>
-            <li class="spot">정보<br><%=info%></li>
+            <li class="spot"><%=info%></li>
             <li class="info">위치<br><%=location%></li>
         </ul>
     </div>

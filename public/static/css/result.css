@@ -151,6 +151,10 @@ body {
     margin: 25px 10px;
 }
 
+.country{
+    font-size:1.2em;
+}
+
 .panel {
     /* border: 1px solid black; */
     margin: 20px 80px;
@@ -221,4 +225,11 @@ body {
 
 li{
     margin: 15px 15px;
+    font-size: 1.2em;
+}
+
+img{
+    border-radius: 50%;
+    width: 700px;
+    height: 400px;
 }
