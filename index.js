@@ -21,7 +21,7 @@ app.use(session({
   resave: false, 
   saveUninitialized: true, 
   cookie: {
-    expires: 1000*10
+    expires: 1000*60*60*24
   },
 }));
 app.use("/", router);
