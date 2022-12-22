@@ -98,6 +98,7 @@ exports.test_result = async (req, res) => {
   })
   console.log('Trip result : ', result)
   res.render('result', {
+    MAP_API_KEY:process.env.MAP_API_KEY,
     mbti : result.mbti,
     spot : result.spot,
     location : result.location,
