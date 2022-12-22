@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.get("/", controller.main);
 router.get("/recommend", controller.recommend);
+// router.post("/whether_test", controller.whether_test);
 
 router.get('/testmain',controller2.testmain);
 router.get('/mbtitest',controller2.mbtitest);
