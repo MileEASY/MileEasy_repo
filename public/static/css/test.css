@@ -27,6 +27,10 @@ div {
     overflow: hidden;
 }
 
+.logo{
+    padding: 5% 2% 10% 100px;
+}
+
 @keyframes wave {
     0% {
         transform: scaleY(1);
@@ -118,7 +122,29 @@ div {
     left: 50%;
     /* transform으로 중앙정렬 */
     transform: translate(-50%, -50%);
-}
+} 
+
+ button {
+    height: 60px;  
+    padding: 20px 70px 20px 70px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #f90;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+  }
+
+ button:hover {
+    background: #df6951;
+  }
 
 .text {
     top: 50%;
@@ -136,7 +162,14 @@ div {
     z-index: 2;
 }
 
-button {
+.pt-7 {
+    padding-top: 4rem !important;
+    margin-top: 150px;
+    width: 100%;
+    z-index: 2;
+  }
+
+/* button {
     text-align: center;
     background: none;
     border: 2px;
@@ -150,16 +183,54 @@ button:hover {
     border-color: none;
     color: white;
     /* box-shadow: 0 0.5em 0.5em -0.4em none; */
-    transform: translateY(-0.25em);
+    /* transform: translateY(-0.25em); */
     /* button:hover에 transition속성을 주면 커서를 내렸을때 transition속성이
     적용되지 않는다. 따라서 위 button에 transition속성을 주도록 하자. */
     /* transition: all 0.25s; */
-    cursor: pointer;
+    /* cursor: pointer; */
+/* } */ *
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-family: "Poppins", "Rubik", "Open Sans", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  /* font-weight: 600; */
+  line-height: 1.2;
+  background-image: linear-gradient(
+    0deg,
+    /* rgba(246, 49, 49, 1) 0%, */
+    #fadc37 10%,
+    rgb(230 97 255) 100%
+  ); 
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+h1,
+.h1 {
+  font-size: 3.6rem;
+  text-align: center;
+}
+
 
 .boat{
     position: absolute;
-    z-index: 1;
+    z-index: 4;
     
     top:30%;
     animation-duration: 30s;
