@@ -79,7 +79,11 @@
             </div>
             <% } else { %>
               <div class="d-flex ms-lg-4">
-                <a class="btn btn-secondary-outline" href="/result">나의 여행지</a>
+                <% if(whether_test == null) { %>
+                  <button class="btn btn-secondary-outline" id="myspot" onclick="test_alert()">나의 여행지</button>
+                <% } else { %>
+                  <a class="btn btn-secondary-outline" href="/result">나의 여행지</a>
+                <% } %>
                 <a class="btn btn-warning ms-3" href="/userUpdate">회원정보 수정</a>
               </div>
             <% } %>  
@@ -537,7 +541,13 @@
     <script type="application/js" src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
     <script type="application/js" src="vendors/fontawesome/all.min.js"></script>
     <script type="application/js" src="/public/static/js/theme.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      function test_alert() {
+        alert("테스트를 먼저 진행헤주세요.");
+        document.location.href='/testmain';
+      }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Volkhov:wght@700&amp;display=swap" rel="stylesheet"/>
   </body>
 </html>

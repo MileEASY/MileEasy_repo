@@ -27,8 +27,20 @@ exports.loading=(req,res)=>{
 }
 
 //mbti테스트 결과
-exports.result = (req, res) => {
-  res.render('result', {MAP_API_KEY:process.env.MAP_API_KEY});
+exports.result = async (req, res) => {
+  let result1 = await User.findOne({
+    where : {id : req.session.user}
+  })
+  let result2 = await Trip.findOne({
+    where : {mbti : result1.mbti}
+  })
+  console.log('find mbti : ', result2)
+  res.render('result', {
+    mbti : result2.mbti,
+    spot : result2.spot,
+    location : result2.location,
+    info : result2.info
+  });
 }
 
 exports.user_type = async (req, res) => {
@@ -75,7 +87,7 @@ exports.user_type = async (req, res) => {
   let data = {
     mbti: usermbti
   }
-  let result = await User.update(data, {where : {id : req.body.id}});
+  let result = await User.update(data, {where : {id : req.session.user}});
   console.log('User result :', result);
   res.send(usermbti);
 }
@@ -94,15 +106,5 @@ exports.test_result = async (req, res) => {
   });
 }
 
-//사용자의 mbti값 조회
-//select mbti from User where id = 'userid'
-//변수에 담기
-//whether_test = select mbti from User where id = 'userid'
 
-//mbti 값이 없는 경우(mbti검사를 안 한 경우) => 추천 여행지 보러가기
-//mbti 값이 있는 경우(mbti검사를 한 경우) => 추천 여행지 보러가기
-// if (whether_test = null) {
-//   // let's get start 버튼 활성화
-// }
-// else // 추천여행지 보러가기 버튼 활성화
 
