@@ -1,0 +1,125 @@
+.slider{
+    width: 1000px;
+ /* ul 기준으로 마진 60px */
+    padding: 60px;
+    height: 580px;
+    position: relative;
+    margin: 0 auto;
+}
+.slider input[type=radio]{
+    display: none;
+}
+
+h1 {
+    color: skyblue;
+}
+
+p{
+    /* color: #916a62; */
+    display: block;
+
+}
+
+a {
+    /* color: #df6951; */
+    display: block;
+    font-size: 2rem;
+}
+
+@font-face {
+    font-family: 'rale_bold';
+    src: url('/public/static/font/Raleway-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'rale_light';
+    src: url('/public/static/font/Raleway-Light.ttf') format('truetype');
+}
+
+ul.imgs{
+    padding: 0;
+    margin: 0;
+}
+ul.imgs li{
+    position: absolute;
+    opacity: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition-delay: 0.9s;
+}
+/* img 경로 크기 조절 */
+ul.imgs li img {
+    width: 500px;
+    height: 550px;
+    border-radius: 14%;
+}
+
+.bullets{
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    transform: translateX(-28%);
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    z-index: 2;
+}
+
+.bullets label{
+    display: inline-block;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.55);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
+    background-color: #df6951;
+}
+.slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
+    background-color: #df6951;
+}
+.slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
+    background-color: #df6951;
+}
+.slider input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){
+    background-color: #df6951;
+}
+
+.slider input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
+    opacity: 1;
+    transition: 1s;
+    z-index: 1;
+}
+.slider input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
+    opacity: 1;
+    transition: 1s;
+    z-index: 1;
+}
+.slider input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
+    opacity: 1;
+    transition: 1s;
+    z-index: 1;
+}
+.slider input[type=radio]:nth-child(4):checked~ul.imgs>li:nth-child(4){
+    opacity: 1;
+    transition: 1s;
+    z-index: 1;
+}
+
+.gallery{
+    /* width: 500px;
+    height: 550px; */
+    display: inline-block;
+}
+
+.text {
+    /* width: 500px;
+    height: 550px; */
+    font-family: 'rale';
+    font-size: 1.5rem;
+    left: 60%;
+    position: absolute;
+}
