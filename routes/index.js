@@ -22,7 +22,8 @@ router.post("/signup", controller3.signup);
 router.get("/signin_home", controller3.signin_home);
 router.get("/signin", controller3.signin);
 router.get("/userUpdate_home", controller3.userupdate_home);
-router.post("/userUpdate", controller3.profile);
 router.post("/userUpdate/image", controller3.profileimg);
+router.patch("/userUpdate", controller3.userupdate);
+router.post("/userDelete", controller3.userdelete);
 
 module.exports = router;

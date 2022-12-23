@@ -1,5 +1,6 @@
 const multiparty = require("multiparty");
 const { User } = require("../model");
+const fs = require('fs');
 
 exports.signup_home = (req, res)=>{res.render('signup');}
 
@@ -41,22 +42,20 @@ exports.userupdate_home = async (req,res)=>{
   let result = await User.findOne({
       where: { id: req.session.user },  
   });
-  console.log("userupdateinfo:"+result);
-  res.render("userInfo", { data: result });
-   
+  res.render("userInfo", { data: result, profile:req.session.profile});
 }
 
 exports.profileimg = (req, res)=>{
   const form = new multiparty.Form({uploadDir: "public/static/image"});
-  form.parse(req, (err, fields, files) => {
+    form.parse(req, (err, fields, files) => {
       console.log("profileimg_fields:"+fields); 
       console.log("profileimg_files:"+files.imageFile[0].path); 
+      req.session.profile = files.imageFile[0].path;
       res.send({ path: `/${files.imageFile[0].path}` });
     });
 }  
 
-exports.profile = (req,res)=>{
-  console.log("req.file"+req.file);
+exports.userupdate = (req,res)=>{
   let data = {
     name: req.body.name,
     pw: req.body.pw,
@@ -65,8 +64,42 @@ exports.profile = (req,res)=>{
     where: { id: req.body.id },
   })
   .then(()=>{
+    //let profileid = req.session.profile.split('/')[3];
+    console.log("file:"+ req.session.profile);
+    /* 
+    if(req.session.profile == "user_default_img.jpg"){
+      console.log("default");
+    } else {
+      fs.unlink(`../public/static/image/${req.session.profile}`, err => {
+        if (err) throw err;
+        console.log('File is deleted.');
+      }); 
+    } */
+  })
+  .then(()=>{
     res.send(true);
   });
-  
-
 }
+
+exports.userdelete = (req,res)=>{
+  User.destroy({
+    where: {id: req.body.id}
+  })
+  .then(()=>{
+    /*
+    if(req.session.profile == "user_default_img.jpg"){
+      console.log("session:"+req.session.user);
+    } else {
+      fs.unlink(`../public/static/image/${req.session.profile}`, err => {
+        if (err) throw err;
+        console.log('File is deleted.');
+      });
+      console.log("session:"+req.session.user);
+    } */
+  })
+  .then(req.session.destroy((err)=>{
+    if(err) throw err;
+    res.send(true);
+  }));
+}
+
