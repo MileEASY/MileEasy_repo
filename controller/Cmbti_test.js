@@ -36,6 +36,7 @@ exports.result = async (req, res) => {
   })
   console.log('find mbti : ', result2)
   res.render('result', {
+    MAP_API_KEY:process.env.API_KEY,
     mbti : result2.mbti,
     spot : result2.spot,
     location : result2.location,
@@ -98,7 +99,7 @@ exports.test_result = async (req, res) => {
   })
   console.log('Trip result : ', result)
   res.render('result', {
-    MAP_API_KEY:process.env.MAP_API_KEY,
+    MAP_API_KEY:process.env.API_KEY,
     mbti : result.mbti,
     spot : result.spot,
     location : result.location,
