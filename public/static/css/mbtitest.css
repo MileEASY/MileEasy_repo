@@ -24,6 +24,11 @@ button {
     
 }
 
+a {
+    color: black;
+    text-decoration: none;
+}
+
 button:hover {
     background: none;
 }

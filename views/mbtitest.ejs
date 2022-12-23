@@ -23,51 +23,45 @@
         <div id="qBox"></div>
         <div id="aBox"></div>
     </form>
-    <form method="post" action="/test_result" id="mbti_result">
-        <input type="hidden" name="type" id="user_mbti">
-    </form>
 
-    <div id="result"><button onclick="result();" id="result">결과보기</button></div>
-
+    <div id="result"><button><a href="/loading">결과보기</a></button></div>
 
     <script>
-        function result() {
-            var form = document.getElementById("mbti_result");
-            form.submit();
-        }
-
         const endPoint = 20;//상태바 엔드포인트
         var no = 0;
         let arr = [];
         document.getElementById('result').style.display = "none";//결과버튼
+
         function goNext(a) {
             arr.push(a.className);
-            if (no < qna.length -1 ) {
-                
+            console.log(arr)
+            if (no < qna.length - 1) {
                 document.getElementById('result').style.display = "none"//결과버튼
-                axios({
-                    method: 'post',
-                    url: '/result',
-                    data: {
-                        type: arr
-                    }
-                })
-                .then((res)=>{
-                    document.getElementById('user_mbti').value = res.data
-                })
                 no++;
                 showQuestion();
+                } else if (no = 14) {
+                    axios({
+                        method: 'post',
+                        url: '/result',
+                        data: {
+                            type: arr
+                        }
+                    })
+                    location.href="/loading";
+                    // document.querySelector('.status').style.display = "none";
+                    // document.getElementById('qBox').style.display = "none";
+                    // document.getElementById('aBox').style.display = "none";
+                    // document.getElementById('result').style.display = "block"//결과버튼
             }
-        
-            else document.getElementById('result').style.display = "block"//결과버튼
         }
-        function showQuestion() {
 
+        function showQuestion() {
             document.getElementById("qBox").innerText = `Q${no + 1} ` + qna[no].q;
             var html = "";
             for (var a of qna[no].a) {
                 html +=
                     `<button class="${a.type}" type="button" onclick="goNext(this);">${a.answer}</button>`;
+                    console.log(no)
             }
             document.getElementById("aBox").innerHTML = html;
 
