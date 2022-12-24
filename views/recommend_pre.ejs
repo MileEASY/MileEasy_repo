@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/public/static/css/gal.css"/>
+    <script type="application/javascript" src="/public/static/js/gal.js"></script>
+    <!-- jquery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <!-- axios CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+axios(
+      "https://apis.data.go.kr/B551011/PhotoGalleryService/galleryList?numOfRows=30&pageNo=1&MobileOS=WIN&MobileApp=web&serviceKey=wWbCS%2FWxSjT413uUzDeI9VJyA6x8OpfFgCkA8vh6o4%2B51XNnvo9MIpVyW6wsAytOdWhX6efZr9iRjWZnETpqXg%3D%3D&_type=json",
+      {
+        method: "get",
+      }
+    ).then((result) => {
+      let items = result.data.response.body.items.item;
+      // for(let i=0; i<items.length; i++){
+      //   console.log(items[i].galPhotographyLocation)
+      // }
+      console.log(items);
+      for (let i = 0; i < 6; i++) {
+        let random = Math.floor(Math.random() * 30);
+        // $("#title").append(
+        //   "<strong>" + items[random].galPhotographyLocation + "</strong>"
+        // );
+        $(".info-img").append("<img src='" + items[random].galWebImageUrl + "'/>");
+        console.log(items[random].galPhotographyLocation);
+      }
+      // let text =
+      //   result.data.response.body.items.item[0].galPhotographyLocation;
+      let img = result.data.response.body.items.item[0].galWebImageUrl;
+      const chosenImage = items[Math.floor(Math.random() * items.length)];
+      // $("#text").append("<strong>" + title + "</strong>");
+      $("#text").append("<img src='" + img + "'/>");
+    });
+  </script>
+    </script>
+</head>
+<body>
+  <div class="text">
+    <h1>recommended page</h1> <br>
+    <a>Let's Find a Trip!</a> <br>
+    <p>Find more diverse and rich travel destination information here. <br> The new trip start here!</p> <br>
+    <p> 보다 더 다양하고, 풍부한 여행지를 <br> 여기에서 찾아보세요. <br> 당신만의 새로운 여행을 시작하세요! </p>
+  </div>
+<div class="gallery-box">
+  <div class="gallery-main-box gallery-main-swiper swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img  alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img  alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img  alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+    </div>
+    <div class="control-wrap">
+      <div class="swiper-gallery-prev">
+      </div>
+      <div class="swiper-gallery-next">
+      </div>
+    </div>
+  </div>
+  <div class="gallery-thumb-box gallery-thumb-swiper swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img  alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img  alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img  alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img  alt="Sample"></p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
