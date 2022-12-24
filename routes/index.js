@@ -25,6 +25,7 @@ router.get("/userUpdate_home", controller3.userupdate_home);
 router.post("/userUpdate/image", controller3.profileimg);
 router.patch("/userUpdate", controller3.userupdate);
 router.post("/userDelete", controller3.userdelete);
+router.get("/logout", controller3.logout);
 
 router.get("/recommend_home", controller4.recommend_home);
 router.get("/guest_home", controller4.guest_home);
