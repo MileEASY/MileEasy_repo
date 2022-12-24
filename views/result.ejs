@@ -8,6 +8,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="../public/static/css/result.css">
     <script defer src="https://maps.googleapis.com/maps/api/js?key=<%=MAP_API_KEY%>&callback=initMap"></script>
+    <script type="text/javascript" src="/public/static/location.json"></script>
+
 </head>
 
 <body>
@@ -110,9 +112,10 @@
     </div>
 
     <script>
+
         window.initMap = function () {
             const map = new google.maps.Map(document.getElementById("map"), {
-            center: { lat: 37.5400456, lng: 126.9921017 },
+            center: {lat : map_location.<%=mbti%>.lat, lng : map_location.<%=mbti%>.lng},
             zoom: 10,
             });
         };
