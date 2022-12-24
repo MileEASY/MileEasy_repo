@@ -26,24 +26,6 @@ exports.loading=(req,res)=>{
   res.render('loading');
 }
 
-//mbti테스트 결과
-exports.result = async (req, res) => {
-  let result1 = await User.findOne({
-    where : {id : req.session.user}
-  })
-  let result2 = await Trip.findOne({
-    where : {mbti : result1.mbti}
-  })
-  console.log('find mbti : ', result2)
-  res.render('result', {
-    MAP_API_KEY:process.env.API_KEY,
-    mbti : result2.mbti,
-    spot : result2.spot,
-    location : result2.location,
-    info : result2.info
-  });
-}
-
 //mbti테스트 진행
 exports.user_type = async (req, res) => {
   let usermbti = '';
@@ -105,9 +87,9 @@ exports.result = async (req, res) => {
   console.log('find mbti : ', result2)
   res.render('result', {
     MAP_API_KEY:process.env.API_KEY,
-    mbti : result.mbti,
-    spot : result.spot,
-    location : result.location,
-    info : result.info
+    mbti : result2.mbti,
+    spot : result2.spot,
+    location : result2.location,
+    info : result2.info
   });
 }
