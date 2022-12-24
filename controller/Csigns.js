@@ -1,6 +1,7 @@
 const multiparty = require("multiparty");
 const { User } = require("../model");
 const fs = require('fs');
+const path = require('path');
 
 exports.signup_home = (req, res)=>{res.render('signup');}
 
@@ -42,39 +43,48 @@ exports.userupdate_home = async (req,res)=>{
   let result = await User.findOne({
       where: { id: req.session.user },  
   });
-  res.render("userInfo", { data: result, profile:req.session.profile});
+  res.render("userInfo", { data: result});
 }
 
 exports.profileimg = (req, res)=>{
   const form = new multiparty.Form({uploadDir: "public/static/image"});
     form.parse(req, (err, fields, files) => {
-      console.log("profileimg_fields:"+fields); 
-      console.log("profileimg_files:"+files.imageFile[0].path); 
-      req.session.profile = files.imageFile[0].path;
-      res.send({ path: `/${files.imageFile[0].path}` });
-    });
+      //console.log("profileimg_fields:",fields); 
+      //console.log( files.imageFile[0] );
+      console.log("profileimg_files:",files.imageFile[0].path); 
+      let filePath = files.imageFile[0].path;
+      User.update({imgpath:filePath},{
+        where: { id: req.session.user },
+      });
+      //req.session.profile = filePath;
+      res.send({ path: `/${filePath}` });
+    })
 }  
 
 exports.userupdate = (req,res)=>{
   let data = {
     name: req.body.name,
-    pw: req.body.pw,
+    pw: req.body.pw, 
   };
-  User.update(data, {
-    where: { id: req.body.id },
+  let beforeimg = req.body.imgpath;
+  User.findOne({
+    where: { id: req.body.id },  
+  })
+  .then((result)=>{
+    console.log("req.body:",beforeimg);
+    console.log('result.body:',result.imgpath);
+    //let name = req.body.imgpath.split('image')[1];
+    if(beforeimg !== "user_default_img.jpg"){
+      fs.unlink(`./public/static/image/${beforeimg}`, (err) => {
+        if (err) throw err;
+        console.log("file delete");
+      });
+    }
   })
   .then(()=>{
-    //let profileid = req.session.profile.split('/')[3];
-    console.log("file:"+ req.session.profile);
-    /* 
-    if(req.session.profile == "user_default_img.jpg"){
-      console.log("default");
-    } else {
-      fs.unlink(`../public/static/image/${req.session.profile}`, err => {
-        if (err) throw err;
-        console.log('File is deleted.');
-      }); 
-    } */
+    User.update(data, {
+      where: { id: req.body.id },
+    })
   })
   .then(()=>{
     res.send(true);
@@ -82,20 +92,24 @@ exports.userupdate = (req,res)=>{
 }
 
 exports.userdelete = (req,res)=>{
-  User.destroy({
-    where: {id: req.body.id}
+  User.findOne({
+    where: { id: req.body.id },  
+  })
+  .then((result)=>{
+    if(result.imgpath == "user_default_img.jpg"){
+      console.log("default");
+    } else {
+      let name = result.imgpath.split('image')[1];
+      fs.unlink(`./public/static/image/${name}`, (err) => {
+        if (err) throw err;
+        console.log("file delete");
+      });
+    }
   })
   .then(()=>{
-    /*
-    if(req.session.profile == "user_default_img.jpg"){
-      console.log("session:"+req.session.user);
-    } else {
-      fs.unlink(`../public/static/image/${req.session.profile}`, err => {
-        if (err) throw err;
-        console.log('File is deleted.');
-      });
-      console.log("session:"+req.session.user);
-    } */
+    User.destroy({
+      where: {id: req.body.id}
+    });
   })
   .then(req.session.destroy((err)=>{
     if(err) throw err;

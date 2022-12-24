@@ -54,10 +54,10 @@
 
             <div class="file_form">
               <div class="img_wrap">
-                <% if(profile) { %>
+                <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
                  <img
                   id="profile_img"
-                  src="<%=profile%>"
+                  src="<%=data.imgpath%>"
                   alt="프로필 이미지"
                  /> 
                 <% } else { %> 
@@ -102,7 +102,7 @@
     </div>
 
     <script>
-      //var imgpath = document.querySelector("#profile_img").src.split('/')[6];
+      var imgpath = document.querySelector("#profile_img").src.split('/')[6];
       $("#userfile").change(function () {
         var file = document.getElementById("userfile");
         var formData = new FormData();
@@ -127,7 +127,7 @@
           pw: form.userPw.value,
           name: form.userName.value,
           img: form.imageFile.value,
-          //imgpath: imgpath
+          imgpath: imgpath
         };
         axios({
           method: "patch",

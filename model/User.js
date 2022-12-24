@@ -18,6 +18,15 @@ const User = (Sequelize, DataTypes)=>{
             mbti: {
                 type: DataTypes.STRING(4),
                 allowNull: true,
+            },
+            imgpath: {
+                type: DataTypes.STRING(100),
+                allowNull: true,
+                defaulteValue: 'user_default_img.jpg',
+            },
+            comment: {
+                type: DataTypes.TEXT("long"),
+                allowNull: true,
             }
         },
         {
