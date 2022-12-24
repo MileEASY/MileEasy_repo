@@ -1,10 +1,23 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'rale_bold';
+    src: url('/public/static/font/Raleway-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'rale_light';
+    src: url('/public/static/font/Raleway-Light.ttf') format('truetype');
+}
+
 *{margin:0;padding:0;}
 
 .object-fit img{width:100%;height:100%;object-fit:cover;}
 
-.gallery-box{margin:0 auto;max-width:800px;}
+.gallery-box{margin:0 auto; 
+	max-width: 800px;
+    width: 50%;
+    margin: 100px;}
 .gallery-box .swiper-container{margin-left:auto;margin-right:auto;position:relative;overflow:hidden;list-style:none;padding:0;z-index:1;}
 
 .gallery-box .gallery-main-box{padding:0 0 10px;}
@@ -28,4 +41,38 @@
 @media screen and (max-width:768px) {
 	.gallery-box .gallery-main-box .swiper-slide .info-txt{padding:10px 15px;}
 	.gallery-box .gallery-main-box .control-wrap > div{width:40px;height:40px;background-size:7px;}
+}
+
+:root{
+	--font-size-lg: calc(1rem + 3vw);
+    --font-size-md: calc(0.5rem + 2vw);
+    --font-size-sm: calc(0.5rem + 1vw);
+}
+
+h1 {
+	font-size: var(--font-size-lg);
+  }
+  
+h2 {
+	font-size: var(--font-size-md);
+  }
+  
+p {
+	font-size: var(--font-size-sm);
+  }
+  
+ 
+  
+a {
+	font-size: var(--font-size-sm);
+  }
+
+  
+.text {
+    /* width: 500px;
+    height: 550px; */
+    font-family: 'rale_light';
+    font-size: 1.5rem;
+    left: 60%;
+    position: absolute;
 }
