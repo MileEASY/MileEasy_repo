@@ -79,12 +79,12 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -99,145 +99,150 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
+    display: block;
 }
 
 body {
-  line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-  list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-  quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
-  content: none;
+    content: '';
+    content: none;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 
 body {
-  background:linear-gradient(to bottom, #ad4a28 1%, #dd723c 5%, #FFFDF4 60%);
-  margin: 0px;
-  overflow: hidden;
-  /* display: flex;
+    background: linear-gradient(to bottom, #ad4a28 1%, #dd723c 5%, #FFFDF4 60%);
+    margin: 0px;
+    overflow: hidden;
+    /* display: flex;
   justify-content: center;
   align-items: center; */
-  height: 100vh;
+    height: 100vh;
 }
 
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    height: 80%;
 }
 
 .airplaneAnimation {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .plane {
-  width: 500px;
-  height: 500px;
-  animation: fly 7s linear infinite;
+    width: 500px;
+    height: 500px;
+    animation: fly 7s linear infinite;
 }
 
 @keyframes fly {
-  0% {
-    transform: translateY(0);
-  }
+    0% {
+        transform: translateY(0);
+    }
 
-  25% {
-    transform: translateY(-30px);
-  }
+    25% {
+        transform: translateY(-30px);
+    }
 
-  50% {
-    transform: translateY(0);
-  }
+    50% {
+        transform: translateY(0);
+    }
 
-  75% {
-    transform: translateY(30px);
-  }
+    75% {
+        transform: translateY(30px);
+    }
 
-  100% {
-    transform: translateY(0);
-  }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 
 .clouds {
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  animation: moving 15s linear infinite;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    animation: moving 15s linear infinite;
 }
+
 @keyframes moving {
-  from{
-    left:-40%;
-  }
-  to{
-    left:100%;
-  }
+    from {
+        left: -40%;
+    }
+
+    to {
+        left: 100%;
+    }
 }
 
 .logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100px;
-  height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 80px;
 }
 
 .btn {
-  /* flex-direction: row; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* margin: 30px; */
+    /* flex-direction: row; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 30px; */
 }
-button{
-  padding: 20px 40px 20px 40px;
-  color: #fff;
-  background: #f90;
-  font-size: 1.4em;
-  font-weight: bold;
-  border: #f90;
-  border-radius: 10px;
-}
-button:hover {
-  background: #f63131;
-}
-.text{
-  font-size: 2.2em;
-  font-weight: 900;
-  letter-spacing: 2px;
-  background-image: linear-gradient(
-    0deg,
-    rgba(246, 49, 49, 1) 8%,
-    rgba(249, 159, 24, 1) 47%,
-    rgba(249, 226, 24, 1) 100%
-  ); 
 
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+button {
+    padding: 20px 40px 20px 40px;
+    color: #fff;
+    background: #f90;
+    font-size: 1.4em;
+    font-weight: bold;
+    border: #f90;
+    border-radius: 10px;
+}
+
+button:hover {
+    background: #f63131;
+}
+
+.text {
+
+    margin: 20px;
+    font-size: 2.2em;
+    font-weight: 900;
+    letter-spacing: 2px;
+    background-image: linear-gradient(0deg,
+            rgba(246, 49, 49, 1) 8%,
+            rgba(249, 159, 24, 1) 47%,
+            rgba(249, 226, 24, 1) 100%);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

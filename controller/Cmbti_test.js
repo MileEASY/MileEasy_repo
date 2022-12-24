@@ -90,6 +90,7 @@ exports.result = async (req, res) => {
     mbti : result2.mbti,
     spot : result2.spot,
     location : result2.location,
-    info : result2.info
+    info : result2.info,
+    etc : result2.etc
   });
 }

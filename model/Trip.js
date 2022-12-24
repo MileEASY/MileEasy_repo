@@ -19,6 +19,10 @@ const Trip = (Sequelize, DataTypes)=>{
                 type: DataTypes.TEXT("long"),
                 allowNull: true,
 
+            },
+            etc:{
+                type:DataTypes.TEXT("long"),
+                allowNull: true,
             }
 
         },
