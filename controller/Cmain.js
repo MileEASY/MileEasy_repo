@@ -6,7 +6,8 @@ exports.main = async (req, res) => {
   console.log("sessionid:"+req.session.user);
   if(req.session.user) {
     let result = await User.findOne({where : {id : req.session.user}});
-    res.render("index", {isLogin: true, id:req.session.user, whether_test:result.mbti});
+    // index렌더할때, 넘겨줄 값들을 작성. 마지막 data:result를 보내면 로그인 후 imgpath를 그안에서 찾을 것
+    res.render("index", {isLogin: true, id:req.session.user, whether_test:result.mbti, data:result});
   }
   else res.render("index", {isLogin: false}); 
   };
