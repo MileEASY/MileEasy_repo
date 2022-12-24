@@ -1,255 +1,243 @@
-body {
-    margin: 0px;
-    overflow: hidden;
-    display: flex;
-
-}
-
-div {
-    position: absolute;
-}
-
-.sky {
-    height: 40%;
-    width: 100%;
-    background: linear-gradient(to bottom, #037ccb 0%, #82ccef 100%)
-}
-
-.sea {
-    height: 30%;
-    width: 200%;
-    left: -50%;
-    top: 40%;
-    border-radius: 0 0 50% 50%;
-    background: linear-gradient(to bottom, rgba(8, 122, 193, 1) 0%, rgba(18, 156, 192, 1) 25%, rgba(42, 212, 229, 1) 50%, rgba(150, 233, 239, 1) 75%, rgba(222, 236, 211, 1) 100%);
-    animation: wave ease-in-out 7s infinite;
-    transform-origin: 50% 0%;
-    overflow: hidden;
-}
-
-.logo{
-    padding: 5% 2% 10% 100px;
-}
-
-@keyframes wave {
-    0% {
-        transform: scaleY(1);
-    }
-
-    35% {
-        transform: scaleY(1.3);
-    }
-
-    69% {
-        transform: scaleY(1);
-    }
-
-    100% {
-        transform: scaleY(1);
-    }
-}
-
-.seafoam {
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to bottom, transparent 0%, transparent 90%, white 100%);
-    animation: seafoam ease-in-out 7s infinite;
-}
-
-@keyframes seafoam {
-    0% {
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
-.sand {
-    height: 35%;
-    width: 100%;
-    background: #fdf1d7;
-    top: 65%;
-}
-
-.sand-front {
-    height: 10%;
-    width: 100%;
-    background: #fdf1d7;
-    top: 90%;
-}
-
-.wet-sand {
-    height: 37.5%;
-    width: 200%;
-    left: -50%;
-    top: 40%;
-    border-radius: 0 0 50% 50%;
-    background: #ecc075;
-    box-shadow: 0 10px 10px 0 #ecc075;
-    animation: wetsand ease-in-out 7s infinite;
-}
-
-@keyframes wetsand {
-    0% {
-        opacity: 0.2
-    }
-
-    34% {
-        opacity: 0.2;
-    }
-
-    35% {
-        opacity: 0.7;
-    }
-
-    100% {
-        opacity: 0.2;
-    }
-}
-
-.button {
-    top: 70%;
-    left: 50%;
-    /* transform으로 중앙정렬 */
-    transform: translate(-50%, -50%);
-} 
-
- button {
-    height: 60px;  
-    padding: 20px 70px 20px 70px;
-    margin: 10px auto;
-    justify-content: center;
-    display: block;
-    color: #fff;
-    background: #f90;
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 20px;
-    outline: none;
-    border: none;
-    border-radius: 1rem;
-    transition: 0.2s ease-in;
-    cursor: pointer;
-  }
-
- button:hover {
-    background: #df6951;
-  }
-
-.text {
-    top: 50%;
-    left: 50%;
-    font-size: 1.3em;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-}
-
-.text2{
-    top:30%;
-    left:50%;
-    font-size: 2em;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-}
-
-.pt-7 {
-    padding-top: 4rem !important;
-    margin-top: 150px;
-    width: 100%;
-    z-index: 2;
-  }
-
-/* button {
-    text-align: center;
-    background: none;
-    border: 2px;
-    padding: 1em 2em;
-    font-size: 2em;
-    transition: all 0.25s;
-    border-radius: 10px;
-}
-
-button:hover {
-    border-color: none;
-    color: white;
-    /* box-shadow: 0 0.5em 0.5em -0.4em none; */
-    /* transform: translateY(-0.25em); */
-    /* button:hover에 transition속성을 주면 커서를 내렸을때 transition속성이
-    적용되지 않는다. 따라서 위 button에 transition속성을 주도록 하자. */
-    /* transition: all 0.25s; */
-    /* cursor: pointer; */
-/* } */ *
-
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
 h1,
-.h1,
 h2,
-.h2,
 h3,
-.h3,
 h4,
-.h4,
 h5,
-.h5,
 h6,
-.h6 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  font-family: "Poppins", "Rubik", "Open Sans", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  /* font-weight: 600; */
-  line-height: 1.2;
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+body {
+  background:linear-gradient(to bottom, #ad4a28 1%, #dd723c 5%, #FFFDF4 60%);
+  margin: 0px;
+  overflow: hidden;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  height: 100vh;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  height: 80%;
+}
+
+.airplaneAnimation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plane {
+  width: 500px;
+  height: 500px;
+  animation: fly 7s linear infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-30px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.clouds {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  animation: moving 15s linear infinite;
+}
+@keyframes moving {
+  from{
+    left:-40%;
+  }
+  to{
+    left:100%;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 80px;
+}
+
+.btn {
+  /* flex-direction: row; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin: 30px; */
+}
+button{
+  padding: 20px 40px 20px 40px;
+  color: #fff;
+  background: #f90;
+  font-size: 1.4em;
+  font-weight: bold;
+  border: #f90;
+  border-radius: 10px;
+}
+button:hover {
+  background: #f63131;
+}
+.text{
+  font-size: 2.2em;
+  font-weight: 900;
+  letter-spacing: 2px;
   background-image: linear-gradient(
     0deg,
-    /* rgba(246, 49, 49, 1) 0%, */
-    #fadc37 10%,
-    rgb(230 97 255) 100%
+    rgba(246, 49, 49, 1) 8%,
+    rgba(249, 159, 24, 1) 47%,
+    rgba(249, 226, 24, 1) 100%
   ); 
 
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-h1,
-.h1 {
-  font-size: 3.6rem;
-  text-align: center;
-}
-
-
-.boat{
-    position: absolute;
-    z-index: 4;
-    
-    top:30%;
-    animation-duration: 30s;
-    animation-name: boat;
-    animation-iteration-count: infinite;
-    animation-direction: normal;
-    animation-timing-function: linear;
-}
-@keyframes boat{
-    from{
-        margin-left: -40%;
-    }
-    to{
-        margin-left: 100%;
-    }
-}
-
-.cloud {
-    width: 100%;
-    height: 30%;
-    z-index: 1;
 }
