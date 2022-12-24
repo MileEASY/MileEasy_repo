@@ -2,6 +2,7 @@ var express = require("express");
 var controller = require("../controller/Cmain");
 var controller2 = require("../controller/Cmbti_test");
 var controller3 = require("../controller/Csigns");
+var controller4 = require("../controller/Crecommend");
 const router = express.Router();
 
 router.get("/", controller.main);
@@ -24,5 +25,8 @@ router.get("/userUpdate_home", controller3.userupdate_home);
 router.post("/userUpdate/image", controller3.profileimg);
 router.patch("/userUpdate", controller3.userupdate);
 router.post("/userDelete", controller3.userdelete);
+
+router.get("/recommend_home", controller4.recommend_home);
+router.get("/guest_home", controller4.guest_home);
 
 module.exports = router;
