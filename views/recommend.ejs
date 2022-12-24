@@ -2,38 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS 슬라이더</title>
-    <link rel="stylesheet" href="/public/static/css/slider1.css">
-
+    <title>gallery</title>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="/public/static/css/gal.css"/>
+    <script type="application/javascript" src="/public/static/js/gal.js"></script>
 </head>
 <body>
-<div class="slider"  >
-    <div class="gallery">
-        <input type="radio" name="slide" id="slide1" checked>
-        <input type="radio" name="slide" id="slide2">
-        <input type="radio" name="slide" id="slide3">
-        <input type="radio" name="slide" id="slide4">
-        <ul id="imgholder" class="imgs">
-            <li><img src="/public/static/img/entj.jpeg"></li>
-            <li><img src="/public/static/img/slide2.jpg"></li>
-            <li><img src="/public/static/img/slide3.jpg"></li>
-            <li><img src="/public/static/img/slide4.jpg"></li>
-        </ul>
-        <div class="bullets" >
-            <label for="slide1">&nbsp;</label>
-            <label for="slide2">&nbsp;</label>
-            <label for="slide3">&nbsp;</label>
-            <label for="slide4">&nbsp;</label>
-        </div>
-    </div>
-    <div class="text">
-        <h1>recommended page</h1>
-        <a>Let's Find a Trip!</a>
-        <p>Find more diverse and rich travel destination information here. <br> The new trip start here!</p>
-        <p> 보다 더 다양하고, 풍부한 여행지를 <br> 여기에서 찾아보세요. <br> 당신만의 새로운 여행을 시작하세요! </p>
 
+  <div class="text">
+    <h1>recommended page</h1> <br>
+    <a>Let's Find a Trip!</a> <br>
+    <p>Find more diverse and rich travel destination information here. <br> The new trip start here!</p> <br>
+    <p> 보다 더 다양하고, 풍부한 여행지를 <br> 여기에서 찾아보세요. <br> 당신만의 새로운 여행을 시작하세요! </p>
+  
+  </div>
+<div class="gallery-box">
+  <div class="gallery-main-box gallery-main-swiper swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932761-33a8f83e-f88b-468f-9b8c-d999ef3a7b71.jpg" alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932791-367654ba-bae0-422b-a468-9a636359fcec.jpg" alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932804-842f1dd9-dd65-4d30-8831-cf17a0ade596.jpg" alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932809-ec3231be-03c8-48b7-a89c-9257f2d136e2.jpg" alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932832-3ece527c-b984-418e-8181-2e8ff83b02a2.jpg" alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932834-1bfb63a6-209f-4141-ab3c-bf2806ac7c53.jpg" alt="Sample"></p>
+        <p class="info-txt"><span>Sample</span></p>
+      </div>
     </div>
+    <div class="control-wrap">
+      <div class="swiper-gallery-prev">
+      </div>
+      <div class="swiper-gallery-next">
+      </div>
+    </div>
+  </div>
+  <div class="gallery-thumb-box gallery-thumb-swiper swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="/public/static/img/infj.jpeg" alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="/public/static/img/enfp.jpeg" alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932804-842f1dd9-dd65-4d30-8831-cf17a0ade596.jpg" alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932809-ec3231be-03c8-48b7-a89c-9257f2d136e2.jpg" alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932832-3ece527c-b984-418e-8181-2e8ff83b02a2.jpg" alt="Sample"></p>
+      </div>
+      <div class="swiper-slide">
+        <p class="info-img object-fit"><img src="https://user-images.githubusercontent.com/33821863/148932834-1bfb63a6-209f-4141-ab3c-bf2806ac7c53.jpg" alt="Sample"></p>
+      </div>
+    </div>
+  </div>
+
 </div>
+
 </body>
 </html>
