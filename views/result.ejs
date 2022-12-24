@@ -12,7 +12,7 @@
 
 <body>
 
-    <img src="../public/static/img/Logo.png" alt="" class="logo">
+    <img src="../public/static/img/Logo.png" alt="" class="logo" onclick="location.href='/'">
     <div class="panel">
         <h1 class="text1">당신의 mbti는</h1>
         <div class="result-box">
@@ -66,27 +66,53 @@
             <img src="public/static/img/isfp.jpeg">
         <% } %>
         <% if(mbti=='ISTJ') { %>
-            <img src="public/static/img/istj.jpeg">
+            <img src="public/static/img/istj.png">
         <% } %>
         <% if(mbti=='ISTP') { %>
             <img src="public/static/img/istp.jpeg">
         <% } %>
 
 
-    <div class="info">
-        <ul>
+    <div class="information">
+        <!-- <ul>
             <li class="spot">정보<br><%=info%></li>
-            <li class="info">위치<br>
-                <div id="map" style="height: 500px; width: 500px;"></div>
-            </li>
-        </ul>
+        </ul> -->
     </div>
 
 
-        <div>
-            <a href="/mbtitest" class="test-again">테스트 다시 하기</a>
-            <button type="button" class="goto-main" onclick="location.href='/'">메인으로 돌아가기</button>
-        </div>
+    </div>
+
+        <ul class="menu">
+            <li class="menu-item">
+            <div class="item">정보</div>
+                <ul class="info">
+                    <li><%= info %></li> 
+                    <li><%= info %></li>
+                    <li><%= info %></li>
+                    <li><%= info %></li>
+                </ul>
+            </li>
+            <li class="menu-item">
+                <div class="item">위치</div>
+                    <ul class="info">
+                        <div id="map"></div>
+                    </ul>
+                </li>
+                <li class="menu-item">
+                    <div class="item">기타</div>
+                        <ul class="info">
+                            <li><%= info %></li> 
+                            <li><%= info %></li>
+                            <li><%= info %></li>
+                            <li><%= info %></li>
+                        </ul>
+                    </li>
+        </ul>
+
+
+    <div class="btn">
+        <button type="button" class="test-again" onclick="location.href='/mbtitest'">테스트 다시 하기</button>
+        <button type="button" class="goto-main" onclick="location.href='/'">메인으로 돌아가기</button>
     </div>
 
     <script>

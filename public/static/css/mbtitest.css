@@ -1,5 +1,5 @@
 body {
-    background-color: #fdf1d7;
+    background-color: #FFFDF4;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -15,12 +15,14 @@ div {
 }
 
 button {
-    background-color: white;
+    color: white;
+    background-color: #f90;
     border: none;
     border-radius: 20px;
     margin: 20px;
     padding: 20px;
     font-size: 1.3em;
+    font-weight: 600;
     
 }
 
@@ -30,10 +32,12 @@ a {
 }
 
 button:hover {
-    background: none;
+    background:  #f63131;
+    transition: 0.5s;
 }
 
 #qBox {
+    /* color: white; */
     margin: 30px;
     padding: 30px;
     background-color: none;
@@ -42,11 +46,13 @@ button:hover {
     font-size: 1.5em;
     justify-content: center;
     text-align: center;
+    font-weight: 600;
 }
 
 #aBox {
-    /* margin: 20px; */
-    /* padding: 20px; */
+    color: white;
+    margin: 20px;
+    /* padding: 20px 20px; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -56,7 +62,7 @@ button:hover {
 
 
 .status{
-
+    /* border: 2px solid #f90; */
     margin: auto;
     height:20px;
     width: 80%;
@@ -69,14 +75,14 @@ button:hover {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: #e9d19e;
+    background-color: #f90;
     border-radius: 20px;
 
 }
 
 img{
-    width: 80px;
-    height: 50px;
+    width: 100px;
+    height: 80px;
     position: fixed;
     top: 0;
     left: 0;
