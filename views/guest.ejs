@@ -1,13 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-</head>
-<body>
-    <h1>방명록 페이지</h1>
+    <!-- css -->
+    <link rel="stylesheet" href="/public/static/css/style-guest.css" />
+    <!-- FontAwesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/3cc7440731.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="cloud">
+        <img src="/public/static/img/cloud.png" alt="구름" />
+      </div>
+      <div class="air air1">
+        <img src="/public/static/img/air.png" alt="낙하산" />
+      </div>
+      <div class="air air2">
+        <img src="/public/static/img/air.png" alt="낙하산2" />
+      </div>
+      <div class="plane plane1">
+        <img src="/public/static/img/plane1.png" alt="비행기1" />
+      </div>
+      <div class="plane plane2">
+        <img src="/public/static/img/plane2.png" alt="비행기1" />
+      </div>
+    </div>
 
-</body>
+    <div class="two-wrapper">
+        <div class="header">
+          <h3 class="logo">
+            <a href="#">헤더<img src="" alt="" /></a>
+          </h3>
+        </div>
+        
+            <!-- 글 작성하기 -->
+            <div class="container">
+              <div class="container_wrapper">
+                <section class="post">
+                  <header>Create Post</header>
+                  <form action="#" class="guest_form">
+                    <div class="content">
+                      <img src="/public/static/img/user_default_img.jpg" alt="profile_img">
+                      <div class="details">
+                        <p>sesac</p>
+                        <div class="select_box">
+                          <i class="fas fa-user-friends"></i>
+                          <span>MBTI</span>
+                          <i class="fas fa-caret-down"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <textarea placeholder="MBTI별 나만의 특별한 여행지를 공유해보세요." required></textarea>
+                    <button>Post</button>
+                  </form>
+                </section>
+                <section class="mbti_type">
+                  <header>
+                    <div class="arrow-back"><i class="fas fa-arrow-left"></i></div>
+                    <p>MBTI Type</p>
+                  </header>
+                  <div class="content">
+                    <p>MBTI를 선택하세요</p>
+                    <span>search results</span>
+                  </div>
+                  <ul class="list">
+                    <!-- MBTI 종류 -->
+                    <li>
+                      <div class="colum">
+                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                        <div class="details">
+                          <p>ESTJ</p>
+                          <span>dddddddd</span>
+                        </div>
+                      </div>
+                      <div class="radio"></div>
+                    </li>
+  
+                    <li class="active">
+                      <div class="colum">
+                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                        <div class="details">
+                          <p>ESTP</p>
+                          <span>dddddddd</span>
+                        </div>
+                      </div>
+                      <div class="radio"></div>
+                    </li>
+                    
+                    <li>
+                      <div class="colum">
+                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                        <div class="details">
+                          <p>ESFP</p>
+                          <span>dddddddd</span>
+                        </div>
+                      </div>
+                      <div class="radio"></div>
+                    </li>
+  
+                    <li>
+                      <div class="colum">
+                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                        <div class="details">
+                          <p>ESFJ</p>
+                          <span>dddddddd</span>
+                        </div>
+                      </div>
+                      <div class="radio"></div>
+                    </li>
+  
+                    <li>
+                      <div class="colum">
+                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                        <div class="details">
+                          <p>ISTJ</p>
+                          <span>dddddddd</span>
+                        </div>
+                      </div>
+                      <div class="radio"></div>
+                    </li>
+  
+                  </ul>
+                </section>
+              </div>
+            </div>
+          
+  
+      <script>
+        const container = document.querySelector(".container");
+        selectBox = container.querySelector(".select_box"),
+        arrowBack = container.querySelector(".arrow-back");
+  
+        selectBox.addEventListener("click", () =>{
+          container.classList.add("active")
+        })
+  
+        arrowBack.addEventListener("click", () =>{
+          container.classList.add("active")
+        })
+      </script>
+  </body>
 </html>
