@@ -220,18 +220,18 @@ body {
 }
 
 button {
-    padding: 10px 70px 10px 70px;
-    color: #2196f3;
-    background: transparent;
-    font-size: 1.4em;
-    font-weight: bold;
-    border-radius: 30px;
-    border: 3px solid;
+  padding: 10px 70px 10px 70px;
+  color: #fff;
+  background: #2196f3;
+  font-size: 1.4em;
+  font-weight: bold;
+  border-radius: 30px;
+  border: 3px solid;
 }
 
 button:hover {
     /* background: #f63131; */
-    color: #ffc107;
+    background-color: navy;
 }
 
 .text {
