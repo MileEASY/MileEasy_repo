@@ -13,3 +13,13 @@ exports.guest_home = async (req, res) => {
         res.render('guest', {isLogin: true, data: result});
     } else res.render('guest', {isLogin: false});
 }
+
+exports.guest_post = async (req, res) => {
+    let data = {
+        // mbti: req.body.mbti,
+        comment : req.body.comment
+      }
+    let result = await User.update(data, {where : {id : req.session.user}})
+    console.log('post comment :', result);
+    res.send(true);
+  }
