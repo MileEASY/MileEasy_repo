@@ -62,8 +62,8 @@
                         </div>
                       </div>
                     </div>
-                    <textarea placeholder="MBTI별 나만의 특별한 여행지를 공유해보세요." required></textarea>
-                    <button>Post</button>
+                    <textarea id="input_comment" placeholder="MBTI별 나만의 특별한 여행지를 공유해보세요." required></textarea>
+                    <button type="button" onclick="postComment()">Post</button>
                   </form>
                 </section>
                 <section class="mbti_type">
@@ -81,7 +81,7 @@
                       <div class="colum">
                         <div class="icon"><i class="fas fa-globe-asia"></i></div>
                         <div class="details">
-                          <p>ESTJ</p>
+                          <p class="check_mbti">ESTJ</p>
                           <span>dddddddd</span>
                         </div>
                       </div>
@@ -92,7 +92,7 @@
                       <div class="colum">
                         <div class="icon"><i class="fas fa-globe-asia"></i></div>
                         <div class="details">
-                          <p>ESTP</p>
+                          <p class="check_mbti">ESTP</p>
                           <span>dddddddd</span>
                         </div>
                       </div>
@@ -103,7 +103,7 @@
                       <div class="colum">
                         <div class="icon"><i class="fas fa-globe-asia"></i></div>
                         <div class="details">
-                          <p>ESFP</p>
+                          <p class="check_mbti">ESFP</p>
                           <span>dddddddd</span>
                         </div>
                       </div>
@@ -114,7 +114,7 @@
                       <div class="colum">
                         <div class="icon"><i class="fas fa-globe-asia"></i></div>
                         <div class="details">
-                          <p>ESFJ</p>
+                          <p class="check_mbti">ESFJ</p>
                           <span>dddddddd</span>
                         </div>
                       </div>
@@ -125,7 +125,7 @@
                       <div class="colum">
                         <div class="icon"><i class="fas fa-globe-asia"></i></div>
                         <div class="details">
-                          <p>ISTJ</p>
+                          <p class="check_mbti">ISTJ</p>
                           <span>dddddddd</span>
                         </div>
                       </div>
@@ -150,6 +150,22 @@
         arrowBack.addEventListener("click", () =>{
           container.classList.add("active")
         })
+
+        function postComment() {
+          axios({
+            method : 'post',
+            url : '',
+            data : {
+              mbti : document.getElementsByClassName("check_mbti").innerText,
+              comment : document.getElementById("input_comment").value
+            }
+          })
+          .then((res) => {
+            if (res != false) {
+              alert('여행지 추천 완료!')
+            }
+          })
+        }
       </script>
   </body>
 </html>
