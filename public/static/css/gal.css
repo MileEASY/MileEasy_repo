@@ -92,6 +92,38 @@ a {
     height: 550px; */
     font-family: 'rale_light';
     font-size: 1.5rem;
-    left: 60%;
+    left: 62%;
     position: absolute;
+}
+
+.btn {
+    /* flex-direction: row; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 30px; */
+}
+
+button {
+    padding: 10px 70px 10px 70px;
+    color: #607d8b;
+    background: transparent;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 3px solid;
+    margin: 5%;
+}
+
+button:hover {
+    /* background: #f63131; */
+    color: #f90;
+}
+
+div {
+    display: block;
+}
+
+body{
+    display: block;
 }

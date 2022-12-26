@@ -195,11 +195,11 @@ body {
 
 @keyframes moving {
     from {
-        left: -40%;
+        left: 40%;
     }
 
     to {
-        left: 100%;
+        left: -100%;
     }
 }
 
