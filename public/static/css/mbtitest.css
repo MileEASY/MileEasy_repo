@@ -1,3 +1,15 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'rale_bold';
+    src: url('/public/static/font/Raleway-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'rale_light';
+    src: url('/public/static/font/Raleway-Light.ttf') format('truetype');
+}
+
 body {
     background-color: #FFFDF4;
     height: 100vh;
@@ -23,12 +35,14 @@ button {
     padding: 20px;
     font-size: 1.3em;
     font-weight: 600;
-    
+    font-family: "rale_light";
 }
 
 a {
     color: black;
     text-decoration: none;
+    font-family: "rale_light";
+
 }
 
 button:hover {
@@ -96,4 +110,6 @@ img{
     justify-content: center;
     align-items: center;
     text-align: center;   
+    font-family: "rale_light";
+
 }

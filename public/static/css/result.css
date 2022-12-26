@@ -3,6 +3,18 @@
    License: none (public domain)
 */
 
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'rale_bold';
+    src: url('/public/static/font/Raleway-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'rale_light';
+    src: url('/public/static/font/Raleway-Light.ttf') format('truetype');
+}
+
 html,
 body,
 div,
@@ -148,17 +160,20 @@ body {
 
 .text1 {
     text-align: center;
-    font-size: 1.4em;
+    font-size: 2.3rem;    
     margin: 20px;
+    font-family: "rale_bold";
 }
 
 .country {
     font-size: 1.4em;
-    line-height: 1.2em;
+    line-height: 2rem;
+    font-family: "rale_bold";
 }
 .reason{
-    font-size:1.3em;
-    line-height: 1.2em;
+    font-size: 1.4em;
+    line-height: 2em;
+    font-family: "rale_bold";
 }
 
 .panel {
@@ -183,6 +198,7 @@ body {
 
 .mbti {
     font-weight: bolder;
+    font-family: "rale_bold";
     letter-spacing: 3px;
     font-size: 4em;
     background-image: linear-gradient(
