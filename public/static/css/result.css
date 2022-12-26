@@ -148,12 +148,17 @@ body {
 
 .text1 {
     text-align: center;
-    font-size: 1.5em;
-    margin: 25px 10px;
+    font-size: 1.4em;
+    margin: 20px;
 }
 
 .country {
-    font-size: 1.5em;
+    font-size: 1.4em;
+    line-height: 1.2em;
+}
+.reason{
+    font-size:1.3em;
+    line-height: 1.2em;
 }
 
 .panel {
@@ -216,6 +221,7 @@ body {
     text-decoration: none;
     margin: 50px 25px;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .test-again:hover {
@@ -235,6 +241,7 @@ body {
     text-decoration: none;
     margin: 50px 25px;
     font-size: 20px;
+    font-weight: bold;
 }
 
 .goto-main:hover {
@@ -264,13 +271,18 @@ ul li {
 
 .menu-item {
     color: white;
-    text-align: center;
+    /* text-align: center; */
     padding: 5px;
     background-color: #f90;
     border-radius: 10px;
     flex-grow: 1;
     transition: 0.2s;
 }
+
+.menu-item:nth-child(even){
+    text-align: center;
+}
+
 
 .menu-item:hover {
     color: black;
@@ -296,14 +308,15 @@ ul li {
     display: none;
 }
 
-.menu-item:hover>ul {
+/* .menu-item:hover>ul {
     display: block;
-}
+} */
 
 .item {
     padding: 15px 0;
     font-weight: bold;
     text-align: center;
+    font-size: 1.1em;
 }
 
 #map {
@@ -311,14 +324,16 @@ ul li {
     /* justify-content: center;
     align-items: center; */
     display: inline-block;
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 350px;
 }
 
 .text2{
-    font-size: 1.1em;
+    font-size: 1em;
+    line-height: 1.3em;
 }
 
 .text3{
-    font-size: 1.1em;
+    font-size: 1em;
+    line-height: 1.3em;
 }

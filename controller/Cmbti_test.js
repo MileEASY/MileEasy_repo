@@ -91,6 +91,7 @@ exports.result = async (req, res) => {
     spot : result2.spot,
     location : result2.location,
     info : result2.info,
-    etc : result2.etc
+    etc : result2.etc,
+    reason : result2.reason
   });
 }
