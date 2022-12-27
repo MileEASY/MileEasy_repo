@@ -1,3 +1,4 @@
+
 const User = (Sequelize, DataTypes)=>{
     return Sequelize.define(
         "User", 
