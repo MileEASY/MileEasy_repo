@@ -10,8 +10,12 @@ exports.recommend_home = (req, res) => {
 exports.guest_home = async (req, res) => {
     if(req.session.user) {
         let result = await User.findOne({where : {id : req.session.user}});
-        res.render('guest', {isLogin: true, data: result});
-    } else res.render('guest', {isLogin: false});
+        res.render('guesthome', {isLogin: true, data: result});
+    } else res.render('guesthome', {isLogin: false});
+}
+
+exports.guest_post_home = async (req, res) => {
+  res.render('guest');
 }
 
 exports.guest_post = async (req, res) => {

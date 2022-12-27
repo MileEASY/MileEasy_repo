@@ -29,6 +29,7 @@ router.get("/logout", controller3.logout);
 
 router.get("/recommend_home", controller4.recommend_home);
 router.get("/guest_home", controller4.guest_home);
-router.post("/guest_home", controller4.guest_post);
+router.get("/guest_post", controller4.guest_post_home);
+router.post("/guest_post", controller4.guest_post);
 
 module.exports = router;
