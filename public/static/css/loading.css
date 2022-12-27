@@ -8,7 +8,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background:  #FFFDF4;
+    /* background:  #FFFDF4; */
+    background: linear-gradient(to bottom, #085b98 1%, #2196f3 5%, #FFFDF4 60%)
 }
 .loader{
     position: relative;
@@ -30,7 +31,7 @@ body{
     left: 0;
     width: 15px;
     height: 15px;
-    background: #f63131;
+    background:#2196f3;
     border-radius: 50%;
     transform: scale(0);
     animation: animate 2s linear infinite;
@@ -63,9 +64,8 @@ body{
     left: 85px;
     background-image: linear-gradient(
         0deg,
-        rgba(246, 49, 49, 1) 8%,
-        rgba(249, 159, 24, 1) 47%,
-        rgba(249, 226, 24, 1) 100%
+        #2196f3 8%,
+        navy 100%
       ); 
       background-clip: text;
       -webkit-background-clip: text;

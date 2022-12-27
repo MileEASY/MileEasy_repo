@@ -21,140 +21,235 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="cloud">
-        <img src="/public/static/img/cloud.png" alt="구름" />
-      </div>
-      <div class="air air1">
-        <img src="/public/static/img/air.png" alt="낙하산" />
-      </div>
-      <div class="air air2">
-        <img src="/public/static/img/air.png" alt="낙하산2" />
-      </div>
-      <div class="plane plane1">
-        <img src="/public/static/img/plane1.png" alt="비행기1" />
-      </div>
-      <div class="plane plane2">
-        <img src="/public/static/img/plane2.png" alt="비행기1" />
-      </div>
-    </div>
-
+      <!-- nav바 영역 -->
     <div class="two-wrapper">
         <div class="header">
           <h3 class="logo">
-            <a href="#">헤더<img src="" alt="" /></a>
+            <a href="/">헤더</a>
           </h3>
         </div>
         
-            <!-- 글 작성하기 -->
-            <div class="container">
-              <div class="container_wrapper">
-                <section class="post">
-                  <header>Create Post</header>
-                  <form action="#" class="guest_form">
-                    <div class="content">
-                      <img src="/public/static/img/user_default_img.jpg" alt="profile_img">
-                      <div class="details">
-                        <p>sesac</p>
-                        <div class="select_box">
-                          <i class="fas fa-user-friends"></i>
-                          <span>MBTI</span>
-                          <i class="fas fa-caret-down"></i>
-                        </div>
-                      </div>
+        <!-- 방명록 전체 영역 -->
+        <div class="container">
+          <div class="container_wrapper">
+            <!-- 방명록 작성 -->
+            <section class="post">
+              <header>글작성하기</header>
+              <form action="/board/upload" method="post" class="guest_form">
+                <div class="content">
+                  <img src="/public/static/img/user_default_img.jpg" alt="profile_img">
+                  <div class="details">
+                    <p>sesac</p>
+                    <div class="select_box">
+                      <i class="fas fa-user-friends"></i>
+                      <span>MBTI</span>
+                      <i class="fas fa-caret-down"></i>
                     </div>
-                    <textarea id="input_comment" placeholder="MBTI별 나만의 특별한 여행지를 공유해보세요." required></textarea>
-                    <button type="button" onclick="postComment()">Post</button>
-                  </form>
-                </section>
-                <section class="mbti_type">
-                  <header>
-                    <div class="arrow-back"><i class="fas fa-arrow-left"></i></div>
-                    <p>MBTI Type</p>
-                  </header>
-                  <div class="content">
-                    <p>MBTI를 선택하세요</p>
-                    <span>search results</span>
                   </div>
-                  <ul class="list">
-                    <!-- MBTI 종류 -->
-                    <li>
-                      <div class="colum">
-                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
-                        <div class="details">
-                          <p class="check_mbti">ESTJ</p>
-                          <span>dddddddd</span>
-                        </div>
-                      </div>
-                      <div class="radio"></div>
-                    </li>
-  
-                    <li class="active">
-                      <div class="colum">
-                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
-                        <div class="details">
-                          <p class="check_mbti">ESTP</p>
-                          <span>dddddddd</span>
-                        </div>
-                      </div>
-                      <div class="radio"></div>
-                    </li>
-                    
-                    <li>
-                      <div class="colum">
-                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
-                        <div class="details">
-                          <p class="check_mbti">ESFP</p>
-                          <span>dddddddd</span>
-                        </div>
-                      </div>
-                      <div class="radio"></div>
-                    </li>
-  
-                    <li>
-                      <div class="colum">
-                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
-                        <div class="details">
-                          <p class="check_mbti">ESFJ</p>
-                          <span>dddddddd</span>
-                        </div>
-                      </div>
-                      <div class="radio"></div>
-                    </li>
-  
-                    <li>
-                      <div class="colum">
-                        <div class="icon"><i class="fas fa-globe-asia"></i></div>
-                        <div class="details">
-                          <p class="check_mbti">ISTJ</p>
-                          <span>dddddddd</span>
-                        </div>
-                      </div>
-                      <div class="radio"></div>
-                    </li>
-  
-                  </ul>
-                </section>
+                </div>
+                <textarea name="guestContent" placeholder="MBTI별 나만의 특별한 여행지를 공유해보세요." required></textarea>
+                <!-- POST버튼 -->
+                <button type="submit">Post</button>
+              </form>
+            </section>
+
+            <!-- MBTI 선택란 -->
+            <section class="mbti_type">
+              <header>
+                <div class="arrow-back"><i class="fas fa-arrow-left"></i></div>
+                <p>MBTI TYPE</p>
+              </header>
+              <div class="content">
+                <p>MBTI를 선택하세요</p>
               </div>
-            </div>
-          
+              <ul class="list">
+                <!-- MBTI 종류 -->
+                <li data-mbti="ISTJ" data-class="fa-globe-asia" style="background-color: #53A347; color: #fff;">
+                  <div class="column">
+                    <div class="icon">
+                      <i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ISTJ</p>
+                      <span>소금형</span>
+                    </div>
+                  </div>
+                </li>
+
+                <li data-mbti="ISFJ" data-class="fa-globe-asia" style="background-color: #40C9F5;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ISFJ</p>
+                      <span>권력형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="INFJ" data-class="fa-globe-asia" style="background-color: #EC5B7B;">
+                  <div class="column" >
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>INFJ</p>
+                      <span>예언자형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="INTJ" data-class="fa-globe-asia" style="background-color: #754D2A;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>INTJ</p>
+                      <span>과학자형</span>
+                    </div>
+                  </div>
+                </li>
+
+                <li data-mbti="ISTP" data-class="fa-globe-asia" style="background-color: #643271;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ISTP</p>
+                      <span>백과사전형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="ISFP" data-class="fa-globe-asia" style="background-color: #8D2735;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ISFP</p>
+                      <span>성인군자형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="INFP" data-class="fa-globe-asia" style="background-color: #FE9214;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>INFP</p>
+                      <span>잔다르크형</span>
+                    </div>
+                  </div>
+                </li>
+                <li  data-mbti="INTP" data-class="fa-globe-asia" style="background-color:#8A8AD0;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>INTP</p>
+                      <span>아이디어형</span>
+                    </div>
+                  </div>
+                </li>
+                
+                <li data-mbti="ESTP" data-class="fa-calendar-week" style="background-color: #608CEB;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-calendar-week"></i></div>
+                    <div class="details">
+                      <p>ESTP</p>
+                      <span>활동가형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="ESFJ" data-class="fas fa-globe-asia" style="background-color: #FACC39;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ESFJ</p>
+                      <span>사교형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="ENFP" data-class="fas fa-globe-asia" style="background-color: #D07C58;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ENFP</p>
+                      <span>스파크형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="ENTP" data-class="fas fa-globe-asia" style="background-color:#9CCC3C;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ENTP</p>
+                      <span>발명가형</span>
+                    </div>
+                  </div>
+                </li>
+
+                <li data-mbti="ESTJ" data-class="fas fa-globe-asia" style="background-color:#9C9636;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ESTJ</p>
+                      <span>사업가형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="ESFJ" data-class="fas fa-globe-asia" style="background-color:#F35860;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ESFJ</p>
+                      <span>친선도모형</span>
+                    </div>
+                  </div>
+                </li>
+                <li data-mbti="ENFJ" data-class="fas fa-globe-asia" style="background-color:#39B989;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ENFJ</p>
+                      <span>언변능숙형</span>
+                    </div>
+                  </div>
+                </li>
+                <li  data-mbti="ENTJ" data-class="fas fa-globe-asia" style="background-color:#9C1F61;">
+                  <div class="column">
+                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="details">
+                      <p>ENTJ</p>
+                      <span>지도자형</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
   
       <script>
-        const container = document.querySelector(".container");
-        selectBox = container.querySelector(".select_box"),
-        arrowBack = container.querySelector(".arrow-back");
-  
-        selectBox.addEventListener("click", () =>{
-          container.classList.add("active")
+      const container = document.querySelector(".container");
+      selectBox = container.querySelector(".select_box"),
+      arrowBack = container.querySelector(".arrow-back");
+      const list = document.querySelectorAll(".list")
+      const mbtiBtn = document.querySelectorAll("li")
+      
+
+      console.log(mbtiBtn)
+      selectBox.addEventListener("click", () =>{
+        container.classList.add("active")
+      })
+
+      arrowBack.addEventListener("click", () =>{
+        container.classList.remove("active")
+      })
+
+      mbtiBtn.forEach(mbti =>{
+        mbti.addEventListener("click",(e)=>{
+          const target = e.target
+          console.log(mbti,"clicked")
+          console.log(mbti.dataset.mbti, mbti.dataset.class)
+          selectBox.children[0].className = "fas "+mbti.dataset.class;
+          selectBox.children[1].innerText = mbti.dataset.mbti;
+          container.classList.remove("active")
         })
-  
-        arrowBack.addEventListener("click", () =>{
-          container.classList.add("active")
-        })
+      })
 
         function postComment() {
           axios({
             method : 'post',
-            url : '',
+            url : '/guest_post',
             data : {
               mbti : document.getElementsByClassName("check_mbti").innerText,
               comment : document.getElementById("input_comment").value

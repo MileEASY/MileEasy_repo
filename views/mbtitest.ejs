@@ -15,7 +15,8 @@
 </head>
 
 <body>
-    <img src="../public/static/img/Logo.png" alt="">
+    <div><h1 class="logo" alt="" onclick="location.href='/'">MileEASY</h1></div>
+    <!-- <img src="../public/static/img/Logo.png" alt=""> -->
     <form>
         <div class="status">
             <div class="statusBar"></div>
@@ -47,11 +48,11 @@
                             type: arr
                         }
                     })
-                    // location.href="/loading";
-                    document.querySelector('.status').style.display = "none";
-                    document.getElementById('qBox').style.display = "none";
-                    document.getElementById('aBox').style.display = "none";
-                    document.getElementById('result').style.display = "block"//결과버튼
+                    location.href="/loading";
+                    // document.querySelector('.status').style.display = "none";
+                    // document.getElementById('qBox').style.display = "none";
+                    // document.getElementById('aBox').style.display = "none";
+                    // document.getElementById('result').style.display = "block"//결과버튼
             }
         }
 
