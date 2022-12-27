@@ -24,10 +24,10 @@ const User = (Sequelize, DataTypes)=>{
                 allowNull: true,
                 defaulteValue: 'user_default_img.jpg',
             },
-            comment: {
-                type: DataTypes.TEXT("long"),
-                allowNull: true,
-            }
+            // comment: {
+            //     type: DataTypes.TEXT("long"),
+            //     allowNull: true,
+            // }
         },
         {
             tableName: "User",
