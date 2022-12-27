@@ -36,7 +36,7 @@
         <!-- 방명록 -->
         <section guestSection>
           <div class="swiper mySwiper guestContainer">
-            <div class="swiper-wrapper content">
+            <div class="swiper-wrapper content" id="card">
               <!-- 방명록 시작 -->
               <% for (i=0; i<data.length; i++) { %>
                 <div class="swiper-slide card">
@@ -51,23 +51,24 @@
                       <span class="userId"><%=data[i].name%></span>
                       <span class="userContent"><%=data[i].comment%></span>
                     </div>
-                    <div class="button">
-                      <button class="delete">delete</button>
-                    </div>
+                      <!-- <div class="button">
+                        <button class="delete">delete</button>
+                      </div> -->
                   </div>
                 </div>
               <% } %>
-             
               <!-- 게스트 방명록 종료 -->
             </div>
           </div>
         </section>
+        <div><button type="button" onclick="mycard()">내가 쓴 카드 보기</button></div>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
       <!-- <div class="swiper-pagination"></div> -->
 
-      <div><a href="/guest_post">나도 추천하러 가기</a></div>
+      <div><button type="button" onclick="cardcreate()">나도 추천하러 가기</button></div>
+      <!-- <div><button type="button" onclick="mycard()">내가 쓴 카드 보기</button></div> -->
     </div>
 
     <!-- Swiper JS -->
@@ -90,6 +91,84 @@
           prevEl: ".swiper-button-prev",
         },
       });
+
+      function cardcreate() {
+        if (isLogin) {
+          document.location.href="/guest_post";
+        } else alert ("로그인을 해주세요!");
+      }
+      var card = document.querySelector("#card");
+      function mycard() {
+        axios({
+          method : 'get',
+          url : '/mycard'
+        })
+        .then((res)=> {
+          //기존 카드를 싹 민다
+          //내 카드만 보여준다
+          console.log(res);
+          console.log(res.data[0]);
+          let html = ""
+          for (i=0; i<res.data.length; i++) {
+              html +=
+                `<div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="${res.data[i].imgpath}" alt="" />
+                    </div>
+                    <div class="userMbti">
+                      <span>${res.data[i].mbti}</span>
+                    </div>
+                    <div class="userId-userContent">
+                      <span class="userId">${res.data[i].name}</span>
+                      <span class="userContent">${res.data[i].comment}</span>
+                    </div>
+                      <input id="rc" type="hidden" value=${res.data[i].rc_id}>
+                      <div class="button">
+                        <button class="delete" onclick="cardDelete()">delete</button>
+                      </div>
+                  </div>
+                </div>`
+          }
+          card.innerHTML = html;
+        });
+      }
+      
+      function cardDelete() {
+        let rc = document.getElementById("rc");
+        axios({
+          method : 'delete',
+          url : '/mycard',
+          data : {
+            rc_id : rc.value
+          }
+        })
+        .then((res)=>{
+          let html = ""
+          for (i=0; i<res.data.length; i++) {
+              html +=
+                `<div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="${res.data[i].imgpath}" alt="" />
+                    </div>
+                    <div class="userMbti">
+                      <span>${res.data[i].mbti}</span>
+                    </div>
+                    <div class="userId-userContent">
+                      <span class="userId">${res.data[i].name}</span>
+                      <span class="userContent">${res.data[i].comment}</span>
+                    </div>
+                      <input id="rc" type="hidden" value=${res.data[i].rc_id}>
+                      <div class="button">
+                        <button class="delete" onclick="cardDelete()">delete</button>
+                      </div>
+                  </div>
+                </div>`
+          }
+          card.innerHTML = html;
+        });
+      }
     </script>
   </body>
 </html>

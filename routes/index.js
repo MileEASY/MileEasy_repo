@@ -30,7 +30,8 @@ router.get("/logout", controller3.logout);
 router.get("/recommend_home", controller4.recommend_home);//추천페이지 렌더
 
 router.get("/guest_home", controller4.guest_home);//사용자 추천페이지 보기
-// router.get("/mycard", controller4.mycard);//내 카드만 보기
+router.get("/mycard", controller4.mycard);//내 카드만 보기
+router.delete("/mycard", controller4.card_delete);//내 카드 삭제
 router.get("/guest_post", controller4.guest_post_home);//입력창 페이지
 router.post("/cardcreate", controller4.cardcreate);//추천 여행지 작성
 
