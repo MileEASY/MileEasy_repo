@@ -5115,21 +5115,21 @@ fieldset:disabled .btn {
 }
 
 .navbar-light .navbar-brand {
-  color: #ff9900;
+  color: #ff7c00;
 }
 
 .navbar-light .navbar-brand:hover,
 .navbar-light .navbar-brand:focus {
-  color: #ff9900;
+  color: #ff7c00;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #ff5b3f;
+  color: #ff7c00;
 }
 
 .navbar-light .navbar-nav .nav-link:hover,
 .navbar-light .navbar-nav .nav-link:focus {
-  color: #79b93c;
+  color:#f63131;
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
@@ -5203,7 +5203,7 @@ fieldset:disabled .btn {
 .navbar-dark .navbar-text a,
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
-  color: #f63131;
+  color: #ff7c00;
 }
 
 .card {
@@ -13162,8 +13162,8 @@ fieldset:disabled .btn {
     padding-bottom: 10rem !important;
   }
   .py-md-11 {
-    padding-top: 12.5rem !important;
-    padding-bottom: 12.5rem !important;
+    /* padding-top: 12.5rem !important;
+    padding-bottom: 12.5rem !important; */
   }
   .py-md-12 {
     padding-top: 15rem !important;
@@ -18027,6 +18027,69 @@ input[type="file"] {
 
 /*# sourceMappingURL=theme.css.map */
 
-
-
- 
+.marquee-full-width {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+}
+.marquee-box {
+	overflow-x: hidden !important;
+	display: flex !important;
+	flex-direction: row !important;
+	position: relative;
+	width: 100%;
+}
+.marquee {
+	flex: 0 0 auto;
+	min-width: 100%;
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	animation: marqueescroll 100s linear 0s infinite;
+	animation-play-state: running;
+	animation-delay: 0s;
+	animation-direction: normal;
+}
+.marquee figure
+{
+	margin-right: 3rem;
+	margin-left: 3rem;
+	padding: 5px;
+	max-width: 250px;	
+	text-align: center;
+	vertical-align: top;
+}
+.marquee figcaption
+{
+	display:none;
+	font-weight: 80%;
+	color: #333;
+	line-height: 1.2;
+}
+.marquee img
+{
+	margin: 0 auto;
+	height: auto;
+	max-height: 3.5rem;
+	max-width: 100%;
+	background: #fdfdfd;
+	border: none;
+}
+.marquee-box:hover div {
+	animation-play-state: running;
+}
+.marquee-box:active div {
+	animation-play-state: running;
+}
+@keyframes marqueescroll {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
