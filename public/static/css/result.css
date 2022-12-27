@@ -146,9 +146,14 @@ table {
     border-spacing: 0;
 }
 
-.logo {
-    width: 100px;
-    height: 80px;
+.logo{
+    font-family: "rale_bold";
+    order: 1;
+    color: #FFFDF4;
+    font-size: 2.3rem;
+    position: absolute;
+    top: 1%;
+    left: 5%;
 }
 
 body {
@@ -181,7 +186,7 @@ body {
 .panel {
     /* border: 1px solid black; */
     /* background-color: white; */
-    margin: 0px 100px;
+    margin: 80px 100px;
     border-radius: 10px;
     /* padding: 15px 25px; */
     /* width: 100%; */
@@ -285,8 +290,13 @@ ul li {
     list-style: none;
 }
 
+.infoBox{
+    /* border: 1px solid black; */
+    margin: 0 100px;
+}
+
 .menu {
-    display: flex;
+    /* display: flex; */
     margin: 10px 80px;
 }
 
@@ -301,16 +311,20 @@ ul li {
     transition: 0.2s;
 }
 
-.menu-item:nth-child(even){
+/* .menu-item:nth-child(even){
+    text-align: center;
+} */
+
+.menu-item{
     text-align: center;
 }
 
 
-.menu-item:hover {
+/* .menu-item:hover {
     color: black;
     background-color:transparent;
 
-}
+} */
 
 .menu-link {
     display: block;
@@ -322,13 +336,13 @@ ul li {
 
 }
 
-.menu-link:hover {
+/* .menu-link:hover {
     color: white;
-}
+} */
 
-.info {
+/* .info {
     display: none;
-}
+} */
 
 /* .menu-item:hover>ul {
     display: block;
@@ -347,15 +361,17 @@ ul li {
     align-items: center; */
     display: inline-block;
     width: 700px;
-    height: 350px;
+    height: 300px;
 }
 
 .text2{
     font-size: 1em;
     line-height: 1.3em;
+    text-align: left;
 }
 
 .text3{
     font-size: 1em;
     line-height: 1.3em;
+    text-align: left;
 }
