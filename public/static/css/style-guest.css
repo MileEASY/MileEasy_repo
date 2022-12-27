@@ -7,8 +7,6 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  /* justify-content: center; */
-  /* align-items: center; */
   min-height: 100vh;
   background-color: #94e0ff;
   overflow: hidden;
@@ -18,7 +16,7 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  background: url(/public/static/img/city.png) no-repeat;
+  background: url(../city.png) no-repeat;
   background-size: auto;
   background-position: bottom;
   width: 100%;
@@ -110,12 +108,132 @@ img {
   }
 }
 
-/* 방명록 */
+/* 게스트 방명록 */
+.swiper {
+  width: 950px;
+}
+.swiper-pagination-bullets {
+  height: 7px;
+  width: 26px;
+  border-radius: 25px;
+  background: #7d2ae8;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  opacity: 0.7;
+  color: #7d2ae8;
+}
 
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  opacity: 1;
+  color: #7d2ae8;
+  transition: all 0.3s ease;
+}
+
+.two-body {
+  display: flex;
+  height: 100vh;
+  border: 1px solid royalblue;
+  align-items: center;
+  justify-content: center;
+}
+.guestSection {
+  border: 1px solid red;
+  position: relative;
+  height: 450px;
+  width: 1075;
+  display: flex;
+  align-items: center;
+}
+
+section .card .image {
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  padding: 3px;
+  background: #7d2ae8;
+  border: 3px solid #fff;
+}
+
+section .card .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  margin: 20px 0;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background: #7d2ae8;
+  border-radius: 20px 20px 0 0;
+}
+
+.card .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  position: relative;
+  z-index: 100;
+}
+
+.card .name-profession {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  color: #333;
+}
+
+.name-profession .name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.name-profession .profession {
+  height: 100px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.card .button {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.card .button button {
+  background: #7d2ae8;
+  outline: none;
+  border: none;
+  color: #fff;
+  padding: 8px 22px;
+  border-radius: 20px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card .button button:hover {
+  background: #6616d0;
+}
+
+/* 방명록 */
 .two-wrapper {
   position: absolute;
   width: 100%;
-  /* height: auto; */
 }
 .two-wrapper .header {
   display: block;
@@ -129,7 +247,6 @@ img {
   margin: 0 auto;
   transition: height 0.2s ease;
   border-radius: 10px;
-  /* box-shadow: 5px 20px 50px #000; */
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
 }
 .container.active {
@@ -145,9 +262,9 @@ img {
 }
 
 .container .post {
-  /* display: none; */
   transition: margin-left 0.18s ease;
 }
+
 .container.active .post {
   margin-left: -500px;
 }
@@ -163,12 +280,14 @@ img {
 .post .guest_form {
   margin: 20px 25px;
 }
-.post form :where(.content, .details .select_box) {
+.post form :where(.content, .details .select_box),
+.mbti_type .list li .column {
   display: flex;
   align-items: center;
 }
 .post form .content img {
   max-width: 52px;
+  border-radius: 50%;
 }
 
 .post form .content .details {
@@ -193,6 +312,7 @@ form .content .details .select_box {
 .details .select_box span {
   font-size: 13px;
   margin-top: 1px;
+  padding-left: 3px;
   font-weight: 500;
 }
 .details .select_box i:last-child {
@@ -211,19 +331,14 @@ form .content .details .select_box {
   margin-top: 30px;
   min-height: 100px;
 }
-.guest_form button {
-  color: #bcc0c4;
+form button {
   height: 53px;
   cursor: no-drop;
   font-size: 18px;
-
-  outline: none;
-  border: none;
-  border-radius: 5px;
-
+  font-weight: 500;
+  color: #bcc0c4;
+  border-radius: 7px;
   background: #e2e5e9;
-
-  margin-bottom: 20px;
 }
 
 .post form textarea:valid ~ button {
@@ -242,15 +357,10 @@ form .content .details .select_box {
 }
 .mbti_type header {
   padding: 17px 0;
-  position: relative;
-  text-align: center;
-  border-bottom: 1px solid #bfbfbf;
-}
 
-.mbti_type :where(.arrow-back, .icon, .radio) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #bfbfbf;
 }
 
 .mbti_type header .arrow-back {
@@ -262,11 +372,22 @@ form .content .details .select_box {
   border-radius: 50%;
   color: #747474;
   background: #e4e6eb;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mbti_type header p {
   font-size: 22px;
   font-weight: 600;
+}
+
+.mbti_type :where(.arrow-back, .icon, .radio) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3px;
 }
 
 .mbti_type .content {
@@ -284,44 +405,49 @@ form .content .details .select_box {
 }
 
 .mbti_type .list {
-  margin: 15px 16px 20px;
+  margin: 5px 16px 20px;
 }
 .mbti_type .list li {
   cursor: pointer;
   list-style: none;
-  margin-bottom: 5px;
-  padding: 12px 10px;
-  border-radius: 7px;
+  margin: 10px;
+  padding: 12px 13px;
+  border-radius: 50%;
+  width: 95px;
+  float: left;
+  color: #fff;
+  align-items: center;
 }
 
 .mbti_type .list li:hover {
-  background: #f0f1f4;
+  transform: scale(1.2);
 }
 .mbti_type .list li.active,
 .mbti_type .list li.active:hover {
   background: #e5f1ff;
 }
-/* 잠시 보류 */
+
 .mbti_type .list li .column {
   display: flex;
   align-items: center;
+  flex-direction: column-reverse;
+  font-weight: bold;
 }
 .mbti_type .list li .column .icon {
-  height: 50px;
   width: 50px;
-  background: #e4e6eb;
+  font-size: 23px;
   border-radius: 50%;
 }
 
 .mbti_type .list li .column .details {
-  margin-left: 15px;
+  text-align: center;
 }
 .mbti_type .list li .column .details p {
   font-weight: 500;
 }
 .mbti_type .list li .column .details span {
-  font-size: 14px;
-  color: #65676b;
+  font-size: 12px;
+  color: #fff;
 }
 .mbti_type .list li .radio {
   height: 20px;
@@ -338,53 +464,4 @@ form .content .details .select_box {
   width: 12px;
   border-radius: inherit;
   background: #4599ff;
-}
-/* 삭제 */
-.board {
-  /* border: 2px solid black; */
-  /* 중앙정렬 */
-  width: 1280px;
-  margin: 0 auto;
-  padding: 30px 50px 50px;
-}
-
-/* 삭제 */
-
-#chk {
-  display: none;
-}
-
-.signup {
-  position: relative;
-  background: #f8f4da;
-  width: 100%;
-  height: 100%;
-}
-
-.login {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  background: #fff;
-}
-.edit {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  /* background: #fff; */
-}
-.edit label {
-  padding: 10px 115px 0px;
-}
-label {
-  color: #fff;
-  font-size: 2.3em;
-  justify-content: center;
-  display: flex;
-  /* margin: 60px; */
-  /* padding: 60px; */
-  padding: 50px 60px 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
 }
