@@ -249,7 +249,7 @@
         function postComment() {
           axios({
             method : 'post',
-            url : '',
+            url : '/guest_post',
             data : {
               mbti : document.getElementsByClassName("check_mbti").innerText,
               comment : document.getElementById("input_comment").value
