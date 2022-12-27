@@ -20,14 +20,23 @@
             <span class="line line2"></span>
             <span class="line line3"></span>
         </div>
-        <ul class="menu-items">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Category</a></li>
-            <li><a href="#">Menu</a></li>
-            <li><a href="#">Testimonial</a></li>
-            <li><a href="#">Contact</a></li>
+        <% if (!isLogin) { %>
+          <ul class="menu-items">
+            <li><a href="#">Marine</a></li>
+            <li><a href="#">Hyonie</a></li>
+            <li><a href="#">Rooney</a></li>
+            <li><a href="#">Nyondoo</a></li>
+            <li><a href="#">GSII</a></li>
         </ul>
+        <% } else { %>
+          <ul class="menu-items">
+            <li><a href="#">냉장고</a></li>
+            <li><a href="#">음원</a></li>
+            <li><a href="#">붕어빵</a></li>
+            <li><a href="#">아나바다</a></li>
+            <li><a href="#">여행 PT</a></li>
+        </ul>
+        <% } %>
         <h1 class="logo" alt="" onclick="location.href='/'">MileEASY</h1>
         <!-- <img src="public/static/img/logo.png" class="logo" alt="" onclick="location.href='/'"> -->
     </div>
