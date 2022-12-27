@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>result page</title>
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="../public/static/css/result.css">
     <script defer src="https://maps.googleapis.com/maps/api/js?key=<%=MAP_API_KEY%>&callback=initMap"></script>
@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     <img src="../public/static/img/Logo.png" alt="" class="logo" onclick="location.href='/'">
     <div class="panel">
         <h1 class="text1">당신의 MBTI는</h1>
@@ -88,19 +87,19 @@
 
         <ul class="menu">
             <li class="menu-item">
-            <div class="item">정보</div>
+            <div class="item">INFO</div>
                 <ul class="info" style="white-space: pre-line;">
                     <div class="text2"><%= info %></div> 
                 </ul>
             </li>
             <li class="menu-item">
-                <div class="item">위치</div>
+                <div class="item">LOCATION</div>
                     <ul class="info">
                         <div id="map"></div>
                     </ul>
                 </li>
                 <li class="menu-item">
-                    <div class="item">기타</div>
+                    <div class="item">ETC</div>
                         <ul class="info" style="white-space: pre-line;">
                             <div class="text3"><%= etc %></div> 
                         </ul>

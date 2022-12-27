@@ -152,7 +152,6 @@ table {
 }
 
 body {
-
     min-height: 100vh;
     background: linear-gradient(to bottom, #085b98 1%, #2196f3 5%, #FFFDF4 60%);
     box-sizing: border-box;
@@ -231,10 +230,10 @@ body {
     text-align: center;
     justify-content: center;
     /* display: inline-block; */
-    border: 1px solid white;
-    background-color: #2196f3;
+    border: 2px solid navy;
+    background-color: transparent;
     border-radius: 10px;
-    color: white;
+    color: navy;
     padding: 15px 25px;
     text-decoration: none;
     margin: 50px 25px;
@@ -243,19 +242,20 @@ body {
 }
 
 .test-again:hover {
-    background-color: navy;
-    border: none;
+
+    /* border: 2px solid navy; */
     transition: 0.7s;
+    cursor: pointer;
 
 }
 
 .goto-main {
 
     /* display: inline-block; */
-    border: 1px solid white;
-    background-color: #2196f3;
+    border: 2px solid navy;
+    background-color: transparent;
     border-radius: 10px;
-    color: white;
+    color: navy;
     padding: 15px 25px;
     text-decoration: none;
     margin: 50px 25px;
@@ -264,9 +264,11 @@ body {
 }
 
 .goto-main:hover {
-    background-color: navy;
-    border: none;
-    transition: 0.7s;
+    /* border: 2px solid navy; */
+    /* background-color: #FFFDF4; */
+    /* border: none; */
+    /* transition: 0.7s; */
+    cursor: pointer;
 }
 
 li {
@@ -289,10 +291,11 @@ ul li {
 }
 
 .menu-item {
-    color: white;
+    color: navy;
+    /* font-size: 1.5em; */
     /* text-align: center; */
     padding: 5px;
-    background-color: #2196f3;
+    background-color:transparent;
     border-radius: 10px;
     flex-grow: 1;
     transition: 0.2s;
@@ -305,7 +308,7 @@ ul li {
 
 .menu-item:hover {
     color: black;
-    background-color:#FFFDF4;
+    background-color:transparent;
 
 }
 
@@ -335,7 +338,7 @@ ul li {
     padding: 15px 0;
     font-weight: bold;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.5em;
 }
 
 #map {
