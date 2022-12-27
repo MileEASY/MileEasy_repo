@@ -38,24 +38,26 @@
           <div class="swiper mySwiper guestContainer">
             <div class="swiper-wrapper content">
               <!-- 방명록 시작 -->
-              <div class="swiper-slide card">
-                <div class="card-content">
-                  <div class="image">
-                    <img src="/public/static/img/user_default_img.jpg" alt="" />
-                  </div>
-                  <div class="userMbti">
-                    <span>ENFP</span>
-                  </div>
-                  <div class="userId-userContent">
-                    <span class="userId">sesac</span>
-                    <span class="userContent">일본여행 완전 강추해요!!!!</span>
-                  </div>
-                  <div class="button">
-                    <!-- <button class="edit">edit</button> -->
-                    <button class="delete">delete</button>
+              <% for (i=0; i<data.length; i++) { %>
+                <div class="swiper-slide card">
+                  <div class="card-content">
+                    <div class="image">
+                      <img src="/public/static/img/user_default_img.jpg" alt="" />
+                    </div>
+                    <div class="userMbti">
+                      <span><%=data[i].mbti%></span>
+                    </div>
+                    <div class="userId-userContent">
+                      <span class="userId"><%=data[i].name%></span>
+                      <span class="userContent"><%=data[i].comment%></span>
+                    </div>
+                    <div class="button">
+                      <button class="delete">delete</button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              <% } %>
+             
               <!-- 게스트 방명록 종료 -->
             </div>
           </div>
