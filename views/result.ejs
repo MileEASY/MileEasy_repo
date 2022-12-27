@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <img src="../public/static/img/Logo.png" alt="" class="logo" onclick="location.href='/'">
+    <!-- <img src="../public/static/img/Logo.png" alt="" class="logo" onclick="location.href='/'"> -->
+    <div><h1 class="logo" alt="" onclick="location.href='/'">MileEASY</h1></div>
     <div class="panel">
         <h1 class="text1">당신의 MBTI는</h1>
         <div class="result-box">
@@ -84,7 +85,7 @@
 
 
     </div>
-
+        <div class="infoBox">
         <ul class="menu">
             <li class="menu-item">
             <div class="item">INFO</div>
@@ -105,6 +106,7 @@
                         </ul>
                     </li>
         </ul>
+    </div>
 
 
     <div class="btn">
@@ -123,37 +125,37 @@
 
 
 
-        $('.menu-item:nth-of-type(1)').mouseover(function(){
-            $(this).nextAll().css('display','none');
-            $('.menu-item:nth-of-type(1)>ul').css('display','block')
-        });
+        // $('.menu-item:nth-of-type(1)').mouseover(function(){
+        //     $(this).nextAll().css('display','none');
+        //     $('.menu-item:nth-of-type(1)>ul').css('display','block')
+        // });
 
-        $('.menu-item:nth-of-type(1)').mouseleave(function(){
-            $(this).nextAll().css('display','block');
-            $('.menu-item:nth-of-type(1)>ul').css('display','none')
-        });
+        // $('.menu-item:nth-of-type(1)').mouseleave(function(){
+        //     $(this).nextAll().css('display','block');
+        //     $('.menu-item:nth-of-type(1)>ul').css('display','none')
+        // });
 
-        $('.menu-item:nth-of-type(2)').mouseover(function(){
-            $(this).next().css('display','none');
-            $(this).prev().css('display','none');
-            $('.menu-item:nth-of-type(2)>ul').css('display','block')
-        });
+        // $('.menu-item:nth-of-type(2)').mouseover(function(){
+        //     $(this).next().css('display','none');
+        //     $(this).prev().css('display','none');
+        //     $('.menu-item:nth-of-type(2)>ul').css('display','block')
+        // });
 
-        $('.menu-item:nth-of-type(2)').mouseleave(function(){
-            $(this).next().css('display','block');
-            $(this).prev().css('display','block');
-            $('.menu-item:nth-of-type(2)>ul').css('display','none')
-        });
+        // $('.menu-item:nth-of-type(2)').mouseleave(function(){
+        //     $(this).next().css('display','block');
+        //     $(this).prev().css('display','block');
+        //     $('.menu-item:nth-of-type(2)>ul').css('display','none')
+        // });
 
-        $('.menu-item:nth-of-type(3)').mouseover(function(){
-            $(this).prevAll().css('display','none');
-            $('.menu-item:nth-of-type(3)>ul').css('display','block')
-        });
+        // $('.menu-item:nth-of-type(3)').mouseover(function(){
+        //     $(this).prevAll().css('display','none');
+        //     $('.menu-item:nth-of-type(3)>ul').css('display','block')
+        // });
 
-        $('.menu-item:nth-of-type(3)').mouseleave(function(){
-            $(this).prevAll().css('display','block');
-            $('.menu-item:nth-of-type(3)>ul').css('display','none')
-        });
+        // $('.menu-item:nth-of-type(3)').mouseleave(function(){
+        //     $(this).prevAll().css('display','block');
+        //     $('.menu-item:nth-of-type(3)>ul').css('display','none')
+        // });
 
     </script>
 </body>
