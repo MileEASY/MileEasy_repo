@@ -14,12 +14,13 @@ exports.recommend_home = (req, res) => {
 //사용자 추천페이지 보기
 exports.guest_home = async (req, res) => {
   if (req.session.user) {
-    let result1 = await User.findOne({ where: { id: req.session.user } });
+    // let result1 = await Recommend.findAll({ where: { name: req.session.user } });
     let result2 = await Recommend.findAll();
     res.render("guesthome", {
       isLogin: true,
-      photo: result1.imgpath,
+      delete : req.session.user,
       data : result2
+
     });
   } else {
     let result3 = await Recommend.findAll();
@@ -30,15 +31,16 @@ exports.guest_home = async (req, res) => {
 };
 //내 카드만 보기
 exports.mycard = async (req, res) => {
-  let result1 = await User.findOne({ where: { id: req.session.user } });
-  let result2 = await Recommend.findAll({ where: { name: req.session.user } });
-  res.send({
-    photo: result1.imgpath,
-    name: result2.name,
-    mbti: result2.mbti,
-    comment: result2.comment,
-  });
+  let result = await Recommend.findAll({ where: { name: req.session.user } });
+  res.send(result);
 };
+
+//내 카드 삭제
+exports.card_delete = async (req, res) => {
+  let result1 = await Recommend.destroy({where : {rc_id : req.body.rc_id}});
+  let result2 = await Recommend.findAll({ where: { name: req.session.user }});
+  res.send(result2);
+}
 
 //여행지 추천 입력창
 exports.guest_post_home = async (req, res) => {
