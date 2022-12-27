@@ -9,7 +9,7 @@ body{
     align-items: center;
     min-height: 100vh;
     /* background:  #FFFDF4; */
-    background: #c2ecfd;
+    background: linear-gradient(to bottom, #085b98 1%, #2196f3 5%, #FFFDF4 60%)
 }
 .loader{
     position: relative;
