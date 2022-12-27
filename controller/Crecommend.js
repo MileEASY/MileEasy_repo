@@ -19,13 +19,13 @@ exports.guest_home = async (req, res) => {
     res.render("guesthome", {
       isLogin: true,
       photo: result1.imgpath,
-      name: result2.name,
-      mbti: result2.mbti,
-      comment: result2.comment,
+      data : result2
     });
   } else {
-    let result2 = await Recommend.findAll();
-    res.render("guesthome", { isLogin: false });
+    let result3 = await Recommend.findAll();
+    res.render("guesthome", { 
+      isLogin: false,
+      data : result3 });
   }
 };
 //내 카드만 보기
@@ -47,12 +47,14 @@ exports.guest_post_home = async (req, res) => {
 
 //추천 여행지 입력 완료 버튼
 exports.cardcreate = async (req, res) => {
+  let result1 = await User.findOne({where : {id : req.session.user}})
   let data = {
     name: req.session.user,
     // mbti: req.body.mbti,
     comment: req.body.comment,
+    imgpath : result1.imgpath
   };
-  let result = await Recommend.create(data);
-  console.log("post comment :", result);
+  let result2 = await Recommend.create(data);
+  console.log("post comment :", result2);
   res.send(true);
 };

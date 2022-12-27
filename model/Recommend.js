@@ -19,6 +19,11 @@ const Recommend = (Sequelize, DataTypes)=>{
             comment: {
                 type: DataTypes.TEXT,
                 allowNull: false
+            },
+            imgpath: {
+                type: DataTypes.STRING(100),
+                allowNull: true,
+                defaulteValue: 'user_default_img.jpg',
             }
         },
         {
