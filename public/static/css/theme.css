@@ -158,6 +158,7 @@ h2,
 h3,
 .h3 {
   /* font-size: calc(1.26738rem + 0.20859vw); */
+  color: #ff9800;
 }
 
 @media (min-width: 1200px) {
@@ -182,6 +183,7 @@ h4,
 h5,
 .h5 {
   font-size: 1.1rem;
+  color: #f66537;
 }
 
 h6,
@@ -8671,7 +8673,7 @@ fieldset:disabled .btn {
 }
 
 .mb-6 {
-  margin-bottom: 2rem !important;
+  margin-bottom: 3rem !important;
 }
 
 .mb-7 {
