@@ -11,7 +11,7 @@
 }
 
 body {
-    background-color: #FFFDF4;
+    background-color:#c2ecfd;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -28,7 +28,7 @@ div {
 
 button {
     color: white;
-    background-color: #f90;
+    background-color:#2196f3;
     border: none;
     border-radius: 20px;
     margin: 20px;
@@ -46,7 +46,7 @@ a {
 }
 
 button:hover {
-    background:  #f63131;
+    background:  navy;
     transition: 0.5s;
     transform: scale(1.3);
 }
@@ -90,7 +90,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: #f90;
+    background-color: #2196f3;
     border-radius: 20px;
 
 }
