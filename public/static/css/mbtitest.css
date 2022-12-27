@@ -21,6 +21,26 @@ body {
 
 }
 
+.logo{
+    font-family: "rale_bold";
+    order: 1;
+    color: #FFFDF4;
+    font-size: 2.3rem;
+    position: absolute;
+    top: 1%;
+    left: 5%;
+}
+
+form {
+    font-size: 1.025rem;
+    font-family: "rale_bold";
+    /* font-family: "rale_light"; */
+    margin: 1%;
+    padding: 5%;
+    position: relative;
+    top: 10%;
+}
+
 div {
     display: flex;
 
