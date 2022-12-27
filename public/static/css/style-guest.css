@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: #94e0ff;
+  background-color: #fbf4d7;
   overflow: hidden;
 }
 
@@ -21,91 +21,6 @@ body {
   background-position: bottom;
   width: 100%;
   height: 100vh;
-}
-img {
-  max-width: 100%;
-}
-
-.cloud,
-.air,
-.plane {
-  position: absolute;
-}
-/* AIR PLANE ANIMATION */
-.plane {
-  left: 0;
-  top: 10%;
-  animation: plane 35s linear infinite;
-}
-@keyframes plane {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    left: 100%;
-    right: -100%;
-  }
-}
-.plane2 {
-  animation: plane2 35s linear infinite;
-  bottom: 0;
-  left: 50%;
-  z-index: -1;
-}
-@keyframes plane2 {
-  0% {
-    opacity: 0.3;
-    transform: scale(0);
-  }
-  100% {
-    opacity: 1;
-    bottom: 210%;
-    top: -100%;
-    transform: scale(1) rotate(90deg) translateX(450px);
-  }
-}
-/* CLOUD ANIMATION */
-.cloud {
-  left: -50%;
-  opacity: 1;
-  animation: cloud 55s linear infinite;
-}
-
-@keyframes cloud {
-  0% {
-    opacity: 0.5;
-    left: -100%;
-  }
-  100% {
-    opacity: 1;
-    left: 100%;
-    right: -100%;
-  }
-}
-/* AIR BALOON ANIMATION */
-.air {
-  bottom: 250px;
-  left: 70%;
-  z-index: -1;
-  animation: air 45s linear infinite;
-}
-.air2 {
-  animation-delay: 20s;
-  left: 20%;
-  opacity: 0;
-}
-
-@keyframes air {
-  0% {
-    transform: scale(0.2);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-    bottom: 100%;
-  }
 }
 
 /* 게스트 방명록 */
