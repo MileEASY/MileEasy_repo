@@ -1,13 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>여기가 캐러셀 이미지 보이는 게스트 홈</h1>
-    <a href="/guest_post">나도 추천하러 가기</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS style -->
+    <link rel="stylesheet" href="/public/static/css/style-guestHome.css" />
+    <title>MileEASY 캐러셀</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Jquery CDN -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <!-- FontAwesome CDN -->
+    <script
+      src="https://kit.fontawesome.com/3cc7440731.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="two-wrapper">
+      <div class="header">
+        <h3 class="logo">
+          <a href="/">헤더</a>
+        </h3>
+      </div>
+      <div class="two-body">
+        <!-- 방명록 -->
+        <section guestSection>
+          <div class="swiper mySwiper guestContainer">
+            <div class="swiper-wrapper content">
+              <!-- 방명록 시작 -->
+              <div class="swiper-slide card">
+                <div class="card-content">
+                  <div class="image">
+                    <img src="/public/static/img/user_default_img.jpg" alt="" />
+                  </div>
+                  <div class="userMbti">
+                    <span>ENFP</span>
+                  </div>
+                  <div class="userId-userContent">
+                    <span class="userId">sesac</span>
+                    <span class="userContent">일본여행 완전 강추해요!!!!</span>
+                  </div>
+                  <div class="button">
+                    <!-- <button class="edit">edit</button> -->
+                    <button class="delete">delete</button>
+                  </div>
+                </div>
+              </div>
+              <!-- 게스트 방명록 종료 -->
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <!-- <div class="swiper-pagination"></div> -->
+
+      <div><a href="/guest_post">나도 추천하러 가기</a></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
 </html>
