@@ -157,6 +157,7 @@ table {
 }
 
 body {
+    /* overflow: hidden; */
     min-height: 100vh;
     background: linear-gradient(to bottom, #085b98 1%, #2196f3 5%, #FFFDF4 60%);
     box-sizing: border-box;
@@ -183,14 +184,29 @@ body {
     color: navy;
 }
 
+.scroll{
+    width: 2em; 
+    height: 2em; 
+    background-color: transparent; 
+    /* z-index: 80;  */
+    /* bottom: 25px;  */
+    /* position: absolute;  */
+    border-width: 0 0.5em 0.5em 0; 
+    /* border-width: 50px; */
+    border-style: solid; 
+    border-color: navy ; 
+    animation: scrolldown 1.2s ease-in-out infinite 0.15s;
+    cursor: pointer;
+}
+
 .panel {
     /* border: 1px solid black; */
     /* background-color: white; */
-    margin: 80px 100px;
+    margin: 0 100px;
     border-radius: 10px;
     /* padding: 15px 25px; */
     /* width: 100%; */
-    padding: 5%;
+    padding: 80px 0;
     display: flex;
     justify-content: center;
     align-items: center;
