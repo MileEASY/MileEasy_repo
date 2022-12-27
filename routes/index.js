@@ -28,7 +28,8 @@ router.post("/userDelete", controller3.userdelete);
 router.get("/logout", controller3.logout);
 
 router.get("/recommend_home", controller4.recommend_home);
-router.get("/guest_home", controller4.guest_home);
-router.post("/guest_home", controller4.guest_post);
+router.get("/guest_home", controller4.guest_home);//추천페이지 렌더
+router.get("/mycard", controller4.mycard);//내 카드만 보기
+router.post("/cardcreate", controller4.cardcreate);//추천 여행지 작성
 
 module.exports = router;
