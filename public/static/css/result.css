@@ -154,7 +154,7 @@ table {
 body {
 
     min-height: 100vh;
-    background-color:#c2ecfd;
+    background: linear-gradient(to bottom, #085b98 1%, #2196f3 5%, #FFFDF4 60%);
     box-sizing: border-box;
 }
 
@@ -163,17 +163,20 @@ body {
     font-size: 2.3rem;    
     margin: 20px;
     font-family: "rale_bold";
+    color: navy;
 }
 
 .country {
     font-size: 1.4em;
     line-height: 2rem;
     font-family: "rale_bold";
+    color: navy;
 }
 .reason{
     font-size: 1.4em;
     line-height: 2em;
     font-family: "rale_bold";
+    color: navy;
 }
 
 .panel {
@@ -302,7 +305,7 @@ ul li {
 
 .menu-item:hover {
     color: black;
-    background-color: #c2ecfd;
+    background-color:#FFFDF4;
 
 }
 
