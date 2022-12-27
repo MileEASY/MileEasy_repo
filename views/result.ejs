@@ -83,27 +83,25 @@
         </ul> -->
     </div>
 
-    <div class="scroll" style="width: 2em; height: 2em; background-color: transparent; z-index: 80; 
-    bottom: 25px; position: absolute; border-width: 0 0.25em 0.25em 0; border-style: solid; border-color: antiquewhite; animation: scrolldown 1.2s ease-in-out infinite 0.15s;"></div>
-    <div class="scroll" style="width: 2em; height: 2em; background-color: transparent; z-index: 80; 
-    bottom: 40px; position: absolute; border-width: 0 0.25em 0.25em 0; border-style: solid; border-color: antiquewhite; animation: scrolldown 1.2s ease-in-out infinite;"></div>
+    <div class="scroll" onclick="showInfo()"></div>
+    <!-- <div class="scroll" onclick='showInfo()'></div> -->
     
 
     </div>
         <div class="infoBox">
         <ul class="menu">
             <li class="menu-item">
-            <div class="item">INFO</div>
-                <ul class="info" style="white-space: pre-line;">
-                    <div class="text2"><%= info %></div> 
-                </ul>
-            </li>
-            <li class="menu-item">
                 <div class="item">LOCATION</div>
                     <ul class="info">
                         <div id="map"></div>
                     </ul>
                 </li>
+            <li class="menu-item">
+            <div class="item">INFO</div>
+                <ul class="info" style="white-space: pre-line;">
+                    <div class="text2"><%= info %></div> 
+                </ul>
+            </li>
                 <li class="menu-item">
                     <div class="item">ETC</div>
                         <ul class="info" style="white-space: pre-line;">
@@ -111,13 +109,13 @@
                         </ul>
                     </li>
         </ul>
-    </div>
 
 
     <div class="btn">
         <button type="button" class="test-again" onclick="location.href='/mbtitest'">테스트 다시 하기</button>
         <button type="button" class="goto-main" onclick="location.href='/'">메인으로 돌아가기</button>
     </div>
+</div>
 
     <script>
 
@@ -128,6 +126,13 @@
             });
         };
 
+        document.querySelector('.infoBox').style.display='none';
+
+        function showInfo(){
+            if($('.infoBox').css('display')=='none') 
+            {document.querySelector('.infoBox').style.display='block';}
+            else document.querySelector('.infoBox').style.display='none'
+        }
 
 
         // $('.menu-item:nth-of-type(1)').mouseover(function(){
