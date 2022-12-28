@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <!-- css -->
+    <!-- style css -->
     <link rel="stylesheet" href="/public/static/css/style-guest.css" />
     <!-- FontAwesome CDN -->
     <script
@@ -34,7 +34,7 @@
           <div class="container_wrapper">
             <!-- 방명록 작성 -->
             <section class="post">
-              <header>글작성하기</header>
+              <header>방명록 <i class="fas fa-pencil-alt"></i></header>
               <form action="/board/upload" method="post" class="guest_form">
                 <div class="content">
                   <img src="/public/static/img/user_default_img.jpg" alt="profile_img">
@@ -49,7 +49,7 @@
                 </div>
                 <textarea name="guestContent" placeholder="MBTI별 나만의 특별한 여행지를 공유해보세요." required></textarea>
                 <!-- POST버튼 -->
-                <button type="submit">Post</button>
+                <button type="submit">등록하기</button>
               </form>
             </section>
 
@@ -57,11 +57,8 @@
             <section class="mbti_type">
               <header>
                 <div class="arrow-back"><i class="fas fa-arrow-left"></i></div>
-                <p>MBTI TYPE</p>
-              </header>
-              <div class="content">
                 <p>MBTI를 선택하세요</p>
-              </div>
+              </header>
               <ul class="list">
                 <!-- MBTI 종류 -->
                 <li data-mbti="ISTJ" data-class="fa-dolly" style="background-color: #53A347; color: #fff;">
@@ -77,7 +74,7 @@
 
                 <li data-mbti="ISFJ" data-class="fa-handshake" style="background-color: #40C9F5;">
                   <div class="column">
-                    <div class="icon"><i class="far fa-handshake"></i></div>
+                    <div class="icon"><i class="fas fa-handshake"></i></div>
                     <div class="details">
                       <p>ISFJ</p>
                       <span>권력형</span>
@@ -103,18 +100,18 @@
                   </div>
                 </li>
 
-                <li data-mbti="ISTP" data-class="fa-globe-asia" style="background-color: #643271;">
+                <li data-mbti="ISTP" data-class="fa-book" style="background-color: #643271;">
                   <div class="column">
-                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="icon"><i class="fas fa-book"></i></div>
                     <div class="details">
                       <p>ISTP</p>
                       <span>백과사전형</span>
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ISFP" data-class="fa-globe-asia" style="background-color: #8D2735;">
+                <li data-mbti="ISFP" data-class="fa-hanukiah" style="background-color: #8D2735;">
                   <div class="column">
-                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="icon"><i class="fas fa-hanukiah"></i></div>
                     <div class="details">
                       <p>ISFP</p>
                       <span>성인군자형</span>
@@ -158,18 +155,18 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ENFP" data-class="fas fa-globe-asia" style="background-color: #D07C58;">
+                <li data-mbti="ENFP" data-class="fa-bolt" style="background-color: #D07C58;">
                   <div class="column">
-                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="icon"><i class="fas fa-bolt"></i></div>
                     <div class="details">
                       <p>ENFP</p>
                       <span>스파크형</span>
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ENTP" data-class="fas fa-globe-asia" style="background-color:#9CCC3C;">
+                <li data-mbti="ENTP" data-class="fa-lightbulb" style="background-color:#9CCC3C;">
                   <div class="column">
-                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="details">
                       <p>ENTP</p>
                       <span>발명가형</span>
@@ -186,18 +183,18 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ESFJ" data-class="fa-laugh" style="background-color:#F35860;">
+                <li data-mbti="ESFJ" data-class="fa-mug-hot" style="background-color:#F35860;">
                   <div class="column">
-                    <div class="icon"><i class="fas fa-laugh"></i></div>
+                    <div class="icon"><i class="fas fa-mug-hot"></i></div>
                     <div class="details">
                       <p>ESFJ</p>
                       <span>친선도모형</span>
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ENFJ" data-class="fas fa-globe-asia" style="background-color:#39B989;">
+                <li data-mbti="ENFJ" data-class="fa-head-side-cough" style="background-color:#39B989;">
                   <div class="column">
-                    <div class="icon"><i class="fas fa-globe-asia"></i></div>
+                    <div class="icon"><i class="fas fa-head-side-cough"></i></div>
                     <div class="details">
                       <p>ENFJ</p>
                       <span>언변능숙형</span>
