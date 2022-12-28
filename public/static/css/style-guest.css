@@ -9,6 +9,15 @@
   font-family: "rale_light";
   src: url("/public/static/font/Raleway-Light.ttf") format("truetype");
 }
+:root {
+  --font-size-lg: calc(1rem + 2vw);
+  --font-size-md: calc(0.5rem + 1vw);
+  --font-size-sm: calc(0.5rem + 0.5vw);
+  font-family: "rale_bold";
+}
+a {
+  font-size: var(--font-size-sm);
+}
 * {
   margin: 0;
   padding: 0;
@@ -476,6 +485,7 @@ form button {
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
+  font-family: "rale_bold";
 }
 
 .navbar a:hover {
