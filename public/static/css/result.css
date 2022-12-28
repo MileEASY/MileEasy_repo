@@ -248,7 +248,7 @@ body {
 .mbti {
     font-weight: bolder;
     /* font-family: "rale_bold"; */
-    font-family: 'rale_italic';
+    /* font-family: 'rale_italic'; */
     letter-spacing: 3px;
     font-size: 4.3em;
     background-image: linear-gradient(
@@ -347,7 +347,8 @@ ul li {
 
 .menu {
     /* display: flex; */
-    margin: 10px 80px;
+    margin: 0% 5% 0% 5%;
+    padding: 0% 5% 0% 5%;
 }
 
 .menu-item {
@@ -359,6 +360,7 @@ ul li {
     border-radius: 10px;
     flex-grow: 1;
     transition: 0.2s;
+
     /* font-family: 'rale_italic'; */
 }
 
@@ -368,6 +370,8 @@ ul li {
 
 .menu-item{
     text-align: center;
+    margin: 5%;
+    padding: 5%;
 }
 
 
@@ -393,11 +397,20 @@ ul li {
 
 /* .info {
     display: none;
+}
+
+.info1 {
+    display: none;
 } */
 
 /* .menu-item:hover>ul {
     display: block;
 } */
+
+button:hover {
+    background-color: #004e92;
+    color: #FFFDF4;
+}
 
 .item {
     padding: 15px 0;
@@ -405,6 +418,27 @@ ul li {
     text-align: center;
     font-size: 1.5em;
     font-family: 'rale_bold';
+
+}
+
+.item2 {
+    padding: 15px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'rale_bold';
+    position: absolute;
+    left: 2%;
+}
+
+.item3 {
+    padding: 15px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'rale_bold';
+    position: absolute;
+    right: 2%;
 }
 
 #map {

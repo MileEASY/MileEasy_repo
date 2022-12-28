@@ -21,12 +21,6 @@
         <div class="result-box">
             <h1 class="mbti"><%=mbti%></h1>
         </div>
-
-        <div class="tour-box">
-            <h1 class="country">추천 여행지는 💎 <%=spot%> 💎 입니다.</h1>
-            <h2 class="reason" style="white-space: pre-line;"><%= reason %> </h2>
-            <div class="tour"></div>
-        </div>
         <% if (mbti=='ENFJ') { %>
             <img src='public/static/img/enfj.png'>
         <% } %>
@@ -76,6 +70,12 @@
             <img src="public/static/img/istp.png">
         <% } %>
 
+        <div class="tour-box">
+            <h1 class="country">추천 여행지는 💎 <%=spot%> 💎 입니다.</h1>
+            <h2 class="reason" style="white-space: pre-line;"><%= reason %> </h2>
+            <div class="tour"></div>
+        </div>
+
 
     <div class="information">
         <!-- <ul>
@@ -91,35 +91,26 @@
         <div id="infoBox">
         <ul class="menu">
             <li class="menu-item">
-                <div class="item">LOCATION</div>
+                <div class="item">🚩 LOCATION </div>
                     <ul class="info">
                         <div id="map"></div>
                     </ul>
+                    <a class="scroll2" href="#infoBox2"></a>
                 </li>
-                <a class="scroll2" href="#infoBox2"></a>
                 </ul>
                 </div>
 
-
-
-                <div id="infoBox2">
-                <ul class="menu">
+        <div id="infoBox2">
+            <ul class="menu">
             <li class="menu-item">
-            <div class="item">INFO</div>
+            <div class="item">💠 INFO</div>
                 <ul class="info" style="white-space: pre-line;">
                     <div class="text2"><%= info %></div> 
                 </ul>
-            </li>
-                <li class="menu-item">
-                    <div class="item">ETC</div>
-                        <ul class="info" style="white-space: pre-line;">
-                            <div class="text3"><%= etc %></div> 
-                        </ul>
-                    </li>
+                <div class="item">💠 ETC</div>
+                <ul class="info" style="white-space: pre-line;">
+                    <div class="text3"><%= etc %></div> 
                 </ul>
-
-
-
     <div class="btn">
         <button type="button" class="test-again" onclick="location.href='/mbtitest'">테스트 다시 하기</button>
         <button type="button" class="goto-main" onclick="location.href='/'">메인으로 돌아가기</button>
