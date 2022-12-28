@@ -1,3 +1,24 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "rale_bold";
+  src: url("/public/static/font/Raleway-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "rale_light";
+  src: url("/public/static/font/Raleway-Light.ttf") format("truetype");
+}
+:root {
+  --font-size-lg: calc(1rem + 2vw);
+  --font-size-md: calc(0.5rem + 1vw);
+  --font-size-sm: calc(0.5rem + 0.5vw);
+  font-family: "rale_bold";
+}
+a {
+  font-size: var(--font-size-sm);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -49,7 +70,6 @@ body {
 .two-body {
   display: flex;
   height: 100vh;
-  border: 1px solid royalblue;
   align-items: center;
   justify-content: center;
 }
@@ -173,4 +193,67 @@ section .card .image img {
 .two-wrapper .header {
   display: block;
   width: 100%;
+}
+
+/* navBar */
+
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines {
+  display: none;
+}
+
+.container-nav {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  box-shadow: 0px 2px 16px 0px #aaa;
+  position: relative;
+  width: 100%;
+  /* background: #2196f3; */
+  /* background: #fffdf4; */
+  color: #000;
+  opacity: 0.85;
+  z-index: 1;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 64px;
+  align-items: center;
+}
+
+.menu-items {
+  order: 2;
+  display: flex;
+}
+.logo {
+  font-family: "rale_bold";
+  order: 1;
+  color: #f90;
+  font-size: 2.3rem;
+  cursor: pointer;
+}
+
+.menu-items li {
+  list-style: none;
+  margin-left: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.navbar a {
+  /* color: #444; */
+  font-family: "rale_light";
+  color: #f90;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
+  font-family: "rale_bold";
+}
+
+.navbar a:hover {
+  color: #f63131;
 }

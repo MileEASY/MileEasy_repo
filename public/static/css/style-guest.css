@@ -211,7 +211,6 @@ section .card .image img {
   background-color: #f90;
   color: #fff;
   font-size: 22px;
-  font-weight: 600;
   text-align: center;
   padding: 20px 0;
 }
@@ -431,6 +430,7 @@ form button {
   background: #4599ff;
 }
 
+/* nav bar */
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines {
   display: none;
