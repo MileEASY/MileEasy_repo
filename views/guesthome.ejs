@@ -42,7 +42,7 @@
                 <div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <img src="/public/static/img/user_default_img.jpg" alt="" />
+                      <img src="/public/static/img/<%=data[i].imgpath%>" alt="" />
                     </div>
                     <div class="userMbti">
                       <span><%=data[i].mbti%></span>
@@ -61,7 +61,7 @@
             </div>
           </div>
         </section>
-        <div><button type="button" onclick="mycard()">내가 쓴 카드 보기</button></div>
+        <div><button id="mycard" type="button" onclick="mycard()">내가 쓴 카드 보기</button></div>
       </div>
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -114,7 +114,7 @@
                 `<div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <img src="${res.data[i].imgpath}" alt="" />
+                      <img src="/public/static/img/${res.data[i].imgpath}" alt="" />
                     </div>
                     <div class="userMbti">
                       <span>${res.data[i].mbti}</span>
@@ -131,6 +131,7 @@
                 </div>`
           }
           card.innerHTML = html;
+          document.querySelector("#mycard").innerHTML = `<a href="/guest_home">돌아가기</a>`
         });
       }
       
@@ -150,7 +151,7 @@
                 `<div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <img src="${res.data[i].imgpath}" alt="" />
+                      <img src="/public/static/img/${res.data[i].imgpath}" alt="" />
                     </div>
                     <div class="userMbti">
                       <span>${res.data[i].mbti}</span>
@@ -169,6 +170,7 @@
           card.innerHTML = html;
         });
       }
+
     </script>
   </body>
 </html>
