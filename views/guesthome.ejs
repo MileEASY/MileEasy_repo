@@ -86,7 +86,8 @@
 
       <!-- 여행 방명록 버튼 -->
       <div class="user-card-button">
-        <button id="mycard" type="button" onclick="mycard()">나의 방명록 보러가기</button>
+        <button id="mycard" class="" type="button" onclick="mycard()">나의 방명록 보러가기</button>
+        <button class="d-none" id="back" type="button" onclick="back()">돌아가기</button>
         <button type="button" onclick="guest_post()">여행 추천하러가기</button>
       </div>
 
@@ -150,10 +151,17 @@
                 </div>`
           }
           card.innerHTML = html;
-          document.querySelector("#mycard").innerHTML = `<a href="/guest_home">돌아가기</a>`
+          $("#mycard").addClass('d-none');
+          $("#back").removeClass('d-none');
         });
       }
       
+      function back() {
+        window.location.href = '/guest_home';
+        $("#back").addClass('d-none');
+        $("#mycard").removeClass('d-none');
+      }
+
       function cardDelete(a) {
         let rc = a.parentNode.previousSibling.previousElementSibling;
         console.log(rc);
