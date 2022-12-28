@@ -14,13 +14,10 @@ exports.recommend_home = (req, res) => {
 //사용자 추천페이지 보기
 exports.guest_home = async (req, res) => {
   if (req.session.user) {
-    // let result1 = await Recommend.findAll({ where: { name: req.session.user } });
     let result2 = await Recommend.findAll();
     res.render("guesthome", {
       isLogin: true,
-      delete : req.session.user,
       data : result2
-
     });
   } else {
     let result3 = await Recommend.findAll();
@@ -47,17 +44,22 @@ exports.card_delete = async (req, res) => {
 //여행지 추천 입력창
 exports.guest_post_home = async (req, res) => {
   let result = await User.findOne({where : {id : req.session.user}})
-  res.render("guest", {data: result});
+  if (result.imgpath == 'user_default_img.jpg') {
+    res.render("guest", {data: result, photo: '/public/static/image/user_default_img.jpg'});
+  } else {
+    res.render("guest", {data: result, photo : result.imgpath});
+  }
+  
 };
 
 //추천 여행지 입력 완료 버튼
 exports.cardcreate = async (req, res) => {
-  let result1 = await User.findOne({where : {id : req.session.user}})
+  // let result1 = await User.findOne({where : {id : req.session.user}})
   let data = {
     name: req.session.user,
     mbti: req.body.mbti,
     comment: req.body.comment,
-    imgpath : result1.imgpath
+    imgpath : req.body.photo
   };
   let result2 = await Recommend.create(data);
   console.log("post comment :", result2);

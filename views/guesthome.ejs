@@ -58,11 +58,7 @@
                 <div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
                         <img src="<%=data[i].imgpath%>" alt="프로필 이미지"/>
-                        <% } else { %> 
-                          <img src="/public/static/image/user_default_img.jpg" alt="프로필 이미지" />
-                        <% } %>
                     </div>
                     <div class="userMbti">
                       <span><%=data[i].mbti%></span>
@@ -137,11 +133,7 @@
                 `<div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
                         <img src="${res.data[i].imgpath}" alt="프로필 이미지" />
-                        <% } else { %> 
-                          <img src="/public/static/image/user_default_img.jpg" alt="프로필 이미지" />
-                        <% } %>
                     </div>
                     <div class="userMbti">
                       <span>${res.data[i].mbti}</span>
@@ -179,11 +171,7 @@
                 `<div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
                         <img src="${res.data[i].imgpath}" alt="프로필 이미지" />
-                        <% } else { %> 
-                          <img src="/public/static/image/user_default_img.jpg" alt="프로필 이미지" />
-                        <% } %>
                     </div>
                     <div class="userMbti">
                       <span>${res.data[i].mbti}</span>
