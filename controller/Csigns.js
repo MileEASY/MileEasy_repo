@@ -64,7 +64,7 @@ exports.profileimg = (req, res)=>{
 exports.userupdate = (req,res)=>{
   let data = {
     name: req.body.name,
-    pw: req.body.pw, 
+    pw: req.body.pw
   };
   let beforeimg = req.body.imgpath;
   User.findOne({
@@ -82,6 +82,7 @@ exports.userupdate = (req,res)=>{
     }
   })
   .then(()=>{
+    console.log(data); 
     User.update(data, {
       where: { id: req.body.id },
     })
