@@ -96,6 +96,14 @@
                         <div id="map"></div>
                     </ul>
                 </li>
+                <a class="scroll2" href="#infoBox2"></a>
+                </ul>
+                </div>
+
+
+
+                <div id="infoBox2">
+                <ul class="menu">
             <li class="menu-item">
             <div class="item">INFO</div>
                 <ul class="info" style="white-space: pre-line;">
@@ -108,7 +116,8 @@
                             <div class="text3"><%= etc %></div> 
                         </ul>
                     </li>
-        </ul>
+                </ul>
+
 
 
     <div class="btn">
@@ -126,9 +135,23 @@
             });
         };
 
-        document.querySelector('#infoBox').style.display='none'
-        $("a").click(function() {
+        document.querySelector('#infoBox').style.display='none';
+        document.querySelector('#infoBox2').style.display='none';
+
+        $(".scroll").click(function() {
+            document.querySelector('.scroll').style.display='none';
+            // document.querySelector('.panel').style.display='none';
             document.querySelector('#infoBox').style.display='block';
+            document.querySelector('#infoBox2').style.display='none';
+        $('html,body').animate({
+            scrollTop: $(".second").offset().top},
+            'slow');
+});
+
+document.querySelector('#infoBox2').style.display='none'
+        $(".scroll2").click(function() {
+            document.querySelector('.scroll2').style.display='none'
+            document.querySelector('#infoBox2').style.display='block';
         $('html,body').animate({
             scrollTop: $(".second").offset().top},
             'slow');
