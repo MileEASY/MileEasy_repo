@@ -20,33 +20,32 @@
     ></script>
   </head>
   <body>
-     <div class="wrapper">
-       <!-- nav바 영역 --> 
-    <div class="two-wrapper">
+    <div class="wrapper">
+      <!-- nav바 영역 -->
+      <div class="two-wrapper">
         <div class="header">
           <nav class="navbar">
             <div class="navbar-container container-nav">
-                <input type="checkbox" name="" id="">
-                <div class="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
-                </div>
-                  <ul class="menu-items">
-                    <li><a href="#">Marine</a></li>
-                    <li><a href="#">Hyonie</a></li>
-                    <li><a href="#">Rooney</a></li>
-                    <li><a href="#">Nyondoo</a></li>
-                    <li><a href="#">GSII</a></li>
-                </ul>
-        
-                <h1 class="logo" alt="" onclick="location.href='/'">MileEASY</h1>
-                <!-- <img src="public/static/img/logo.png" class="logo" alt="" onclick="location.href='/'"> -->
-            </div>
-        </nav>
-        </div>  
+              <input type="checkbox" name="" id="" />
+              <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+              </div>
+              <ul class="menu-items">
+                <li><a href="#">Marine</a></li>
+                <li><a href="#">Hyonie</a></li>
+                <li><a href="#">Rooney</a></li>
+                <li><a href="#">Nyondoo</a></li>
+                <li><a href="#">GSII</a></li>
+              </ul>
 
-        
+              <h1 class="logo" alt="" onclick="location.href='/'">MileEASY</h1>
+              <!-- <img src="public/static/img/logo.png" class="logo" alt="" onclick="location.href='/'"> -->
+            </div>
+          </nav>
+        </div>
+
         <!-- 방명록 전체 영역 -->
         <div class="container">
           <div class="container_wrapper">
@@ -56,9 +55,12 @@
               <form action="/board/upload" method="post" class="guest_form">
                 <div class="content">
                   <div class="image">
-                    <img src="/public/static/img/user_default_img.jpg" alt="profile_img">
+                    <img
+                      src="/public/static/img/user_default_img.jpg"
+                      alt="profile_img"
+                    />
                   </div>
-    
+
                   <div class="details">
                     <p>sesac</p>
                     <div class="select_box" title="MBTI 타입을 선택해주세요.">
@@ -68,7 +70,11 @@
                     </div>
                   </div>
                 </div>
-                <textarea name="guestContent" placeholder="MBTI별 나만의 특별한 여행지를 공유해보세요." required></textarea>
+                <textarea
+                  name="guestContent"
+                  placeholder="MBTI별 나만의 특별한 여행지를 공유해보세요."
+                  required
+                ></textarea>
                 <!-- POST버튼 -->
                 <button type="submit">등록하기</button>
               </form>
@@ -82,7 +88,11 @@
               </header>
               <ul class="list">
                 <!-- MBTI 종류 -->
-                <li data-mbti="ISTJ" data-class="fa-dolly" style="background-color: #53A347; color: #fff;">
+                <li
+                  data-mbti="ISTJ"
+                  data-class="fa-dolly"
+                  style="background-color: #53a347; color: #fff"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-dolly"></i></div>
                     <div class="details">
@@ -93,7 +103,11 @@
                   <!-- <div class="radio"></div> -->
                 </li>
 
-                <li data-mbti="ISFJ" data-class="fa-handshake" style="background-color: #40C9F5;">
+                <li
+                  data-mbti="ISFJ"
+                  data-class="fa-handshake"
+                  style="background-color: #40c9f5"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-handshake"></i></div>
                     <div class="details">
@@ -102,8 +116,12 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="INFJ" data-class="fa-star-of-david" style="background-color: #EC5B7B;">
-                  <div class="column" >
+                <li
+                  data-mbti="INFJ"
+                  data-class="fa-star-of-david"
+                  style="background-color: #ec5b7b"
+                >
+                  <div class="column">
                     <div class="icon"><i class="fas fa-star-of-david"></i></div>
                     <div class="details">
                       <p>INFJ</p>
@@ -111,7 +129,11 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="INTJ" data-class="fa-vials" style="background-color: #754D2A;">
+                <li
+                  data-mbti="INTJ"
+                  data-class="fa-vials"
+                  style="background-color: #754d2a"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-vials"></i></div>
                     <div class="details">
@@ -121,7 +143,11 @@
                   </div>
                 </li>
 
-                <li data-mbti="ISTP" data-class="fa-book" style="background-color: #643271;">
+                <li
+                  data-mbti="ISTP"
+                  data-class="fa-book"
+                  style="background-color: #643271"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-book"></i></div>
                     <div class="details">
@@ -130,7 +156,11 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ISFP" data-class="fa-hanukiah" style="background-color: #8D2735;">
+                <li
+                  data-mbti="ISFP"
+                  data-class="fa-hanukiah"
+                  style="background-color: #8d2735"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-hanukiah"></i></div>
                     <div class="details">
@@ -139,7 +169,11 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="INFP" data-class="fa-flag" style="background-color: #FE9214;">
+                <li
+                  data-mbti="INFP"
+                  data-class="fa-flag"
+                  style="background-color: #fe9214"
+                >
                   <div class="column">
                     <div class="icon"><i class="far fa-flag"></i></div>
                     <div class="details">
@@ -148,17 +182,27 @@
                     </div>
                   </div>
                 </li>
-                <li  data-mbti="INTP" data-class="fa-head-side-virus" style="background-color:#8A8AD0;">
+                <li
+                  data-mbti="INTP"
+                  data-class="fa-head-side-virus"
+                  style="background-color: #8a8ad0"
+                >
                   <div class="column">
-                    <div class="icon"><i class="fas fa-head-side-virus"></i></div>
+                    <div class="icon">
+                      <i class="fas fa-head-side-virus"></i>
+                    </div>
                     <div class="details">
                       <p>INTP</p>
                       <span>아이디어형</span>
                     </div>
                   </div>
                 </li>
-                
-                <li data-mbti="ESTP" data-class="fa-calendar-week" style="background-color: #608CEB;">
+
+                <li
+                  data-mbti="ESTP"
+                  data-class="fa-calendar-week"
+                  style="background-color: #608ceb"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-calendar-week"></i></div>
                     <div class="details">
@@ -167,7 +211,11 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ESFP" data-class="fa-smile" style="background-color: #FACC39;">
+                <li
+                  data-mbti="ESFP"
+                  data-class="fa-smile"
+                  style="background-color: #facc39"
+                >
                   <div class="column">
                     <div class="icon"><i class="far fa-smile"></i></div>
                     <div class="details">
@@ -176,7 +224,11 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ENFP" data-class="fa-bolt" style="background-color: #D07C58;">
+                <li
+                  data-mbti="ENFP"
+                  data-class="fa-bolt"
+                  style="background-color: #d07c58"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-bolt"></i></div>
                     <div class="details">
@@ -185,7 +237,11 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ENTP" data-class="fa-lightbulb" style="background-color:#9CCC3C;">
+                <li
+                  data-mbti="ENTP"
+                  data-class="fa-lightbulb"
+                  style="background-color: #9ccc3c"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="details">
@@ -195,7 +251,11 @@
                   </div>
                 </li>
 
-                <li data-mbti="ESTJ" data-class="fa-chart-bar" style="background-color:#9C9636;">
+                <li
+                  data-mbti="ESTJ"
+                  data-class="fa-chart-bar"
+                  style="background-color: #9c9636"
+                >
                   <div class="column">
                     <div class="icon"><i class="far fa-chart-bar"></i></div>
                     <div class="details">
@@ -204,7 +264,11 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ESFJ" data-class="fa-mug-hot" style="background-color:#F35860;">
+                <li
+                  data-mbti="ESFJ"
+                  data-class="fa-mug-hot"
+                  style="background-color: #f35860"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-mug-hot"></i></div>
                     <div class="details">
@@ -213,16 +277,26 @@
                     </div>
                   </div>
                 </li>
-                <li data-mbti="ENFJ" data-class="fa-head-side-cough" style="background-color:#39B989;">
+                <li
+                  data-mbti="ENFJ"
+                  data-class="fa-head-side-cough"
+                  style="background-color: #39b989"
+                >
                   <div class="column">
-                    <div class="icon"><i class="fas fa-head-side-cough"></i></div>
+                    <div class="icon">
+                      <i class="fas fa-head-side-cough"></i>
+                    </div>
                     <div class="details">
                       <p>ENFJ</p>
                       <span>언변능숙형</span>
                     </div>
                   </div>
                 </li>
-                <li  data-mbti="ENTJ" data-class="fa-seedling" style="background-color:#9C1F61;">
+                <li
+                  data-mbti="ENTJ"
+                  data-class="fa-seedling"
+                  style="background-color: #9c1f61"
+                >
                   <div class="column">
                     <div class="icon"><i class="fas fa-seedling"></i></div>
                     <div class="details">
@@ -230,57 +304,54 @@
                       <span>지도자형</span>
                     </div>
                   </div>
-                  
                 </li>
-
               </ul>
             </section>
           </div>
         </div>
-  
-      <script>
+      </div>
+    </div>
+    <script>
       const container = document.querySelector(".container");
-      selectBox = container.querySelector(".select_box"),
-      arrowBack = container.querySelector(".arrow-back");
-      const list = document.querySelectorAll(".list")
-      const mbtiBtn = document.querySelectorAll("li")
-      
+      (selectBox = container.querySelector(".select_box")),
+        (arrowBack = container.querySelector(".arrow-back"));
+      const list = document.querySelectorAll(".list");
+      const mbtiBtn = document.querySelectorAll("li");
 
-      console.log(mbtiBtn)
-      selectBox.addEventListener("click", () =>{
-        container.classList.add("active")
-      })
+      console.log(mbtiBtn);
+      selectBox.addEventListener("click", () => {
+        container.classList.add("active");
+      });
 
-      arrowBack.addEventListener("click", () =>{
-        container.classList.remove("active")
-      })
+      arrowBack.addEventListener("click", () => {
+        container.classList.remove("active");
+      });
 
-      mbtiBtn.forEach(mbti =>{
-        mbti.addEventListener("click",(e)=>{
-          const target = e.target
-          console.log(mbti,"clicked")
-          console.log(mbti.dataset.mbti, mbti.dataset.class)
-          selectBox.children[0].className = "fas "+mbti.dataset.class;
+      mbtiBtn.forEach((mbti) => {
+        mbti.addEventListener("click", (e) => {
+          const target = e.target;
+          console.log(mbti, "clicked");
+          console.log(mbti.dataset.mbti, mbti.dataset.class);
+          selectBox.children[0].className = "fas " + mbti.dataset.class;
           selectBox.children[1].innerText = mbti.dataset.mbti;
-          container.classList.remove("active")
-        })
-      })
+          container.classList.remove("active");
+        });
+      });
 
-        function postComment() {
-          axios({
-            method : 'post',
-            url : '/guest_post',
-            data : {
-              mbti : document.getElementsByClassName("check_mbti").innerText,
-              comment : document.getElementById("input_comment").value
-            }
-          })
-          .then((res) => {
-            if (res != false) {
-              alert('여행지 추천 완료!')
-            }
-          })
-        }
-      </script>
+      function postComment() {
+        axios({
+          method: "post",
+          url: "/guest_post",
+          data: {
+            mbti: document.getElementsByClassName("check_mbti").innerText,
+            comment: document.getElementById("input_comment").value,
+          },
+        }).then((res) => {
+          if (res != false) {
+            alert("여행지 추천 완료!");
+          }
+        });
+      }
+    </script>
   </body>
 </html>
