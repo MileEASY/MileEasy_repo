@@ -107,6 +107,7 @@ a {
     padding-top: 10%;
     /* padding: 4%; */
     left: 62%;
+    margin-right: 5%; 
     position: absolute;
 }
 
@@ -120,8 +121,9 @@ a {
 
 
 button {
-    padding: 10px 80px 10px 80px;
-    position: relative;
+    /* padding: 10px 80px 10px 80px; */
+    padding: 3% 20% 3% 20%;
+    /* position: relative; */
     right: 10%;
     background: #f90;
     font-size: 1rem;
@@ -197,6 +199,7 @@ body{
 .logo{
     font-family: "rale_bold";
     order: 1;
+    cursor: pointer;
     color: #f90;
     font-size: 2.3rem;
 }
