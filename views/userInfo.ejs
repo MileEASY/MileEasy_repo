@@ -47,25 +47,25 @@
             id="form_userUpdate"
           >
             <label for="chk" aria-hidden="true">
-              <a href="/"> 
-                  <img src="/public/static/img/Logo.png" alt="logo"/> 
+              <a href="/">
+                <img src="/public/static/img/Logo.png" alt="logo" />
               </a>
             </label>
 
             <div class="file_form">
               <div class="img_wrap">
                 <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
-                 <img
+                <img
                   id="profile_img"
                   src="<%=data.imgpath%>"
                   alt="프로필 이미지"
-                 /> 
-                <% } else { %> 
-                 <img
+                />
+                <% } else { %>
+                <img
                   id="profile_img"
                   src="/public/static/img/user_default_img.jpg"
                   alt="프로필 이미지"
-                 />
+                />
                 <% } %>
               </div>
               <div class="file_wrap">
@@ -78,19 +78,21 @@
               </div>
             </div>
 
-            <input type="text" name="userId" value="<%=data.id%>" disabled/>
+            <input type="text" name="userId" value="<%=data.id%>" disabled />
             <input
               type="text"
               name="userName"
               placeholder="User name"
               value="<%=data.name%>"
               required
+              title="이름을 입력하세요."
             />
             <input
               type="password"
               name="userPw"
               placeholder="Password"
               required
+              title="비밀번호를 입력하세요."
             />
             <div class="userInfoBtn">
               <button type="button" onclick="userEdit()">edit</button>
@@ -102,7 +104,7 @@
     </div>
 
     <script>
-      var imgpath = document.querySelector("#profile_img").src.split('/')[6];
+      var imgpath = document.querySelector("#profile_img").src.split("/")[6];
       $("#userfile").change(function () {
         var file = document.getElementById("userfile");
         var formData = new FormData();
@@ -110,8 +112,8 @@
         axios({
           method: "post",
           url: "/userUpdate/image",
-          data: formData
-          })
+          data: formData,
+        })
           .then((a) => {
             return a.data;
           })
@@ -127,20 +129,19 @@
           pw: form.userPw.value,
           name: form.userName.value,
           img: form.imageFile.value,
-          imgpath: imgpath
+          imgpath: imgpath,
         };
         axios({
           method: "patch",
           url: "/userUpdate",
           data: user,
-        })
-        .then((res) => {
-            if (res.data) {
-              alert("회원정보 수정 성공");
-              window.location.href = "/";
-            } else {
-              alert("알 수 없는 문제가 발생했습니다.");
-            }
+        }).then((res) => {
+          if (res.data) {
+            alert("회원정보 수정 성공");
+            window.location.href = "/";
+          } else {
+            alert("알 수 없는 문제가 발생했습니다.");
+          }
         });
       }
 
@@ -153,15 +154,14 @@
           img: form.imageFile.value,
           //imgpath: imgpath
         };
-        if(user.pw == "") {
+        if (user.pw == "") {
           alert("패스워드를 입력해 주세요");
         } else {
           axios({
-          method: "post",
-          url: "/userDelete",
-          data: user,
-          })
-          .then((res)=>{
+            method: "post",
+            url: "/userDelete",
+            data: user,
+          }).then((res) => {
             if (res.data) {
               alert("회원탈퇴 성공");
               window.location.href = "/";
@@ -169,7 +169,7 @@
               alert("알 수 없는 문제가 발생했습니다.");
             }
           });
-        } 
+        }
       }
     </script>
   </body>

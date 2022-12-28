@@ -21,9 +21,15 @@
           <a href="#"><img src="" alt="" /></a>
         </h1>
       </div>
-      <div class="cloud"><img src="/public/static/img/cloud.png" alt="구름" /></div>
-      <div class="air air1"><img src="/public/static/img/air.png" alt="낙하산" /></div>
-      <div class="air air2"><img src="/public/static/img/air.png" alt="낙하산2" /></div>
+      <div class="cloud">
+        <img src="/public/static/img/cloud.png" alt="구름" />
+      </div>
+      <div class="air air1">
+        <img src="/public/static/img/air.png" alt="낙하산" />
+      </div>
+      <div class="air air2">
+        <img src="/public/static/img/air.png" alt="낙하산2" />
+      </div>
       <div class="plane plane1">
         <img src="/public/static/img/plane1.png" alt="비행기1" />
       </div>
@@ -38,26 +44,36 @@
           <form id="login">
             <label for="chk" aria-hidden="true">
               <!-- Login -->
-              <a href="/"><img src="/public/static/img/Logo.png" alt="logo" /></a>
+              <a href="/"
+                ><img src="/public/static/img/Logo.png" alt="logo"
+              /></a>
             </label>
-            <input type="text" name="userId" placeholder="id" required="" />
+            <input
+              type="text"
+              name="userId"
+              placeholder="id"
+              required=""
+              title="아이디를 입력하세요."
+            />
             <input
               type="password"
               name="userPw"
               placeholder="Password"
               required=""
+              title="비밀번호를 입력하세요."
             />
             <div class="d-flex ms-lg-4">
               <button id="signinBtn" type="button" onclick="signin()">
-              <a class="btn btn-secondary-outline"> Sign in </a> </button>
-              </div>
+                <a class="btn btn-secondary-outline"> Sign in </a>
+              </button>
+            </div>
           </form>
           <p id="welcome" class="d-none"></p>
         </div>
       </div>
     </div>
     <script>
-      document.addEventListener("keypress", function(event) {
+      document.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
           event.preventDefault();
           document.getElementById("signinBtn").click();
@@ -65,31 +81,30 @@
       });
       function signin() {
         let form = document.querySelector("#login");
-            let user = {
-                    id:form.userId.value,
-                    pw:form.userPw.value,
-                }
-            if(user.id =="" || user.pw== ""){
-                alert("회원 정보를 모두 기입해 주세요");
+        let user = {
+          id: form.userId.value,
+          pw: form.userPw.value,
+        };
+        if (user.id == "" || user.pw == "") {
+          alert("회원 정보를 모두 기입해 주세요");
+        } else {
+          axios({
+            method: "get",
+            url: "/signin",
+            params: {
+              id: user.id,
+              pw: user.pw,
+            },
+          }).then((res) => {
+            if (res.data.name) {
+              alert(`welcome, ${res.data.name}!`);
+              window.location.href = "/";
             } else {
-                axios({
-                    method: 'get',
-                    url: '/signin',
-                    params: {
-                        id: user.id,
-                        pw: user.pw
-                    }
-                })
-                .then((res)=>{
-                    if(res.data.name){
-                       alert(`welcome, ${res.data.name}!`);
-                       window.location.href = "/";
-                    } else {
-                       alert(`정확한 정보를 입력하세요`);
-                       $('#login')[0].reset();
-                    } 
-                });
-            }   
+              alert(`정확한 정보를 입력하세요`);
+              $("#login")[0].reset();
+            }
+          });
+        }
       }
     </script>
   </body>

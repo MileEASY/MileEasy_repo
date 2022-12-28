@@ -20,9 +20,15 @@
           <a href="#"><img src="" alt="" /></a>
         </h1>
       </div>
-      <div class="cloud"><img src="/public/static/img/cloud.png" alt="구름" /></div>
-      <div class="air air1"><img src="/public/static/img/air.png" alt="낙하산" /></div>
-      <div class="air air2"><img src="/public/static/img/air.png" alt="낙하산2" /></div>
+      <div class="cloud">
+        <img src="/public/static/img/cloud.png" alt="구름" />
+      </div>
+      <div class="air air1">
+        <img src="/public/static/img/air.png" alt="낙하산" />
+      </div>
+      <div class="air air2">
+        <img src="/public/static/img/air.png" alt="낙하산2" />
+      </div>
       <div class="plane plane1">
         <img src="/public/static/img/plane1.png" alt="비행기1" />
       </div>
@@ -37,31 +43,42 @@
           <form id="signup">
             <label for="chk" aria-hidden="true">
               <!-- Sign up -->
-              <a href="/"><img src="/public/static/img/Logo.png" alt="logo" /></a>
+              <a href="/"
+                ><img src="/public/static/img/Logo.png" alt="logo"
+              /></a>
             </label>
             <input
               type="text"
               name="userName"
               placeholder="User name"
               required=""
+              title="이름을 입력하세요."
             />
-            <input type="text" name="userId" placeholder="id" required="" />
+            <input
+              type="text"
+              name="userId"
+              placeholder="id"
+              required=""
+              title="아이디를 입력하세요."
+            />
             <input
               type="password"
               name="userPw"
               placeholder="Password"
               required=""
+              title="비밀번호를 입력하세요."
             />
             <div class="d-flex ms-lg-4">
               <button id="signupBtn" type="button" onclick="signup()">
-              <a class="btn btn-secondary-outline"> Sign UP </a> </button>
-              </div>
-            </form>
+                <a class="btn btn-secondary-outline"> Sign UP </a>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
     <script>
-      document.addEventListener("keypress", function(event) {
+      document.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
           event.preventDefault();
           document.getElementById("signupBtn").click();
@@ -69,38 +86,37 @@
       });
       function signup() {
         let form = document.querySelector("#signup");
-            let user = {
-                    name:form.userName.value,
-                    id:form.userId.value,
-                    pw:form.userPw.value,
-                }
-            if(user.name == "" || user.id =="" || user.pw== ""){
-                alert("회원 정보를 모두 기입해 주세요");
+        let user = {
+          name: form.userName.value,
+          id: form.userId.value,
+          pw: form.userPw.value,
+        };
+        if (user.name == "" || user.id == "" || user.pw == "") {
+          alert("회원 정보를 모두 기입해 주세요");
+        } else {
+          axios({
+            method: "get",
+            url: "/signup",
+            params: { id: user.id },
+          }).then((res) => {
+            console.log(res);
+            if (res.data != false) {
+              alert(`이미 있는 ID 입니다`);
+              $("input[name=userId]").val("");
+              $("input[name=userPw]").val("");
             } else {
-                axios({
-                    method: 'get',
-                    url: '/signup',
-                    params: {id:user.id}
-                })
-                .then((res)=>{
-                        console.log(res);
-                    if(res.data != false) { alert(`이미 있는 ID 입니다`);
-                        $("input[name=userId]").val("");
-                        $("input[name=userPw]").val("");
-                    } else {
-                        axios({
-                        method: 'post',
-                        url: '/signup',
-                        data: user,
-                        })
-                        .then((response)=>{
-                            console.log(response);
-                            alert(`welcome, ${response.data.name}`);
-                            window.location.href = "/";
-                        });
-                    }
-                });           
-            }   
+              axios({
+                method: "post",
+                url: "/signup",
+                data: user,
+              }).then((response) => {
+                console.log(response);
+                alert(`welcome, ${response.data.name}`);
+                window.location.href = "/";
+              });
+            }
+          });
+        }
       }
     </script>
   </body>
