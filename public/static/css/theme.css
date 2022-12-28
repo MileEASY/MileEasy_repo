@@ -185,6 +185,7 @@ h5,
   font-size: 1rem;
   font-weight: 500;
   color: #ff9900;
+  font-weight: bold;
 }
 
 h6,
@@ -9781,7 +9782,7 @@ fieldset:disabled .btn {
 }
 
 .text-team {
-  color :#009688;
+  color :#ff9900;
 }
 
 .bg-facebook {
