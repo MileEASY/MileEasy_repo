@@ -111,7 +111,7 @@
       });
 
       function guest_post() {
-        if (isLogin) {
+        if (<%=isLogin%>) {
           document.location.href="/guest_post";
         } else alert ("로그인을 해주세요!");
       }
