@@ -60,7 +60,11 @@
                 <div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <img src="/public/static/img/<%=data[i].imgpath%>" alt="" />
+                      <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
+                        <img src="<%=data[i].imgpath%>" alt="프로필 이미지"/>
+                        <% } else { %> 
+                          <img src="/public/static/image/user_default_img.jpg" alt="프로필 이미지" />
+                        <% } %>
                     </div>
                     <div class="userMbti">
                       <span><%=data[i].mbti%></span>
@@ -86,7 +90,7 @@
       <div class="swiper-button-prev" style="color: #f90"></div>
       <div class="swiper-pagination"></div>
 
-      <div><button type="button" onclick="cardcreate()">나도 추천하러 가기</button></div>
+      <div><button type="button" onclick="guest_post()">나도 추천하러 가기</button></div>
       <!-- <div><button type="button" onclick="mycard()">내가 쓴 카드 보기</button></div> -->
     </div>
 
@@ -111,7 +115,7 @@
         },
       });
 
-      function cardcreate() {
+      function guest_post() {
         if (isLogin) {
           document.location.href="/guest_post";
         } else alert ("로그인을 해주세요!");
@@ -134,7 +138,11 @@
                 `<div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <img src="/public/static/img/${res.data[i].imgpath}" alt="" />
+                      <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
+                        <img src="${res.data[i].imgpath}" alt="프로필 이미지" />
+                        <% } else { %> 
+                          <img src="/public/static/image/user_default_img.jpg" alt="프로필 이미지" />
+                        <% } %>
                     </div>
                     <div class="userMbti">
                       <span>${res.data[i].mbti}</span>
@@ -172,7 +180,11 @@
                 `<div class="swiper-slide card">
                   <div class="card-content">
                     <div class="image">
-                      <img src="/public/static/img/${res.data[i].imgpath}" alt="" />
+                      <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
+                        <img src="${res.data[i].imgpath}" alt="프로필 이미지" />
+                        <% } else { %> 
+                          <img src="/public/static/image/user_default_img.jpg" alt="프로필 이미지" />
+                        <% } %>
                     </div>
                     <div class="userMbti">
                       <span>${res.data[i].mbti}</span>

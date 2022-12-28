@@ -55,17 +55,18 @@
               <form action="/board/upload" method="post" class="guest_form">
                 <div class="content">
                   <div class="image">
-                    <img
-                      src="/public/static/img/user_default_img.jpg"
-                      alt="profile_img"
-                    />
+                    <% if(data.imgpath !== 'user_default_img.jpg' ) { %>
+                      <img src="<%=data.imgpath%>>"  alt="프로필 이미지" />
+                      <% } else { %> 
+                       <img src="/public/static/image/user_default_img.jpg" alt="프로필 이미지" />
+                      <% } %>
                   </div>
 
                   <div class="details">
-                    <p>sesac</p>
+                    <p><%=data.id%></p>
                     <div class="select_box" title="MBTI 타입을 선택해주세요.">
                       <i class="fas fa-user-friends"></i>
-                      <span>MBTI</span>
+                      <span id="mbti">MBTI</span>
                       <i class="fas fa-caret-down"></i>
                     </div>
                   </div>
@@ -76,7 +77,7 @@
                   required
                 ></textarea>
                 <!-- POST버튼 -->
-                <button type="submit">등록하기</button>
+                <button type="button" onclick="cardcreate()">등록하기</button>
               </form>
             </section>
 
@@ -338,17 +339,18 @@
         });
       });
 
-      function postComment() {
+      function cardcreate() {
         axios({
           method: "post",
-          url: "/guest_post",
+          url: "/cardcreate",
           data: {
-            mbti: document.getElementsByClassName("check_mbti").innerText,
-            comment: document.getElementById("input_comment").value,
+            mbti: document.querySelector("#mbti").innerText,
+            comment: document.querySelector("textarea").value,
           },
         }).then((res) => {
           if (res != false) {
             alert("여행지 추천 완료!");
+            window.location.href = '/guest_home';
           }
         });
       }
