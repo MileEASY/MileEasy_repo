@@ -185,6 +185,7 @@ h5,
   font-size: 1rem;
   font-weight: 500;
   color: #ff9900;
+  /* color: #7d7370;   */
   font-weight: bold;
 }
 
@@ -278,7 +279,7 @@ sup {
 }
 
 a {
-  color:#ff9900;
+  color: #ff5722;
   text-decoration: underline;
 }
 
@@ -9783,8 +9784,8 @@ fieldset:disabled .btn {
 }
 
 .text-team {
-  color :#ff9900;
-}
+  color: #ff9800;
+  font-weight: bold;}
 
 .bg-facebook {
   background-color: #3c5a99 !important;
