@@ -6,8 +6,13 @@
 @charset "UTF-8";
 
 @font-face {
+    font-family: 'rale_italic';
+    src: url('/public/static/font/Raleway-Italic-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'rale_bold';
-    src: url('/public/static/font/Raleway-ExtraBold.ttf') format('truetype');
+    src: url('/public/static/font/Raleway-Bold.ttf') format('truetype');
 }
 
 @font-face {
@@ -168,20 +173,24 @@ body {
     text-align: center;
     font-size: 2.3rem;    
     margin: 20px;
-    font-family: "rale_bold";
+    /* font-family: "rale_bold"; */
+    font-weight: bold;
+    font-family: 'rale_italic';
     color: navy;
 }
 
 .country {
     font-size: 1.4em;
     line-height: 2rem;
-    font-family: "rale_bold";
+    font-weight: bold;
+    font-family: 'rale_italic';
     color: navy;
 }
 .reason{
     font-size: 1.4em;
     line-height: 2em;
-    font-family: "rale_bold";
+    font-weight: bold;
+    font-family: 'rale_italic';
     color: navy;
 }
 
@@ -223,9 +232,10 @@ body {
 
 .mbti {
     font-weight: bolder;
-    font-family: "rale_bold";
+    /* font-family: "rale_bold"; */
+    font-family: 'rale_italic';
     letter-spacing: 3px;
-    font-size: 4em;
+    font-size: 4.3em;
     background-image: linear-gradient(
         0deg,
         #2196f3 8%,
@@ -257,11 +267,12 @@ body {
     background-color: transparent;
     border-radius: 10px;
     color: navy;
-    padding: 15px 25px;
+    padding: 15px 30px;
     text-decoration: none;
-    margin: 50px 25px;
+    margin: 50px 50px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bolder;
+    font-family: 'rale_bold';
 }
 
 .test-again:hover {
@@ -279,11 +290,12 @@ body {
     background-color: transparent;
     border-radius: 10px;
     color: navy;
-    padding: 15px 25px;
+    padding: 15px 30px;
     text-decoration: none;
-    margin: 50px 25px;
+    margin: 50px 50px;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: bolder;
+    font-family: 'rale_bold';
 }
 
 .goto-main:hover {
@@ -327,6 +339,7 @@ ul li {
     border-radius: 10px;
     flex-grow: 1;
     transition: 0.2s;
+    /* font-family: 'rale_italic'; */
 }
 
 /* .menu-item:nth-child(even){
@@ -371,6 +384,7 @@ ul li {
     font-weight: bold;
     text-align: center;
     font-size: 1.5em;
+    font-family: 'rale_bold';
 }
 
 #map {
@@ -386,12 +400,14 @@ ul li {
     font-size: 1em;
     line-height: 1.3em;
     text-align: left;
+    font-family: 'rale_italic';
 }
 
 .text3{
     font-size: 1em;
     line-height: 1.3em;
     text-align: left;
+    font-family: 'rale_italic';
 }
 
 .scroll{

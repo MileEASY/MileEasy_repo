@@ -1,3 +1,14 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'rale_bold';
+    src: url('/public/static/font/Raleway-ExtraBold.ttf') format('truetype');
+}
+
+
+
+
+
 html,
 body,
 div,
@@ -139,6 +150,20 @@ body {
   justify-content: center;
   align-items: center; */
     height: 100vh;
+    font-family: 'rale_bold';
+}
+
+.logo{
+  font-family: "rale_bold";
+  order: 1;
+  color: #FFFDF4;
+  font-size: 2.3rem;
+  position: absolute;
+  top: 1%;
+  left: 5%;
+}
+.logo:hover{
+  cursor: pointer;
 }
 
 .main {
@@ -227,11 +252,15 @@ button {
   font-weight: bold;
   border-radius: 30px;
   border: 3px solid;
+  border-radius: 25px;
+  margin: 20px;
 }
 
 button:hover {
     /* background: #f63131; */
     background-color: navy;
+    cursor: pointer;
+    transition: 0.7s;
 }
 
 .text {
