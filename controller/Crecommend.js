@@ -37,7 +37,9 @@ exports.mycard = async (req, res) => {
 
 //내 카드 삭제
 exports.card_delete = async (req, res) => {
+  console.log(req.body.rc_id)
   let result1 = await Recommend.destroy({where : {rc_id : req.body.rc_id}});
+  console.log(result1);
   let result2 = await Recommend.findAll({ where: { name: req.session.user }});
   res.send(result2);
 }

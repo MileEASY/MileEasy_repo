@@ -69,9 +69,10 @@
                       <span class="userId"><%=data[i].name%></span>
                       <span class="userContent"><%=data[i].comment%></span>
                     </div>
-                      <!-- <div class="button">
-                        <button class="delete">delete</button>
-                      </div> -->
+                      <input type="hidden" name="rc" value="<%=data[i].rc_id%>">
+                      <div class="button">
+                          <!-- <button class="delete" onclick="cardDelete()">delete</button> -->
+                      </div>
                   </div>
                 </div>
               <% } %>
@@ -115,6 +116,7 @@
           document.location.href="/guest_post";
         } else alert ("로그인을 해주세요!");
       }
+
       var card = document.querySelector("#card");
       function mycard() {
         axios({
@@ -141,9 +143,9 @@
                       <span class="userId">${res.data[i].name}</span>
                       <span class="userContent">${res.data[i].comment}</span>
                     </div>
-                      <input id="rc" type="hidden" value=${res.data[i].rc_id}>
+                      <input type="hidden" name="rc" value=${res.data[i].rc_id}>
                       <div class="button">
-                        <button class="delete" onclick="cardDelete()">delete</button>
+                          <button type="button" class="delete" onclick="cardDelete(this)">delete</button>
                       </div>
                   </div>
                 </div>`
@@ -153,10 +155,11 @@
         });
       }
       
-      function cardDelete() {
-        let rc = document.getElementById("rc");
+      function cardDelete(a) {
+        let rc = a.parentNode.previousSibling.previousElementSibling;
+        console.log(rc);
         axios({
-          method : 'delete',
+          method : 'post',
           url : '/mycard',
           data : {
             rc_id : rc.value
@@ -178,9 +181,9 @@
                       <span class="userId">${res.data[i].name}</span>
                       <span class="userContent">${res.data[i].comment}</span>
                     </div>
-                      <input id="rc" type="hidden" value=${res.data[i].rc_id}>
+                      <input type="hidden" name="rc" value=${res.data[i].rc_id}>
                       <div class="button">
-                        <button class="delete" onclick="cardDelete()">delete</button>
+                          <button type="button" class="delete" onclick="cardDelete(this)">delete</button>
                       </div>
                   </div>
                 </div>`
