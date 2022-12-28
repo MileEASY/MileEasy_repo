@@ -165,7 +165,7 @@ table {
 body {
     /* overflow: hidden; */
     min-height: 100vh;
-    background: linear-gradient(to bottom, #085b98 1%, #2196f3 5%, #FFFDF4 60%);
+    background: linear-gradient(to bottom , #35a0f7 , #FFFDF4);
     box-sizing: border-box;
 }
 
@@ -238,8 +238,8 @@ body {
     font-size: 4.3em;
     background-image: linear-gradient(
         0deg,
-        #2196f3 8%,
-        navy 100%
+        #004e92 8%,
+        #000428 100%
       ); 
     
       background-clip: text;
@@ -408,6 +408,10 @@ ul li {
     line-height: 1.3em;
     text-align: left;
     font-family: 'rale_italic';
+}
+
+html{
+    scroll-behavior: smooth;
 }
 
 .scroll{
