@@ -4148,6 +4148,7 @@ fieldset:disabled .btn {
 .btn-link {
   font-weight: 400;
   color: #212832;
+  font-size: large;
   text-decoration: underline;
 }
 
