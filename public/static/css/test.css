@@ -142,9 +142,8 @@ table {
 
 
 body {
-    background: linear-gradient(to bottom, #085b98 1%, #2196f3 5%, #FFFDF4 60%) !important;
-    /* background: linear-gradient(to bottom, #ad4a28 1%, #dd723c 5%, #FFFDF4 60%) !important; */
-    margin: 0px;
+    background: linear-gradient(to bottom , #35a0f7 , #FFFDF4) !important;
+
     overflow: hidden;
     /* display: flex;
   justify-content: center;
@@ -251,7 +250,7 @@ button {
   font-size: 1.4em;
   font-weight: bold;
   border-radius: 30px;
-  border: 3px solid;
+  border: none;
   border-radius: 25px;
   margin: 20px;
 }

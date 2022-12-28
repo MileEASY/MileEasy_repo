@@ -83,12 +83,12 @@
         </ul> -->
     </div>
 
-    <div class="scroll" onclick="showInfo()"></div>
+    <a class="scroll" href="#infoBox"></a>
     <!-- <div class="scroll" onclick='showInfo()'></div> -->
     
 
-    </div>
-        <div class="infoBox">
+</div>
+        <div id="infoBox">
         <ul class="menu">
             <li class="menu-item">
                 <div class="item">LOCATION</div>
@@ -126,13 +126,21 @@
             });
         };
 
-        document.querySelector('.infoBox').style.display='none';
+        document.querySelector('#infoBox').style.display='none'
+        $("a").click(function() {
+            document.querySelector('#infoBox').style.display='block';
+        $('html,body').animate({
+            scrollTop: $(".second").offset().top},
+            'slow');
+});
 
-        function showInfo(){
-            if($('.infoBox').css('display')=='none') 
-            {document.querySelector('.infoBox').style.display='block';}
-            else document.querySelector('.infoBox').style.display='none'
-        }
+
+
+        // function showInfo(){
+        //     if($('.infoBox').css('display')=='none') 
+        //     {document.querySelector('.infoBox').style.display='block';}
+        //     else document.querySelector('.infoBox').style.display='none'
+        // }
 
 
         // $('.menu-item:nth-of-type(1)').mouseover(function(){

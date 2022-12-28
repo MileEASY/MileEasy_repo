@@ -9,7 +9,7 @@ body{
     align-items: center;
     min-height: 100vh;
     /* background:  #FFFDF4; */
-    background: linear-gradient(to bottom, #085b98 1%, #2196f3 5%, #FFFDF4 60%)
+    background: linear-gradient(to bottom , #2196f3 , #FFFDF4)
 }
 .loader{
     position: relative;
@@ -64,7 +64,7 @@ body{
     left: 85px;
     background-image: linear-gradient(
         0deg,
-        #2196f3 8%,
+        #2196f3 10%,
         navy 100%
       ); 
       background-clip: text;
