@@ -82,15 +82,21 @@ exports.userupdate = (req,res)=>{
     }
   })
   .then(()=>{
-    console.log(data); 
-    User.update(data, {
-      where: { id: req.body.id },
-    })
-  })
-  .then(()=>{
-    res.send(true);
-  });
-}
+    if(data.name !== '') {
+      User.update( { name : data.name},{
+          where: { id: req.body.id },
+        })
+    }
+    if(data.pw !== '') {
+    User.update( {pw : data.pw},{
+          where: { id: req.body.id },
+        })
+    }
+   })
+     .then(()=>{
+       res.send(true);
+     });
+   }
 
 exports.userdelete = (req,res)=>{
   User.findOne({
