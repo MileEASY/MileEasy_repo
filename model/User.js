@@ -5,16 +5,16 @@ const User = (Sequelize, DataTypes)=>{
         { 
             id: { //id varchar(15) not null primary key
                 type: DataTypes.STRING(50),
-                allowNull: true,
+                allowNull: false,
                 primaryKey : true
             },
             pw: { //pw varchar(15) not null
                 type: DataTypes.STRING(50),
-                allowNull: true
+                allowNull: false
             },
             name: { //name varchar(5)
                 type: DataTypes.STRING(128),
-                allowNull: true
+                allowNull: false
             },
             mbti: {
                 type: DataTypes.STRING(4),
