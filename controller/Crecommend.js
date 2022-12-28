@@ -46,7 +46,8 @@ exports.card_delete = async (req, res) => {
 
 //여행지 추천 입력창
 exports.guest_post_home = async (req, res) => {
-  res.render("guest");
+  let result = await User.findOne({where : {id : req.session.user}})
+  res.render("guest", {data: result});
 };
 
 //추천 여행지 입력 완료 버튼
@@ -54,7 +55,7 @@ exports.cardcreate = async (req, res) => {
   let result1 = await User.findOne({where : {id : req.session.user}})
   let data = {
     name: req.session.user,
-    // mbti: req.body.mbti,
+    mbti: req.body.mbti,
     comment: req.body.comment,
     imgpath : result1.imgpath
   };
