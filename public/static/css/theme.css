@@ -182,8 +182,9 @@ h4,
 
 h5,
 .h5 {
-  font-size: 1.1rem;
-  color: #f66537;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ff9900;
 }
 
 h6,
@@ -276,12 +277,12 @@ sup {
 }
 
 a {
-  color: #f90;
+  color:#ff9900;
   text-decoration: underline;
 }
 
 a:hover {
-  color: #f90;
+  color: navy;
   text-decoration: underline;
 }
 
@@ -9777,6 +9778,10 @@ fieldset:disabled .btn {
 
 .text-reset {
   color: inherit !important;
+}
+
+.text-team {
+  color :#009688;
 }
 
 .bg-facebook {
