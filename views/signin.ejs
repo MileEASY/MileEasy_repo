@@ -54,6 +54,7 @@
               placeholder="id"
               required=""
               title="아이디를 입력하세요."
+              autofocus
             />
             <input
               type="password"
@@ -97,7 +98,7 @@
             },
           }).then((res) => {
             if (res.data.name) {
-              alert(`welcome, ${res.data.name}!`);
+              alert(`${res.data.name}님, 환영합니다!`);
               window.location.href = "/";
             } else {
               alert(`정확한 정보를 입력하세요`);

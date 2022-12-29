@@ -111,7 +111,7 @@
                 data: user,
               }).then((response) => {
                 console.log(response);
-                alert(`welcome, ${response.data.name}`);
+                alert(`${response.data.name}님, 환영합니다!`);
                 window.location.href = "/";
               });
             }
