@@ -55,7 +55,7 @@
               <form action="/board/upload" method="post" class="guest_form">
                 <div class="content">
                   <div class="image">
-                      <img id="photo" src="<%=photo%>"  alt="프로필 이미지" />
+                    <img id="photo" src="<%=photo%>" alt="프로필 이미지" />
                   </div>
 
                   <div class="details">
@@ -336,20 +336,23 @@
       });
 
       function cardcreate() {
-        axios({
-          method: "post",
-          url: "/cardcreate",
-          data: {
-            mbti: document.querySelector("#mbti").innerText,
-            comment: document.querySelector("textarea").value,
-            photo: $("#photo").attr("src")
-          },
-        }).then((res) => {
-          if (res != false) {
+        if (document.querySelector("#mbti").innerText != "MBTI") {
+          axios({
+            method: "post",
+            url: "/cardcreate",
+            data: {
+              mbti: document.querySelector("#mbti").innerText,
+              comment: document.querySelector("textarea").value,
+              photo: $("#photo").attr("src"),
+            },
+          }).then((res) => {
             alert("여행지 추천 완료!");
-            window.location.href = '/guest_home';
-          }
-        });
+            window.location.href = "/guest_home";
+          });
+        } else {
+          alert("MBTI를 선택해주세요.");
+          window.location.href = "/guest_post";
+        }
       }
     </script>
   </body>
