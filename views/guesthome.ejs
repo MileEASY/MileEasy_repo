@@ -114,16 +114,19 @@
       function guest_post() {
         if (<%=isLogin%>) {
           document.location.href="/guest_post";
-        } else alert ("로그인을 해주세요!");
+        } else alert ("로그인 유저만 이용할 수 있는 서비스입니다.");
       }
 
       var card = document.querySelector("#card");
       function mycard() {
-        axios({
-          method : 'get',
-          url : '/mycard'
-        })
-        .then((res)=> {
+        if (!<%=isLogin%>) {
+          alert ("로그인을 해주세요!");
+        } else {
+          axios({
+            method : 'get',
+            url : '/mycard'
+          })
+          .then((res)=> {
           //기존 카드를 싹 민다
           //내 카드만 보여준다
           console.log(res);
@@ -149,11 +152,12 @@
                       </div>
                   </div>
                 </div>`
-          }
-          card.innerHTML = html;
-          $("#mycard").addClass('d-none');
-          $("#back").removeClass('d-none');
-        });
+            }
+            card.innerHTML = html;
+            $("#mycard").addClass('d-none');
+            $("#back").removeClass('d-none');
+          });
+        }
       }
       
       function back() {
