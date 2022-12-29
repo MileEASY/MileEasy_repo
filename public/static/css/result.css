@@ -160,6 +160,8 @@ table {
     top: 5%;
     left: 5%;
     cursor: pointer;
+    position: fixed;
+    z-index: 4;
 }
 
 body {
@@ -312,7 +314,7 @@ body {
     /* border: 2px solid navy; */
     /* background-color: #FFFDF4; */
     /* border: none; */
-    /* transition: 0.7s; */
+    transition: 0.7s;
     cursor: pointer;
 }
 
@@ -421,14 +423,14 @@ button:hover {
 
 .text2 {
     font-size: 1em;
-    line-height: 1.3em;
+    line-height: 1.5em;
     text-align: left;
     font-family: 'rale_italic';
 }
 
 .text3 {
     font-size: 1em;
-    line-height: 1.3em;
+    line-height: 1.5em;
     text-align: left;
     font-family: 'rale_italic';
 }
@@ -483,4 +485,18 @@ html {
         transform: translateY(20%) rotate(45deg);
         opacity: 0.7;
     }
+}
+.infoImg{
+    width: 40px;
+    height: 40px;
+}
+
+.etcImg{
+    width: 40px;
+    height: 40px; 
+}
+
+.cloud{
+    width: 100%;
+    height: 30%
 }
