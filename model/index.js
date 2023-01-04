@@ -1,6 +1,7 @@
 const Sequelize = require("sequelize");
 const config = require("../config/config.js")["mile"];
 
+console.log( config );
 const db = {};
 const sequelize = new Sequelize(
     config.database,
