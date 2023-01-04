@@ -1,10 +1,5 @@
 const { User } = require('../model');
 const { Trip } = require('../model');
-let Ecount = 0; let Icount = 0;
-let Scount = 0; let Ncount = 0;
-let Tcount = 0; let Fcount = 0;
-let Jcount = 0; let Pcount = 0;
-
 
 //mbti테스트 메인
 exports.testmain=(req,res)=>{
@@ -30,6 +25,10 @@ exports.loading=(req,res)=>{
 exports.user_type = async (req, res) => {
   let usermbti = '';
   console.log('select type : ', req.body.type);
+  let Ecount = 0; let Icount = 0;
+  let Scount = 0; let Ncount = 0;
+  let Tcount = 0; let Fcount = 0;
+  let Jcount = 0; let Pcount = 0;
 
   for (let i = 0; i < req.body.type.length; i++) {
     if (req.body.type[i] === 'E') {
@@ -57,6 +56,8 @@ exports.user_type = async (req, res) => {
       Pcount++;
     }
   };
+
+  console.log('E : ', Ecount, 'I : ', Icount, 'S : ', Scount, 'N : ', Ncount, 'T : ', Tcount, 'F : ', Fcount, 'J : ', Jcount, 'P : ', Pcount);
 
   if (Ecount > Icount) { usermbti += 'E' }
   else usermbti += 'I'
