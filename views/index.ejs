@@ -89,7 +89,7 @@
             </div>
             <% } else { %>
               <div class="d-flex ms-lg-4">
-                <% if(whether_test == null) { %>
+                <% if(data.mbti == null) { %>
                   <button class="btn btn-secondary-outline" id="myspot" onclick="test_alert()">나의 여행지</button>
                 <% } else { %>
                   <a class="btn btn-secondary-outline" href="/result">나의 여행지</a>
@@ -127,7 +127,7 @@
                   <a href="/userUpdate_home"><img  id="profile_img"  src="/public/static/img/user_default_img.jpg" alt="프로필 이미지" /></a>
                 <% } %>
               </div>
-            <h1 class="mb-4 fs-9 fw-bold"> <%=id%>님, <br/> 탐험을 시작하세요. </h1>
+            <h1 class="mb-4 fs-9 fw-bold"> <%=data.name%>님, <br/> 탐험을 시작하세요. </h1>
               <p class="mb-6 lead text-secondary">   Start exploring new ways of traveling.  <br class="d-none d-xl-block" /> Test your MBTI and find recommended  <br class="d-none d-xl-block" />  travel destinations! <br class="d-none d-xl-block" /> The adventure begins right now. </p>
               <div class="text-center text-md-start"> <a class="btn btn-warning me-3 btn-lg" href="/recommend_home" role="button"  >여행지 둘러보기</a  >
              <a class="btn btn-warning me-3 btn-lg" href="/testmain"  role="button" >Let's MBTI TEST!</a> </div>
