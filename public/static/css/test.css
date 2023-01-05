@@ -142,12 +142,13 @@ table {
 
 
 body {
-    background: linear-gradient(to bottom , #35a0f7 , #FFFDF4) !important;
+    /* background: linear-gradient(to bottom , #35a0f7 , #FFFDF4) !important; */
+    background-color: #a0d4ff !important;
 
     overflow: hidden;
-    /* display: flex;
+    display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: center;
     height: 100vh;
     font-family: 'rale_bold';
 }
@@ -292,12 +293,6 @@ button:hover {
     font-family: Arial;
   } */
   
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--background);
-  }
   
   .container {
     /* color: var(--color); */

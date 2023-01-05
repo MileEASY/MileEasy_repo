@@ -8,8 +8,8 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* background:  #FFFDF4; */
-    background: linear-gradient(to bottom , #2196f3 , #FFFDF4)
+    background-color: #a0d4ff
+    /* background: linear-gradient(to bottom , #2196f3 , #FFFDF4) */
 }
 .loader{
     position: relative;

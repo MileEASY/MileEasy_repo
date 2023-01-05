@@ -189,12 +189,24 @@ body {
     color: navy;
 }
 
+@media (max-width : 700px) {
+    .country{
+        width: 100vw;
+    }
+}
+
 .reason {
     font-size: 1.4em;
     line-height: 1.5em;
     font-weight: bold;
     font-family: 'rale_italic';
     color: navy;
+}
+
+@media (max-width : 700px) {
+    .reason{
+        width: 100vw;
+    }
 }
 
 .scroll {
@@ -271,6 +283,13 @@ body {
     align-items: center;
 }
 
+@media (max-width : 950px) {
+    .btn{
+        flex-direction: column;
+    }
+}
+
+
 .test-again {
     text-align: center;
     justify-content: center;
@@ -285,6 +304,13 @@ body {
     font-size: 20px;
     font-weight: bolder;
     font-family: 'rale_bold';
+}
+
+@media (max-width : 950px) {
+    .test-again{
+        flex-direction: column;
+        margin: 20px 0;
+    }
 }
 
 .test-again:hover {
@@ -310,12 +336,32 @@ body {
     font-family: 'rale_bold';
 }
 
+@media (max-width : 950px) {
+    .goto-main{
+        flex-direction: column;
+        margin: 20px 0;
+    }
+}
+
 .goto-main:hover {
     /* border: 2px solid navy; */
     /* background-color: #FFFDF4; */
     /* border: none; */
     transition: 0.7s;
     cursor: pointer;
+}
+
+.share{
+    border: 2px solid navy;
+    background-color: transparent;
+    border-radius: 10px;
+    color: navy;
+    padding: 15px 30px;
+    text-decoration: none;
+    margin: 50px 50px;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: 'rale_bold';
 }
 
 li {
@@ -341,6 +387,7 @@ ul li {
 
 #infoBox2 {
     margin: 100px 0px;
+    
 }
 
 .menu {
@@ -392,7 +439,7 @@ button:hover {
 
 }
 
-.item2 {
+/* .item2 {
     padding: 15px 0;
     font-weight: bold;
     text-align: center;
@@ -400,9 +447,9 @@ button:hover {
     font-family: 'rale_bold';
     position: absolute;
     left: 2%;
-}
+} */
 
-.item3 {
+/* .item3 {
     padding: 15px 0;
     font-weight: bold;
     text-align: center;
@@ -410,13 +457,22 @@ button:hover {
     font-family: 'rale_bold';
     position: absolute;
     right: 2%;
-}
+} */
+
+/* .Locainfo{
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+} */
 
 #map {
     /* display: flex; */
     /* justify-content: center;
     align-items: center; */
     display: inline-block;
+    /* text-align: center; */
     width: 100%;
     height: 450px;
 }
@@ -426,6 +482,7 @@ button:hover {
     line-height: 1.5em;
     text-align: left;
     font-family: 'rale_italic';
+    word-break:keep-all;
 }
 
 .text3 {
@@ -433,6 +490,7 @@ button:hover {
     line-height: 1.5em;
     text-align: left;
     font-family: 'rale_italic';
+    word-break: keep-all;
 }
 
 html {
