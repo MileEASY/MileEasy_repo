@@ -4148,8 +4148,7 @@ fieldset:disabled .btn {
   font-weight: 400;
   color: #212832;
   font-size: large;
-  padding: 1rem 3rem 1rem 1rem;
-  /* text-decoration: underline; */
+  padding: 1rem 3rem 1rem 1rem !important;
 }
 
 .btn-link:hover {
