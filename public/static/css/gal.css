@@ -336,3 +336,18 @@ body{
         display: none;
     }
 }
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 50%;
+    }
+    .text h1, h2, h3{
+        width: 50%;
+    }
+    .text .btn {
+        width: 50%;
+    }
+    button {
+        font-size: 50%;
+    }
+}
