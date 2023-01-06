@@ -11,6 +11,11 @@
     <script defer src="https://maps.googleapis.com/maps/api/js?key=<%=MAP_API_KEY%>&callback=initMap"></script>
     <script type="text/javascript" src="/public/static/location.json"></script>
 
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.1.0/kakao.min.js"
+    integrity="sha384-dpu02ieKC6NUeKFoGMOKz6102CLEWi9+5RQjWSV0ikYSFFd8M3Wp2reIcquJOemx" crossorigin="anonymous"></script>
+  <script>Kakao.init('dc492d22c20df2caf8b6f88f3ed0d1ff');
+    Kakao.isInitialized();</script>
+
 </head>
 
 <body>
@@ -115,7 +120,7 @@
         <button type="button" class="goto-main" onclick="location.href='/'">메인으로 돌아가기</button>
         <!-- <button class="share">공유하기</button> -->
     </div>
-    <button class="share">공유하기</button>
+    <button class="share" onclick="share()">공유하기</button>
 </div>
 
     <script>
@@ -149,46 +154,37 @@ document.querySelector('#infoBox2').style.display='none'
             'slow');
 });
 
+function share(){
+    Kakao.Share.sendDefault({
+    objectType: 'feed',
+    content: {
+        title: 'mbti로 알아보는 여행지',
+        imageUrl:
+        'https://cdn.pixabay.com/photo/2021/09/10/19/36/passport-6614031_1280.png',
+        link: {
+        mobileWebUrl: 'https://developers.kakao.com',
+        webUrl: 'https://developers.kakao.com',
+        },
+    },
 
-
-        // function showInfo(){
-        //     if($('.infoBox').css('display')=='none') 
-        //     {document.querySelector('.infoBox').style.display='block';}
-        //     else document.querySelector('.infoBox').style.display='none'
-        // }
-
-
-        // $('.menu-item:nth-of-type(1)').mouseover(function(){
-        //     $(this).nextAll().css('display','none');
-        //     $('.menu-item:nth-of-type(1)>ul').css('display','block')
-        // });
-
-        // $('.menu-item:nth-of-type(1)').mouseleave(function(){
-        //     $(this).nextAll().css('display','block');
-        //     $('.menu-item:nth-of-type(1)>ul').css('display','none')
-        // });
-
-        // $('.menu-item:nth-of-type(2)').mouseover(function(){
-        //     $(this).next().css('display','none');
-        //     $(this).prev().css('display','none');
-        //     $('.menu-item:nth-of-type(2)>ul').css('display','block')
-        // });
-
-        // $('.menu-item:nth-of-type(2)').mouseleave(function(){
-        //     $(this).next().css('display','block');
-        //     $(this).prev().css('display','block');
-        //     $('.menu-item:nth-of-type(2)>ul').css('display','none')
-        // });
-
-        // $('.menu-item:nth-of-type(3)').mouseover(function(){
-        //     $(this).prevAll().css('display','none');
-        //     $('.menu-item:nth-of-type(3)>ul').css('display','block')
-        // });
-
-        // $('.menu-item:nth-of-type(3)').mouseleave(function(){
-        //     $(this).prevAll().css('display','block');
-        //     $('.menu-item:nth-of-type(3)>ul').css('display','none')
-        // });
+    buttons: [
+        {
+        title: '웹으로 이동',
+        link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+        },
+        },
+        {
+        title: '앱으로 이동',
+        link: {
+            mobileWebUrl: 'https://developers.kakao.com',
+            webUrl: 'https://developers.kakao.com',
+        },
+        },
+    ],
+    });
+}
 
     </script>
 </body>
