@@ -4,8 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS style -->
-    <link rel="stylesheet" href="/public/static/css/style-guestHome.css" />
     <title>MileEASY 유저 추천 여행지</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Jquery CDN -->
@@ -24,91 +22,110 @@
       src="https://kit.fontawesome.com/3cc7440731.js"
       crossorigin="anonymous"
     ></script>
+    <!-- CSS style -->
+    <link rel="stylesheet" href="/public/static/css/style-guestHome.css" />
   </head>
   <body>
-      <!-- nav바 영역 -->
-      <div class="header">
-        <nav class="navbar">
-          <div class="navbar-container container-nav">
-            <input type="checkbox" name="" id="" />
-            <div class="hamburger-lines">
-              <span class="line line1"></span>
-              <span class="line line2"></span>
-              <span class="line line3"></span>
-            </div>
-            <ul class="menu-items">
-              <li><a href="#">Marine</a></li>
-              <li><a href="#">Hyonie</a></li>
-              <li><a href="#">Rooney</a></li>
-              <li><a href="#">Nyondoo</a></li>
-              <li><a href="#">GSIII</a></li>
-            </ul>
-
-            <h1 class="logo" alt="" onclick="location.href='/'">MileEASY</h1>
+    <!-- nav바 영역 -->
+    <div class="header">
+      <nav class="navbar">
+        <div class="navbar-container container-nav">
+          <input type="checkbox" name="" id="" />
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
           </div>
-        </nav>
-      </div>
+          <ul class="menu-items">
+            <li><a href="https://github.com/ome-r">Marine</a></li>
+            <li><a href="https://github.com/hyonie-Kim">Hyonie</a></li>
+            <li><a href="https://github.com/loveyrooney">Rooney</a></li>
+            <li><a href="https://github.com/nyondoo">Nyondoo</a></li>
+            <li><a href="https://github.com/GSIII">GSIII</a></li>
+          </ul>
 
-        <!-- 게스트 방명록 -->
-      <section guestSection>
-          <div class="swiper mySwiper guestContainer">
-            <div class="swiper-wrapper content" id="card">
-              <!-- 방명록 시작 -->
-              <% for (i=0; i<data.length; i++) { %>
-                <div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                        <img src="<%=data[i].imgpath%>" alt="프로필 이미지"/>
-                    </div>
-                    <div class="userMbti">
-                      <span><%=data[i].mbti%></span>
-                    </div>
-                    <div class="userId-userContent">
-                      <span class="userId"><%=data[i].name%></span>
-                      <span class="userContent"><%=data[i].comment%></span>
-                    </div>
-                      <input type="hidden" name="rc" value="<%=data[i].rc_id%>">
-                      <div class="button">
-                          <!-- <button class="delete" onclick="cardDelete()">delete</button> -->
-                      </div>
-                  </div>
-                </div>
-              <% } %>
-              <!-- 게스트 방명록 종료 -->
+          <h1 class="logo" alt="" onclick="location.href='/'">MileEASY</h1>
+        </div>
+      </nav>
+    </div>
+
+    <!-- 게스트 방명록 -->
+    <div class="slide-container swiper">
+      <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper" id="card">
+          <% for (i=0; i<data.length; i++) { %>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img
+                  src="<%=data[i].imgpath%>"
+                  alt="프로필이미지"
+                  class="card-img"
+                />
+              </div>
             </div>
+            <div class="userMbti">
+              <span><%=data[i].mbti%></span>
+            </div>
+            <div class="card-content">
+              <h2 class="userId"><%=data[i].name%></h2>
+              <p class="userContent">
+                <%=data[i].comment%>
+              </p>
+            </div>
+            <input type="hidden" name="rc" value="<%=data[i].rc_id%>">
+            <div class="button">
+              <!-- <button class="delete" onclick="cardDelete()">delete</button> -->
           </div>
-          <div class="swiper-button-next" style="color: #f90"></div>
-          <div class="swiper-button-prev" style="color: #f90"></div>
-          <div class="swiper-pagination"></div>
-          
-      </section>
-      
-
-      <!-- 여행 방명록 버튼 -->
-      <div class="user-card-button">
-        <button id="mycard" class="" type="button" onclick="mycard()">나의 방명록 보러가기</button>
-        <button class="d-none" id="back" type="button" onclick="back()">돌아가기</button>
-        <button type="button" onclick="guest_post()">여행 추천하러가기</button>
+          </div>
+          <% } %>
+        </div>
       </div>
+      <div class="swiper-button-next swiper-navBtn"></div>
+      <div class="swiper-button-prev swiper-navBtn"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <!-- 여행 방명록 버튼 -->
+    <div class="user-card-button">
+      <button id="mycard" class="" type="button" onclick="mycard()">나의 방명록 보러가기</button>
+      <button class="d-none" id="back" type="button" onclick="back()">돌아가기</button>
+      <button type="button" onclick="guest_post()">여행 추천하러가기</button>
+    </div>
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper(".mySwiper", {
+      var swiper = new Swiper(".slide-content", {
         slidesPerView: 3,
-        spaceBetween: 30,
-        slidesPerGroup: 3,
+        spaceBetween: 25,
+        // slidesPerGroup: 3,
         loop: true,
-        loopFillGroupWithBlank: true,
+        centerSlide:'true',
+        fade: 'true',
+        grabCursor:'true',
+        // loopFillGroupWithBlank: true,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
+          dynamicBullets:true
         },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+        breakpoints:{
+          0:{
+            slidesPerView: 1,
+          },
+          520:{
+            slidesPerView: 2,
+          },
+          950:{
+            slidesPerView: 3,
+          },
+        }
       });
 
       function guest_post() {
@@ -134,24 +151,32 @@
           let html = ""
           for (i=0; i<res.data.length; i++) {
               html +=
-                `<div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                        <img src="${res.data[i].imgpath}" alt="프로필 이미지" />
-                    </div>
-                    <div class="userMbti">
+                `<div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img
+                  src="${res.data[i].imgpath}"
+                  alt="프로필이미지"
+                  class="card-img"
+                />
+              </div>
+            </div>
+
+            <div class="userMbti">
                       <span>${res.data[i].mbti}</span>
                     </div>
-                    <div class="userId-userContent">
-                      <span class="userId">${res.data[i].name}</span>
-                      <span class="userContent">${res.data[i].comment}</span>
-                    </div>
-                      <input type="hidden" name="rc" value=${res.data[i].rc_id}>
-                      <div class="button">
-                          <button type="button" class="delete" onclick="cardDelete(this)">delete</button>
-                      </div>
-                  </div>
-                </div>`
+            <div class="card-content">
+              <h2 class="userId">${res.data[i].name}</h2>
+              <p class="userContent">
+                ${res.data[i].comment}
+              </p>
+            </div>
+            <input type="hidden" name="rc" value="${res.data[i].rc_id}">
+            <div class="button">
+              <!-- <button class="delete" onclick="cardDelete()">delete</button> -->
+          </div>
+          </div>`
             }
             card.innerHTML = html;
             $("#mycard").addClass('d-none');
@@ -159,7 +184,7 @@
           });
         }
       }
-      
+
       function back() {
         window.location.href = '/guest_home';
         $("#back").addClass('d-none');
@@ -180,29 +205,36 @@
           let html = ""
           for (i=0; i<res.data.length; i++) {
               html +=
-                `<div class="swiper-slide card">
-                  <div class="card-content">
-                    <div class="image">
-                        <img src="${res.data[i].imgpath}" alt="프로필 이미지" />
-                    </div>
-                    <div class="userMbti">
+              `<div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img
+                  src="${res.data[i].imgpath}"
+                  alt="프로필이미지"
+                  class="card-img"
+                />
+              </div>
+            </div>
+
+            <div class="userMbti">
                       <span>${res.data[i].mbti}</span>
                     </div>
-                    <div class="userId-userContent">
-                      <span class="userId">${res.data[i].name}</span>
-                      <span class="userContent">${res.data[i].comment}</span>
-                    </div>
-                      <input type="hidden" name="rc" value=${res.data[i].rc_id}>
-                      <div class="button">
-                          <button type="button" class="delete" onclick="cardDelete(this)">delete</button>
-                      </div>
-                  </div>
-                </div>`
+            <div class="card-content">
+              <h2 class="userId">${res.data[i].name}</h2>
+              <p class="userContent">
+                ${res.data[i].comment}
+              </p>
+            </div>
+            <input type="hidden" name="rc" value="${res.data[i].rc_id}">
+            <div class="button">
+              <!-- <button class="delete" onclick="cardDelete()">delete</button> -->
+          </div>
+          </div>`
           }
           card.innerHTML = html;
         });
       }
-
     </script>
   </body>
 </html>
