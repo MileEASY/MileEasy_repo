@@ -178,8 +178,7 @@ section .card .image img {
   width: 500px;
   overflow: hidden;
   position: relative;
-  left: 33%;
-  margin-top: 3%;
+  margin: 35px auto;
   overflow: hidden;
   background: #fff;
   transition: height 0.2s ease;
@@ -603,5 +602,39 @@ form button {
 @media (max-width: 500px) {
   .navbar-container input[type="checkbox"]:checked ~ .logo {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: 30px auto;
+    width: 450px;
+    height: 500px;
+  }
+  .container .container_wrapper {
+    width: 900px;
+  }
+  .container.active .post {
+    margin-left: -450px;
+  }
+  .container section {
+    width: 450px;
+  }
+  .container section {
+    width: 450px;
+  }
+  .post .guest_form {
+    margin: 35px 25px;
+    min-height: 220px;
+  }
+  .post form textarea {
+    min-height: 195px;
+  }
+  .container.active {
+    height: 500px;
+  }
+  .mbti_type .list li {
+    margin: 6px;
+    width: 90px;
   }
 }
