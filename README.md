@@ -1,21 +1,19 @@
 # [ MileEasy_repo]
+<a name="readme-top"></a>
 
 > SeSAC_1YS_1차 프로젝트 MileEasy
- (#-readme-top)
 
 <img src="https://i.ibb.co/Kq7r121/Logo.png" alt="Logo" border="0">
 
 
 ## 🚩 Table of Contents
 
-- [Packages](#-packages)
+- [Getting Started](#-getting-started)
 - [Why MileEASY?](#-why-mileeasy)
 - [Features](#-features)
-- [Examples](#-examples)
 - [Browser Support](#-browser-support)
 - [Pull Request Steps](#-pull-request-steps)
 - [Contributing](#-contributing)
-- [Used By](#-used-by)
 
 
 ### Built With
@@ -32,7 +30,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
+<a name="getting-started"></a>
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
 
